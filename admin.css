@@ -1,0 +1,9 @@
+#readly_big_video,
+#readly_big_audio {
+	width: 100%;
+}
+
+#readly_big_video_box,
+#readly_big_audio_box {
+	display: none;
+}

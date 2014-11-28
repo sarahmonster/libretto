@@ -1,0 +1,327 @@
+# Copyright (C) 2014 WPShower
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Readly 1.0\n"
+"Report-Msgid-Bugs-To: http://wpshower.com/forums\n"
+"POT-Creation-Date: 2014-03-31 14:34+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-03-31 14:34+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: readly/header.php:42
+msgid "Menu"
+msgstr ""
+
+#: readly/header.php:43
+msgid "Skip to content"
+msgstr ""
+
+#: readly/content-single.php:32 readly/content-page.php:16
+#: readly/content.php:45
+msgid "Read More<span></span>"
+msgstr ""
+
+#: readly/content-single.php:34 readly/content-page.php:17 readly/image.php:94
+msgid "Pages:"
+msgstr ""
+
+#: readly/content-single.php:40 readly/content-single.php:43
+msgid ", "
+msgstr ""
+
+#: readly/content-single.php:48
+#, php-format
+msgid "Tagged %2$s"
+msgstr ""
+
+#: readly/content-single.php:57
+#, php-format
+msgid "Posted in %1$s<span class=\"sep\"> &#183; </span>Tagged %2$s"
+msgstr ""
+
+#: readly/content-single.php:60
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: readly/content-single.php:73 readly/content-page.php:19
+#: readly/content.php:22 readly/content.php:59 readly/image.php:108
+#: readly/inc/template-tags.php:119 readly/inc/template-tags.php:133
+msgid "Edit"
+msgstr ""
+
+#: readly/footer.php:21
+msgid "WordPress"
+msgstr ""
+
+#: readly/functions.php:73
+msgid "Primary Menu"
+msgstr ""
+
+#: readly/functions.php:94
+msgid "Sidebar"
+msgstr ""
+
+#: readly/functions.php:190
+msgid "The End"
+msgstr ""
+
+#: readly/functions.php:245
+msgid "Read More"
+msgstr ""
+
+#: readly/functions.php:269
+msgid "Enter your video link, embed code or shortcode here:"
+msgstr ""
+
+#: readly/functions.php:278
+msgid "Enter your audio link, embed code or shortcode here:"
+msgstr ""
+
+#: readly/functions.php:286
+msgid "Video"
+msgstr ""
+
+#: readly/functions.php:294
+msgid "Audio"
+msgstr ""
+
+#: readly/no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: readly/no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: readly/no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: readly/no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: readly/search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: readly/content.php:19 readly/content.php:56
+msgid "Leave a comment"
+msgstr ""
+
+#: readly/content.php:19 readly/content.php:56
+msgid "1 Comment"
+msgstr ""
+
+#: readly/content.php:19 readly/content.php:56
+msgid "% Comments"
+msgstr ""
+
+#: readly/content.php:26
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: readly/archive.php:22
+#, php-format
+msgid "Posts from the <span>'%s'</span> Category"
+msgstr ""
+
+#: readly/archive.php:25
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: readly/archive.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: readly/archive.php:40
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: readly/archive.php:43
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: readly/archive.php:46
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: readly/archive.php:49
+msgid "Archives"
+msgstr ""
+
+#: readly/404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: readly/404.php:20
+msgid "Please feel free to <a href=\""
+msgstr ""
+
+#: readly/image.php:24
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size "
+"image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: readly/image.php:38
+msgid "Previous"
+msgstr ""
+
+#: readly/image.php:39
+msgid "Next"
+msgstr ""
+
+#: readly/image.php:100
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: readly/image.php:102
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+
+#: readly/image.php:104
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: readly/image.php:106
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: readly/comments.php:39 readly/comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: readly/comments.php:40 readly/comments.php:60
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: readly/comments.php:41 readly/comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: readly/comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: readly/comments.php:75
+msgid "Submit Comment"
+msgstr ""
+
+#: readly/inc/template-tags.php:38
+msgid "Post navigation"
+msgstr ""
+
+#: readly/inc/template-tags.php:49
+msgid ""
+"<span class=\"img loader\"></span><span class=\"img loader2\"></span><span "
+"class=\"text\">Load more posts</span>"
+msgstr ""
+
+#: readly/inc/template-tags.php:85
+msgid "<span class=\"meta-nav\"></span>Older posts"
+msgstr ""
+
+#: readly/inc/template-tags.php:93
+msgid "Newer posts<span class=\"meta-nav\"></span>"
+msgstr ""
+
+#: readly/inc/template-tags.php:119
+msgid "Pingback:"
+msgstr ""
+
+#: readly/inc/template-tags.php:128
+#, php-format
+msgid "%s <span class=\"says\">on</span>"
+msgstr ""
+
+#: readly/inc/template-tags.php:137
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: readly/inc/template-tags.php:162
+#, php-format
+msgid ""
+"<a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" "
+"datetime=\"%3$s\">%4$s</time></a>"
+msgstr ""
+
+#: readly/inc/extras.php:78
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: readly/inc/customizer.php:19
+msgid "Colors"
+msgstr ""
+
+#: readly/inc/customizer.php:22
+msgid "Allows you to customize some colors."
+msgstr ""
+
+#: readly/inc/customizer.php:34
+msgid "Color"
+msgstr ""
+
+#: readly/inc/customizer.php:43
+msgid "Social networks"
+msgstr ""
+
+#: readly/inc/customizer.php:46
+msgid "Allows you to customize social network links."
+msgstr ""
+
+#: readly/inc/customizer.php:78
+msgid "Page Navigation"
+msgstr ""
+
+#: readly/inc/customizer.php:89
+msgid "Standard"
+msgstr ""
+
+#: readly/inc/customizer.php:90
+msgid "Load More Button"
+msgstr ""
+
+#: readly/inc/customizer.php:91
+msgid "Infinite Scroll"
+msgstr ""
+
+#: readly/inc/customizer.php:97
+msgid "Galleries"
+msgstr ""
+
+#: readly/inc/customizer.php:104
+msgid "Disable custom fancybox galleries"
+msgstr ""

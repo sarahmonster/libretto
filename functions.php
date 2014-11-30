@@ -8,42 +8,20 @@
 
 /**
  * Set the content width based on the theme's design and stylesheet.
- *
- * @since Readly 1.0
  */
-if (!isset($content_width))
+if ( ! isset($content_width) ) {
 	$content_width = 920; /* pixels */
+}
 
-/*
- * Load Jetpack compatibility file.
- */
-require(get_template_directory().'/inc/jetpack.php');
-
-if (!function_exists('readly_setup')):
+if ( ! function_exists('readly_setup') ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
- *
- * @since Readly 1.0
  */
 function readly_setup() {
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require(get_template_directory().'/inc/template-tags.php');
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	require(get_template_directory().'/inc/extras.php');
-
-	/**
-	 * Customizer additions
-	 */
-	require(get_template_directory().'/inc/customizer.php');
 
 	/**
 	 * Make theme available for translation
@@ -62,7 +40,6 @@ function readly_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support('post-thumbnails');
-
 	add_image_size('readly-gallery', 436, 436, true);
 	add_image_size('readly-full', 920);
 
@@ -81,80 +58,140 @@ function readly_setup() {
 	));
 }
 endif; // readly_setup
-
 add_action('after_setup_theme', 'readly_setup');
 
 /**
  * Register widgetized area and update sidebar with default widgets
- *
- * @since Readly 1.0
  */
 function readly_widgets_init() {
-	register_sidebar(array(
-		'name' => __('Sidebar', 'readly'),
-		'id' => 'sidebar-1',
+	register_sidebar( array(
+		'name'          => __('Sidebar', 'readly'),
+		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	));
 }
-
 add_action('widgets_init', 'readly_widgets_init');
+
+/**
+ * Generate URLs for our custom fonts (via Google)
+ */
+function readly_fonts_url() {
+    $fonts_url = '';
+		 
+		/* Translators: If there are characters in your language that are not
+		* supported by Open Sans, translate this to 'off'. Do not translate
+		* into your own language.
+		*/
+		$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
+    
+		if ( 'off' !== $libre_baskerville ) {
+		    $font_families = array();
+		 
+		    if ( 'off' !== $libre_baskerville ) {
+		        $font_families[] = 'Libre Baskerville:400,700,400italic';
+		    }
+
+		    $query_args = array(
+    			'family' => urlencode( implode( '|', $font_families ) ),
+    			'subset' => urlencode( 'latin,latin-ext' ),
+				);
+
+				$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		}
+
+    return $fonts_url;
+}
 
 /**
  * Enqueue scripts and styles
  */
 function readly_scripts() {
-	wp_enqueue_style('fancybox-style', get_template_directory_uri().'/fancybox/jquery.fancybox.css?v=2.1.5');
-	wp_enqueue_style('readly-style', get_stylesheet_uri());
-	$css = '.gallery .gallery-item {
-	max-width: '.get_option('thumbnail_size_w').'px;
-}';
-	wp_add_inline_style('readly-style', $css);
 
-	wp_enqueue_script('navigation', get_template_directory_uri().'/js/navigation.js', array(), '20120206', true);
+	// General site stylesheet & JS
+	wp_enqueue_style( 'readly-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'readly-script', get_template_directory_uri().'/js/readly.js', array(), '20140331' );
 
-	wp_enqueue_script('skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true);
+	// Fonts
+	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	// JQuery & JQuery UI
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-ui', get_template_directory_uri().'/js/jquery-ui-1.10.2.custom.min.js', array(), '20130317' );
+	
+	// Navigation (TODO: simplify)
+	wp_enqueue_script( 'navigation', get_template_directory_uri().'/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	// Comments
+	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if (is_singular() && wp_attachment_is_image()) {
-		wp_enqueue_script('keyboard-image-navigation', get_template_directory_uri().'/js/keyboard-image-navigation.js', array('jquery'), '20120202');
+	// Media (TODO: simplify)
+	if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri().'/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
-	wp_enqueue_script('wp-mediaelement');
+	// Media elements (TODO: simplify)
+	wp_enqueue_script( 'wp-mediaelement' );
+	wp_enqueue_style( 'wp-mediaelement' );
 
-	wp_enqueue_style('wp-mediaelement');
+	// TODO: Replace me with non-inline styles
+	$css = '.gallery .gallery-item { max-width: '.get_option('thumbnail_size_w').'px; }';
+	wp_add_inline_style( 'readly-style', $css );
 
-	wp_enqueue_script('jquery');
+	// Fancybox (TODO: review)
+	wp_enqueue_style( 'fancybox-style', get_template_directory_uri().'/fancybox/jquery.fancybox.css?v=2.1.5' );
+	wp_enqueue_script( 'fancybox', get_template_directory_uri().'/fancybox/jquery.fancybox.js', array( 'jquery' ), '3b1', true );
 
-	wp_enqueue_script('jquery-ui', get_template_directory_uri().'/js/jquery-ui-1.10.2.custom.min.js', array(), '20130317');
+	// Responsive video (TODO: simplify)
+	wp_enqueue_script( 'wpshower-responsive-videos', get_template_directory_uri().'/js/wpshower-responsive-videos.js', array( 'jquery' ), '20140331', true );
+	wp_enqueue_script( 'jquery-mousewheel', get_template_directory_uri().'/js/jquery.mousewheel.js', array( 'jquery' ), '3.1.6', true );
 
-	wp_enqueue_script('wpshower-responsive-videos', get_template_directory_uri().'/js/wpshower-responsive-videos.js', array('jquery'), '20140331', true);
-
-	wp_enqueue_script('jquery-mousewheel', get_template_directory_uri().'/js/jquery.mousewheel.js', array('jquery'), '3.1.6', true);
-	wp_enqueue_script('fancybox', get_template_directory_uri().'/fancybox/jquery.fancybox.js', array('jquery'), '3b1', true);
-
-	wp_enqueue_script('readly-script', get_template_directory_uri().'/js/readly.js', array(), '20140331');
-
-	if (!is_singular() && 'infinite-scroll' == get_theme_mod('page_navigation'))
-		wp_enqueue_script('infinite-scroll', get_template_directory_uri().'/js/jquery.infinitescroll.min.js', array('jquery'), '2.0b.110415', true);
+	// Infinite Scroll (TODO: review)
+	if ( !is_singular() && 'infinite-scroll' == get_theme_mod( 'page_navigation' ) )
+		wp_enqueue_script( 'infinite-scroll', get_template_directory_uri().'/js/jquery.infinitescroll.min.js', array( 'jquery' ), '2.0b.110415', true );
 }
-
-add_action('wp_enqueue_scripts', 'readly_scripts');
+add_action( 'wp_enqueue_scripts', 'readly_scripts' );
 
 /**
- * Admin styles
+ * Implement the Custom Header feature.
  */
-function readly_admin_scripts_styles() {
-	wp_enqueue_style('readly-admin-style', get_template_directory_uri().'/admin.css');
-
-	wp_enqueue_script('readly-admin', get_template_directory_uri().'/js/admin.js', array(), '20140331', true);
+//require get_template_directory() . '/inc/custom-header.php';
+function readly_custom_header_fonts() {
+    wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
 }
+add_action( 'admin_print_styles-appearance_page_custom-header', 'readly_scripts_styles' );
 
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+// Editor admin styles
+function readly_admin_scripts_styles() {
+	wp_enqueue_style( 'readly-admin-style', get_template_directory_uri().'/admin.css' );
+	wp_enqueue_script( 'readly-admin', get_template_directory_uri().'/js/admin.js', array(), '20140331', true );
+	add_editor_style( array( 'editor-style.css', readly_fonts_url() ) );
+}
 add_action('admin_enqueue_scripts', 'readly_admin_scripts_styles');
 
 // This theme uses its own gallery styles.

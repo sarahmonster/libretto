@@ -20,18 +20,23 @@
 					<?php do_action('readly_credits'); ?>
 					&#169; Copyright 2014 <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_attr(get_bloginfo('name', 'display')); ?></a>. Powered By <a href="http://wordpress.org/" title="<?php esc_attr_e('A Semantic Personal Publishing Platform', 'readly'); ?>" rel="generator"><?php echo __('WordPress', 'readly'); ?></a>.
 					<br />
-					Designed & Crafted by <a href="http://wpshower.com/">Wpshower</a>.
+					Designed &amp; Crafted by <a href="http://wpshower.com/">Wpshower</a>.
 				</div>
 			</div>
 		</div><!-- .site-info -->
+
 <?php
-$options = get_option('readly_social');
-$social = array();
-foreach ($options as $key => $value) {
-	if ($options[$key] != '') {
-		$social[$key] = $value;
+
+if (get_option('readly_social')) {
+	$options = get_option('readly_social');
+	$social = array();
+	foreach ($options as $key => $value) {
+		if ($options[$key] != '') {
+			$social[$key] = $value;
+		}
 	}
 }
+
 if (!empty($social)):
 	$array = array(
 		'twitter' => 'w',
@@ -44,6 +49,7 @@ if (!empty($social)):
 		'flickr' => '8',
 		'rss' => 'r'
 	);
+
 ?>
 		<div id="social">
 			<div id="social_wrapper">

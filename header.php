@@ -6,7 +6,9 @@
  *
  * @package Readly
  */
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -39,5 +41,4 @@
 
 		</header><!-- #masthead -->
 
-	<div id="page" class="hfeed site">
-		<div id="main" class="site-main">
+	<div id="content" class="site-content">

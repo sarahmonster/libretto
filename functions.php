@@ -3,7 +3,6 @@
  * Readly functions and definitions
  *
  * @package Readly
- * @since Readly 1.0
  */
 
 /**

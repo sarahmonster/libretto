@@ -196,13 +196,6 @@ add_action('admin_enqueue_scripts', 'readly_admin_scripts_styles');
 // This theme uses its own gallery styles.
 add_filter('use_default_gallery_style', '__return_false');
 
-// [big] shortcode
-function readlyShortcodeBig($atts, $content = null) {
-	return '<div class="readly_big">'.do_shortcode($content).'</div>';
-}
-
-add_shortcode('big', 'readlyShortcodeBig');
-
 // updated form for password protected posts
 function readlyPasswordForm($content) {
 	$before = array('>Password: <input name="post_password" id="');
@@ -210,7 +203,6 @@ function readlyPasswordForm($content) {
 	$content = str_replace($before, $after, $content);
 	return $content;
 }
-
 add_filter('the_password_form', 'readlyPasswordForm');
 
 // infinite scroll
@@ -240,7 +232,6 @@ function readly_infinite_scroll_js() {
 	</script>
 <?php
 }
-
 add_action('wp_footer', 'readly_infinite_scroll_js', 100);
 
 class wpShower {

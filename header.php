@@ -35,7 +35,9 @@
 
 			<nav id="site-navigation" class="navigation-main" role="navigation">
 				<h1 class="menu-toggle"><?php _e('Menu', 'readly'); ?><span>m</span></h1>
-				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e('Skip to content', 'readly'); ?>"><?php _e('Skip to content', 'readly'); ?></a></div>
+				<div class="assistive-text skip-link">
+					<a href="#content" title="<?php esc_attr_e('Skip to content', 'readly'); ?>"><?php _e('Skip to content', 'readly'); ?></a>
+				</div>
 				<?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => false)); ?>
 			</nav><!-- .site-navigation -->
 

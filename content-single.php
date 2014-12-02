@@ -24,6 +24,11 @@
 		$result = wpShower::getContentAndAttachments();
 		echo readly_formatted_gallery($result['attachments'], 'readly_big');
 	}
+
+	// Show the featured image, for posts that have one
+	if ( has_post_thumbnail() ) {
+		get_template_part( 'partials/featured-image' );
+	}
 	?>
 
 	<div class="entry-content">

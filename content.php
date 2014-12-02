@@ -22,9 +22,7 @@
 			<?php edit_post_link(__('Edit', 'readly'), '<span class="sep"> &#183; </span><span class="edit-link">', '</span>'); ?>
 		</div><!-- .entry-meta -->
 		<?php if ('link' !== get_post_format()): ?>
-		<h1 class="entry-title">	
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'readly'), the_title_attribute('echo=0'))); ?>" rel="bookmark"><?php the_title(); ?></a>
-		</h1>
+			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 	<?php endif; ?>

@@ -64,8 +64,32 @@ add_action('after_setup_theme', 'readly_setup');
  */
 function readly_widgets_init() {
 	register_sidebar( array(
-		'name'          => __('Sidebar', 'readly'),
+		'name'          => __('First Footer Sidebar', 'readly'),
 		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	));
+	register_sidebar( array(
+		'name'          => __('Second Footer Sidebar', 'readly'),
+		'id'            => 'sidebar-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	));
+	register_sidebar( array(
+		'name'          => __('Third Footer Sidebar', 'readly'),
+		'id'            => 'sidebar-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	));
+	register_sidebar( array(
+		'name'          => __('Fourth Footer Sidebar', 'readly'),
+		'id'            => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',

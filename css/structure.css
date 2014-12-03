@@ -1,0 +1,21 @@
+body, 
+button, 
+input, 
+select, 
+textarea, 
+#page, 
+#masthead, 
+#colophon {
+    background: #F7F7F5;
+}
+
+#content {
+  width: auto;
+  padding: 0;
+  margin: 4rem auto;
+  max-width: 680px;
+}
+
+#content > article, #nav-below, #comments {
+  padding: 20px 40px;
+}

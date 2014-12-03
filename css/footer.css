@@ -1,0 +1,45 @@
+#colophon {
+  border-top: 1px solid #f8f8f7;
+  bottom: 0;
+  display: table;
+  padding: 2rem 4rem;
+  position: absolute;
+  width: 100%;
+}
+
+#colophon .site-info {
+  display: table-cell;
+  vertical-align: top;
+  color: #adadae;
+  font-size: 18px;
+  font-size: 1.4rem;
+}
+
+.site-info a {
+  color: #adadae;
+}
+
+.site-info a[rel="generator"] {
+  display: block;
+}
+
+#social {
+  display: table-cell;
+  text-align: right;
+  padding: 5px 40px 0 0;
+  vertical-align: top;
+}
+
+#social a {
+  color: #fff;
+  background: #d1d1c6;
+  border-radius: 2px;
+  display: inline-block;
+  font-family: readly;
+  font-size: 18px;
+  height: 30px;
+  line-height: 31px;
+  text-align: center;
+  text-shadow: none;
+  width: 30px;
+}

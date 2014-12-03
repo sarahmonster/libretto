@@ -115,6 +115,7 @@ function readly_customize_register($wp_customize) {
 add_action('customize_register', 'readly_customize_register');
 
 function readly_header_output() {
+	/*
 	$color = get_option('readly_color', wpShower::$color);
 
 	echo '<style type="text/css" id="custom-background-css">
@@ -192,6 +193,7 @@ html {
 <script type="text/javascript">
 var hover_color = "'.$color.'";
 </script>';
+*/
 }
 
 add_action('wp_head', 'readly_header_output');
@@ -199,10 +201,8 @@ add_action('wp_head', 'readly_header_output');
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * @since Readly 1.2
  */
 function readly_customize_preview_js() {
 	wp_enqueue_script('readly_customizer', get_template_directory_uri().'/js/customizer.js', array('customize-preview'), '20140331', true);
 }
-
 add_action('customize_preview_init', 'readly_customize_preview_js');

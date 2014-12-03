@@ -53,7 +53,7 @@
 		if ('gallery' == $post_format) {
 			echo $result['content'];
 		} else {
-			the_excerpt(__('Read More<span></span>', 'readly'));
+			the_content(__('Read more', 'readly'));
 		}
 		?>
 	</div><!-- .entry-content -->

@@ -4,7 +4,10 @@
  *
  * @package Readly
  */
+?>
+</div><!-- #content -->
 
+<?php 
 // Sort of hacky code to count the total number of active sidebars
 $available_sidebars = array("sidebar-1", "sidebar-2", "sidebar-3", "sidebar-4");
 $active_sidebars = 0;

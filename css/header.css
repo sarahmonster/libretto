@@ -29,8 +29,7 @@
 }
 
 /* Tablets and up */
-@media only screen and (min-width : 641px) {
-
+@media only screen and (min-width: 641px) {
   #masthead {
     border-bottom: 1px solid #f8f8f7;
     -moz-box-shadow: inset 0 -10px 10px -10px #ededeb;

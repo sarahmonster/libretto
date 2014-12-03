@@ -1,7 +1,7 @@
 #footer-sidebar {
   background: #fffffe;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
-  margin-bottom: 6rem;
+  margin: 0 0 2rem 0;
   width: 100%;
 }
 
@@ -14,7 +14,6 @@
 /* Phone-sized screens */
 @media only screen and (max-width: 640px) {
   #footer-sidebar .widget-block {
-    border-bottom: 1px dotted #4b4b3c;
     width: 100%;
   }
 }

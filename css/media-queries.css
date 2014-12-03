@@ -62,38 +62,7 @@
     font-size: 28px;
     font-size: 2.8rem;
   }
-
-  #colophon {
-    display: block;
-  }
-  #footer-wrapper {
-    display: table;
-    width: 100%;
-  }
-  #colophon .site-info {
-    display: table-footer-group;
-    text-align: center;
-  }
-  #site-info-wrapper {
-    display: table-row;
-  }
-  #site-info-wrapper2 {
-    display: table-cell;
-    padding: 0 20px;
-  }
-  #social {
-    display: table-header-group;
-    text-align: center;
-    padding: 0;
-  }
-  #social_wrapper {
-    display: table-row;
-  }
-  #social_wrapper2 {
-    display: table-cell;
-    padding-bottom: 2em;
-  }
-
+  
   #content > article, #nav-below, #comments {
     padding: 20px;
   }

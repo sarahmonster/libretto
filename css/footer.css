@@ -1,18 +1,8 @@
-#colophon {
-  border-top: 1px solid #f8f8f7;
-  bottom: 0;
-  display: table;
-  padding: 2rem 4rem;
-  position: absolute;
-  width: 100%;
-}
-
 #colophon .site-info {
-  display: table-cell;
-  vertical-align: top;
   color: #adadae;
-  font-size: 18px;
+  font-size: 14px;
   font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .site-info a {
@@ -21,13 +11,6 @@
 
 .site-info a[rel="generator"] {
   display: block;
-}
-
-#social {
-  display: table-cell;
-  text-align: right;
-  padding: 5px 40px 0 0;
-  vertical-align: top;
 }
 
 #social a {
@@ -42,4 +25,35 @@
   text-align: center;
   text-shadow: none;
   width: 30px;
+}
+
+/* For phones and little screens */
+@media only screen and (max-width: 640px) {
+  #colophon .site-info,
+  #social {
+    padding: 1rem .5rem 2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Tablets and up */
+@media only screen and (min-width: 641px) {
+  #colophon {
+    padding: 2rem 4rem;
+    width: 100%;
+  }
+
+  #colophon .site-info {
+    float: left;
+  }
+
+  #social {
+    float: right;
+    padding-top: .5rem;
+  }
+
+  #social a:hover {
+    background: purple;
+  }
 }

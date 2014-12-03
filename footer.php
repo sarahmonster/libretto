@@ -43,7 +43,7 @@ if ( !empty( $social ) ):
 ?>
 	<div id="social">
 	<?php foreach ( $social as $social_network_name => $social_network_link ): ?>
-		<a href="<?php echo $social_network_link; ?>"><?php echo $array[$social_network_name]; ?></a>
+		<a href="<?php echo $social_network_link; ?>" class="<?php echo $social_network_name; ?>"><?php echo $array[$social_network_name]; ?></a>
 	<?php endforeach; ?>
 	</div><!-- #social -->
 <?php endif; ?>

@@ -36,7 +36,7 @@
 /* Anything bigger */
 @media only screen and (min-width: 1024px) {
   #footer-sidebar {
-    padding: 4rem 10rem;
+    padding: 4rem 2rem;
   }
 
   /* Different widths for different numbers of active sidebars */

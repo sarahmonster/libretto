@@ -73,5 +73,4 @@
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<div class="article-separator">j j j</div>
 </article><!-- #post-## -->

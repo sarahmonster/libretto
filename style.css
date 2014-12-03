@@ -158,3 +158,6 @@ and Blueprint http://www.blueprintcss.org/
  * 14 Media Queries
 --------------------------------------------------------------*/
 @import url("css/media-queries.css");
+
+/* TODO: move me! */
+@font-face { font-family: readly; src: url('readly.ttf'); }

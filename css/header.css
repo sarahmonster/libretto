@@ -1,24 +1,10 @@
-#masthead {
-  border-bottom: 1px solid #f8f8f7;
-  -moz-box-shadow: inset 0 -10px 10px -10px #ededeb;
-  -webkit-box-shadow: inset 0 -10px 10px -10px #ededeb;
-  box-shadow: inset 0 -10px 10px -10px #ededeb;
-  padding: 2rem 4rem;
-}
-
-#masthead a {
-  text-decoration: none;
-}
-
 .site-branding {
   color: #adadae;
-  float: left;
   font-size: 16px;
   font-size: 1.6rem;
   font-style: italic;
-  line-height: 1.5em;
+  line-height: 1.5;
   margin: 0 5% 0 0;
-  width: 20%;
 }
 
 .site-branding h1 {
@@ -28,8 +14,43 @@
   line-height: 1em;
 }
 
-.site-navigation {
-  display: block;
-  float: left;
-  width: 75%;
+/* For phones and little screens */
+@media only screen and (max-width: 640px) {
+  #masthead {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-branding {
+    text-align: center;
+    margin: 8rem 0 0 0;
+    width: 100%;
+  }
+}
+
+/* Tablets and up */
+@media only screen and (min-width : 641px) {
+
+  #masthead {
+    border-bottom: 1px solid #f8f8f7;
+    -moz-box-shadow: inset 0 -10px 10px -10px #ededeb;
+    -webkit-box-shadow: inset 0 -10px 10px -10px #ededeb;
+    box-shadow: inset 0 -10px 10px -10px #ededeb;
+    padding: 2rem 4rem;
+  }
+
+  .site-branding {
+    float: left;
+  }
+
+  #site-navigation {
+    display: block;
+    float: right;
+  }
+
+  #site-navigation:before, 
+  #site-navigation:after {
+    content: "";
+    display: table;
+  }
 }

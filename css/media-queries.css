@@ -1,82 +1,10 @@
 /* Tablets and up */
 @media only screen and (min-width : 641px) {
-  #site-navigation-wrapper2 > div > ul > li > .sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 99999;
-    padding: 0.5em 0;
-    -webkit-box-shadow: 0px 0px 15px 3px rgba(227,227,224,1);
-    -moz-box-shadow: 0px 0px 15px 3px rgba(227,227,224,1);
-    box-shadow: 0px 0px 15px 3px rgba(227,227,224,1);
-  }
-  #site-navigation-wrapper2 > div > ul > li > .sub-menu:before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    left: -moz-calc(50% - 6px);
-    left: -webkit-calc(50% - 6px);
-    left: calc(50% - 6px);
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-  }
-  #site-navigation-wrapper2 > div > ul > li:hover .sub-menu {
-    display: block;
-  }
-  .sub-menu {
-    background: #f7f7f5;
-  }
-  .sub-menu:before {
-    border-bottom: 6px solid #f7f7f5;
-  }
-  .sub-menu a {
-    white-space: nowrap;
-    color: #424242;
-  }
-  .sub-menu li {
-    display: block;
-    float: none;
-    padding: 0 1em;
-    font-size: 19px;
-    font-size: 1.9rem;
-    text-align: center;
-    line-height: 1.67em;
-  }
-  .sub-menu li li {
-    padding: 0;
-  }
+
 }
 
 @media only screen and (max-width : 999px) {
-  #masthead {
-    display: block;
-    padding-bottom: 20px;
-  }
-  #header-wrapper {
-    display: table;
-    width: 100%;
-  }
-  #masthead hgroup {
-    display: table-row;
-    padding: 0;
-  }
-  #hgroup-wrapper {
-    display: table-cell;
-    padding: 0 40px;
-  }
-  #site-navigation {
-    display: table-row;
-    padding: 0;
-  }
-  #site-navigation-wrapper {
-    float: none;
-    display: table-cell;
-    padding: 24px 40px 0 10px;
-  }
-  #site-navigation {
-    float: none;
-  }
+
   #main {
     padding: 0 40px;
   }
@@ -120,66 +48,6 @@
     padding: 0;
     margin: 0;
     max-width: none;
-  }
-
-  /* Menu and header */
-  #masthead {
-    margin: 0;
-    padding: 0;
-  }
-
-  .site-branding {
-    text-align: center;
-    margin: 8rem 0 0 0;
-    width: 100%;
-  }
-
-  #site-navigation {
-    background: #1c1c16;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  .menu-toggle {
-    background: #25251e;
-    color: #fff;
-    display: block;
-    margin: 0;
-    padding: 1.5rem 1.5rem;
-  }
-
-  .menu-toggle span {
-    float: right;
-    padding-right: 20px;
-    font-style: normal;
-    font-family: readly;
-    font-size: 2.5rem;
-  }
-
-  #site-navigation .menu {
-    display: none;
-  } 
-
-  #site-navigation .menu li {
-    border-top: 1px solid #383837;
-    display: block;
-    text-align: left;
-  }
-  
-  #site-navigation .menu li:hover .sub-menu {
-    display: none;
-    position: relative;
-    width: 100%;
-  }
-
-  #site-nagivation .sub-menu li {
-    background: #25251e;
-    text-indent: 1rem;
-  }
-
-  #site-navigation .menu-item-has-children:hover:after {
-    display: none;
   }
 
   .entry-header .entry-meta {

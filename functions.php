@@ -139,6 +139,7 @@ function readly_scripts() {
 
 	// Fonts
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
+	wp_enqueue_style( 'custom-icons', 'https://fontastic.s3.amazonaws.com/MpssqMLH2xJjPZ9ercTgGh/icons.css', array(), null );
 
 	// JQuery & JQuery UI
 	wp_enqueue_script( 'jquery' );

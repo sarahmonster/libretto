@@ -230,6 +230,16 @@ function readlyPasswordForm($content) {
 }
 add_filter('the_password_form', 'readlyPasswordForm');
 
+// Add custom post class for password-protected posts
+function password_protected_class( $classes ) {
+	global $post;
+	if ( post_password_required( $post ) ) {
+		$classes[] = "password-protected";
+	}
+	return $classes;
+}
+add_filter( 'post_class', 'password_protected_class' );
+
 // infinite scroll
 function readly_infinite_scroll_js() {
 	if (is_singular() || 'infinite-scroll' != get_theme_mod('page_navigation')) return;

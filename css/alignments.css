@@ -1,15 +1,39 @@
 .alignleft {
   display: inline;
   float: left;
-  margin: 0 1.5em 0.3em 0;
+  margin: 0 1.5em 0.5em 0;
 }
+
 .alignright {
   display: inline;
   float: right;
-  margin: 0 0 0.3em 1.5em;
+  margin: 0 0 0.5em 1.5em;
 }
+
 .aligncenter {
   clear: both;
   display: block;
   margin: 0 auto;
+}
+
+/* Tablets and up */
+@media only screen and (min-width: 641px) {
+  .alignleft {
+    margin-left: -2em;
+  }
+
+  .alignright {
+    margin-right: -2em;
+  }
+}
+
+/* Desktops and stuff */
+@media only screen and (min-width: 860px) {
+  .alignleft {
+    margin-left: -6em;
+  }
+
+  .alignright {
+    margin-right: -6em;
+  }
 }

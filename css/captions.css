@@ -1,5 +1,5 @@
 .wp-caption {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
   max-width: 100%;
 }
 
@@ -9,9 +9,13 @@
 }
 
 .wp-caption-text {
+  color: #95957a;
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.2;
   text-align: center;
 }
 
 .wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
+  margin: 1rem 0;
 }

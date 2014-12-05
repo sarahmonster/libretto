@@ -33,15 +33,6 @@
 
 	
 	<?php
-	// Readly formats images and whatnot in its own special way. Seems like that special way is by obscuring them entirely. Will probably strip this out.
-	if ('audio' == $post_format) readly_formatted_audio();
-	elseif ('video' == $post_format) readly_formatted_video();
-	elseif ('image' == $post_format) readly_formatted_image();
-	elseif ('gallery' == $post_format) {
-		$result = wpShower::getContentAndAttachments();
-		echo readly_formatted_gallery($result['attachments'], 'readly_big');
-	}
-
 	// Show the featured image, for posts that have one and aren't already image, video, or gallery posts 
 	if ( has_post_thumbnail() and 'image' != $post_format and 'gallery' != $post_format and 'video' != $post_format ) {
 		get_template_part( 'partials/featured-image' );
@@ -49,13 +40,7 @@
 	?>
 
 	<div class="entry-content">
-		<?php
-		if ('gallery' == $post_format) {
-			echo $result['content'];
-		} else {
-			the_content(__('Read more', 'readly'));
-		}
-		?>
+		<?php the_content(__('Read more', 'readly')); ?>
 	</div><!-- .entry-content -->
 
 	<?php if ('post' == get_post_type()): // Hide category and tag text for pages on Search ?>

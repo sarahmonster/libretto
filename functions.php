@@ -184,7 +184,15 @@ add_action( 'wp_enqueue_scripts', 'readly_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+$args = array(
+	'flex-width'    => true,
+	'width'         => 980,
+	'flex-height'    => true,
+	'height'        => 200,
+);
+add_theme_support( 'custom-header', $args );
+
+
 function readly_custom_header_fonts() {
     wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
 }

@@ -27,7 +27,17 @@
 	
 		<?php do_action( 'before' ); ?>
 		<header id="masthead" class="site-header" role="banner">
-			
+
+		<?php 
+		// Show a custom header if one is set
+		if ( '' != get_header_image() ): ?>
+		<div class="header-image">
+			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+		</div>
+		<?php endif; ?>
+		
+		<div class="header-bar">
+
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo('description'); ?></h2>
@@ -40,6 +50,8 @@
 				</div>
 				<?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => false)); ?>
 			</nav><!-- .site-navigation -->
+
+		</div>
 
 		</header><!-- #masthead -->
 

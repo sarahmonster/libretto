@@ -1,5 +1,3 @@
-/* TODO: clean this up */
-
 button,
 input,
 select,
@@ -50,10 +48,19 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
+input[type="submit"], 
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  background: #fff;
+  border: 0;
+  border-bottom: 2px solid #a4a48d;
+  color: #a4a48d;
+  padding: 1.05rem 1.4rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
 }
 
 input[type="text"]:focus,
@@ -61,19 +68,49 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"] {
-  padding: 3px;
+  color: #7a7a62;
+  border: 1px solid #7a7a62;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 textarea {
   overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-  padding-left: 3px;
   vertical-align: top; /* Improves readability and alignment in all browsers */
   width: 98%;
 }
+
+/* Vendor prefixes for placeholder text */
+::-webkit-input-placeholder {
+   color: #d9d9cf;
+}
+
+::-moz-placeholder { 
+   color: #cacabc;  
+}
+
+:-ms-input-placeholder {  
+   color: #cacabc;  
+}
+
+input[type="submit"], button {
+  background: #a4a48d;
+  border: 1px solid #efefec;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  position: relative;
+  outline: 4px solid #a4a48d;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover, button:hover {
+  background: #7a7a62;
+  outline: 2px solid #7a7a62;
+}
+
+input[type="submit"]:active, button:active {
+  background: #b3b3a0;
+  outline: 5px solid #b3b3a0;
+}
+

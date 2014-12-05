@@ -221,24 +221,26 @@ add_action('admin_enqueue_scripts', 'readly_admin_scripts_styles');
 // This theme uses its own gallery styles.
 add_filter('use_default_gallery_style', '__return_false');
 
-// updated form for password protected posts
-function readlyPasswordForm($content) {
-	$before = array('>Password: <input name="post_password" id="');
-	$after = array('><input name="post_password" placeholder="Password" class="password_protected" id=');
-	$content = str_replace($before, $after, $content);
-	return $content;
+// Customize the password form just a smidge
+function readly_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $o = __( "This post is password-protected. To read it, please enter the password below." ) .
+    '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:" ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit" ) . '" /></p>
+    </form>';
+    return $o;
 }
-add_filter('the_password_form', 'readlyPasswordForm');
+add_filter( 'the_password_form', 'readly_password_form' );
 
 // Add custom post class for password-protected posts
-function password_protected_class( $classes ) {
+function readly_password_protected_class( $classes ) {
 	global $post;
 	if ( post_password_required( $post ) ) {
 		$classes[] = "password-protected";
 	}
 	return $classes;
 }
-add_filter( 'post_class', 'password_protected_class' );
+add_filter( 'post_class', 'readly_password_protected_class' );
 
 // infinite scroll
 function readly_infinite_scroll_js() {

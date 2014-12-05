@@ -44,19 +44,20 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
   padding: 0;
 }
 
+/* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"],
-input[type="submit"], 
 textarea {
   background: #fff;
   border: 0;
   border-bottom: 2px solid #a4a48d;
   color: #a4a48d;
-  padding: 1.05rem 1.4rem;
   font-size: 1.4rem;
   line-height: 1.6;
+  width: 100%;
+  padding: 1.2rem 1.4rem;
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -77,7 +78,7 @@ textarea:focus {
 textarea {
   overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
   vertical-align: top; /* Improves readability and alignment in all browsers */
-  width: 98%;
+  width: 100%;
 }
 
 /* Vendor prefixes for placeholder text */
@@ -93,14 +94,21 @@ textarea {
    color: #cacabc;  
 }
 
+/* Submit buttons */
+.form-submit {
+  text-align: center;
+}
+
 input[type="submit"], button {
   background: #a4a48d;
   border: 1px solid #efefec;
   color: #fff;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  position: relative;
+  min-width: 15em;
   outline: 4px solid #a4a48d;
+  padding: 1.15rem 1.4rem;
+  position: relative;
   text-transform: uppercase;
 }
 
@@ -114,3 +122,12 @@ input[type="submit"]:active, button:active {
   outline: 5px solid #b3b3a0;
 }
 
+/* Labels */
+label {
+  color: #95957a;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+input + input[type="submit"] {
+  margin-left: 1rem;
+}

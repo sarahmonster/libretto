@@ -236,6 +236,35 @@ article + article {
   width: 0;
 }
 
+
+/* Password-protected posts */
+.password-protected .entry-content {
+  color: #95957a;
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+.password-protected label {
+  display: none;
+}
+
+/* Tablets and up */
+@media only screen and (min-width: 641px) {
+  .password-protected input[type="password"] {
+    width: 60%;
+  }
+
+  .password-protected .form-submit {
+    display: inline-block;
+    margin-left: 1%;
+    width: 37%;
+  }
+
+  .password-protected input[type="submit"] {
+    width: 100%;
+  }
+}
+
 /* Entry footers */
 footer.entry-meta {
   margin-top: 1.75em;

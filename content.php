@@ -34,9 +34,22 @@
 	
 	<?php
 	// Show the featured image, for posts that have one and aren't already image, video, or gallery posts 
-	if ( has_post_thumbnail() and 'image' != $post_format and 'gallery' != $post_format and 'video' != $post_format ) {
-		get_template_part( 'partials/featured-image' );
-	}
+	if ( has_post_thumbnail() and 'image' != $post_format and 'gallery' != $post_format and 'video' != $post_format ):
+		// First, we'll check to see how big it is. This will determine how we'll display it.
+		$image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+		$thumbnail_width = $image_attributes[1];
+		$thumbnail_height = $image_attributes[2];
+
+		// We'll make it super-big if a big image has been uploaded. Otherwise, let's just center it.
+		if ( $thumbnail_width > 920 ) {
+		  $thumbnail_class = "readly_big";
+		} else {
+		  $thumbnail_class = "aligncenter";
+		}
+
+		// Finally, show the image
+		the_post_thumbnail( 'full', array( 'class' => $thumbnail_class . ' featured-image' ) );
+	endif;
 	?>
 
 	<div class="entry-content">

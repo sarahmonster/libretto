@@ -245,7 +245,9 @@ article + article {
 }
 
 .password-protected label {
-  display: none;
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
 }
 
 /* Tablets and up */

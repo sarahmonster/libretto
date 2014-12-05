@@ -22,7 +22,7 @@ function readly_customize_register($wp_customize) {
 		'description' => __('Allows you to customize some colors.', 'readly')
 	));
 	$wp_customize->add_setting('readly_color', array(
-		'default' => wpShower::$color,
+		'default' => '#457690',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'transport' => 'postMessage'
@@ -91,27 +91,7 @@ function readly_customize_register($wp_customize) {
 			'infinite-scroll' => __('Infinite Scroll', 'readly'),
 		),
 	));
-
-	// Galleries
-	$wp_customize->add_section('readly_section_galleries', array(
-		'title' => __('Galleries', 'readly'),
-		'priority' => 105
-	));
-	$wp_customize->add_setting('readly_fancybox', array(
-		'default' => false
-	));
-	$wp_customize->add_control('readly_fancybox', array(
-		'label' => __('Disable custom fancybox galleries', 'readly'),
-		'section' => 'readly_section_galleries',
-		'type' => 'checkbox',
-		'priority' => 20
-	));
-
-	$wp_customize->get_setting('blogname')->transport = 'postMessage';
-	$wp_customize->get_setting('blogdescription')->transport = 'postMessage';
-	$wp_customize->get_setting('readly_color')->transport = 'postMessage';
 }
-
 add_action('customize_register', 'readly_customize_register');
 
 function readly_header_output() {

@@ -73,10 +73,6 @@
     display: none;
   }
 
-  #site-navigation {
-    margin-top: 2rem;
-  }
-
   #site-navigation .menu > li {
     display: inline-block;
     position: relative;

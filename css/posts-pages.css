@@ -82,7 +82,8 @@
 
 .entry-meta {
   color: #cacabc;
-  font-style: italic;
+  font-family: Montserrat;
+  font-size: 1.6rem;
 }
 
 .entry-header .entry-meta:before,
@@ -101,8 +102,9 @@
 }
 
 .entry-title, .page-title {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-family: "Playfair Display";
+  font-size: 44px;
+  font-size: 4.4rem;
   line-height: 1.28em;
 }
 

@@ -182,7 +182,7 @@
 
 
 
-/* Still needs work */
+
 
 .site-content [class*="navigation"] {
   margin: 0 0 1.5em;
@@ -235,15 +235,24 @@
   font-style: italic;
 }
 
+
+/* Post-by-post navigation */
 .previous a, .next a {
   display: inline-block;
   position: relative;
-  color: #424242;
+  color: #adadae;
+  font-style: italic;
 }
 
 .previous .meta-nav, .next .meta-nav {
-  color: #adadae;
-  font-style: italic;
+  color: #424242;
+  display: block;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .previous .meta-nav:before, .next .meta-nav:before {

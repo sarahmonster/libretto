@@ -39,8 +39,8 @@ function readly_content_nav($nav_id) {
 
 		<?php if (is_single()): // navigation links for single posts ?>
 
-			<div class="previous"><?php previous_post_link('%link', '<span class="meta-nav">'._x('Previous Article', 'Previous post link', 'readly').'</span><br />%title'); ?></div>
-			<div class="next"><?php next_post_link('%link', '<span class="meta-nav">'._x('Next Article', 'Next post link', 'readly').'</span><br />%title'); ?></div>
+			<div class="previous"><?php previous_post_link('%link', '<span class="meta-nav">'._x('Previous Article', 'Previous post link', 'readly').'</span> %title'); ?></div>
+			<div class="next"><?php next_post_link('%link', '<span class="meta-nav">'._x('Next Article', 'Next post link', 'readly').'</span> %title'); ?></div>
 
 		<?php elseif ($wp_query->max_num_pages > 1 && (is_home() || is_archive() || is_search())): // navigation links for home, archive, and search pages ?>
 

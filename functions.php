@@ -136,12 +136,22 @@ function readly_fonts_url() {
 		* into your own language.
 		*/
 		$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
+		$montserrat = _x( 'on', 'Montserrat font: on or off', 'ready' );
+		$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'ready' );
     
-		if ( 'off' !== $libre_baskerville ) {
+		if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display ) {
 		    $font_families = array();
 		 
 		    if ( 'off' !== $libre_baskerville ) {
 		        $font_families[] = 'Libre Baskerville:400,700,400italic';
+		    }
+
+		    if ( 'off' !== $playfair_display ) {
+		        $font_families[] = 'Playfair Display:400,700,900,400italic,700italic,900italic';
+		    }
+
+		    if ( 'off' !== $montserrat ) {
+		        $font_families[] = 'Montserrat:400,700,400italic';
 		    }
 
 		    $query_args = array(

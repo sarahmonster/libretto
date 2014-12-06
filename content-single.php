@@ -20,10 +20,7 @@
 	?>
 
 	<div class="entry-content">
-		<?php
-		if ('gallery' == $post_format) echo $result['content'];
-		else the_content(__('Read More<span></span>', 'readly'));
-		?>
+		<?php the_content(); ?>
 		<?php wp_link_pages(array('before' => '<div class="page-links">'.__('Pages:', 'readly'), 'after' => '</div>')); ?>
 	</div><!-- .entry-content -->
 

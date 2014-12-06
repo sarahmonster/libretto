@@ -12,6 +12,22 @@ if ( ! isset($content_width) ) {
 	$content_width = 920; /* pixels */
 }
 
+// Adds gallery shortcode defaults of size="medium" and columns="2"  
+
+function readly_gallery_atts( $out, $pairs, $atts ) {
+    $atts = shortcode_atts( array(
+      'columns' => '3',
+      'size' => 'gallery',
+    ), $atts );
+ 
+    $out['columns'] = $atts['columns'];
+    $out['size'] = $atts['size'];
+ 
+    return $out;
+ 
+}
+add_filter( 'shortcode_atts_gallery', 'readly_gallery_atts', 10, 3 );
+
 if ( ! function_exists('readly_setup') ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -39,8 +55,11 @@ function readly_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support('post-thumbnails');
-	add_image_size('readly-gallery', 436, 436, true);
-	add_image_size('readly-full', 920);
+
+	/**
+	 * Add an image size for galleries
+	 */
+	add_image_size('gallery', 400, 400, true);
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.

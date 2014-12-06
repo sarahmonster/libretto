@@ -1,3 +1,4 @@
+/* Naturalize smiley-faces */
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
@@ -14,10 +15,12 @@ object {
   max-width: 100%;
 }
 
+
+/* I dunno, man */
 .entry-media {
   position: relative;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 0.5em;
 }
 .entry-media > * {
   display: block;
@@ -28,20 +31,7 @@ object {
   height: 30px !important;
   max-width: 100% !important;
 }
-.format-image .entry-media,
-.entry-audio-embed,
-.format-video > .entry-media,
-.readly_big {
-  text-align: center;
-  margin-left: -160px;
-  margin-right: -160px;
-  max-width: -moz-calc(100% + 320px);
-  max-width: -webkit-calc(100% + 320px);
-  max-width: calc(100% + 320px);
-  width: -moz-calc(100% + 320px);
-  width: -webkit-calc(100% + 320px);
-  width: calc(100% + 320px);
-}
+
 .format-video .video-content {
   position: relative;
   overflow: hidden;
@@ -54,172 +44,30 @@ object {
   margin: 0;
 }
 
-/* Media elements */
-.hentry .mejs-mediaelement,
-.hentry .mejs-container .mejs-controls {
-  background: #424242;
-}
 
-.hentry .mejs-controls .mejs-time-rail .mejs-time-loaded,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-  background: #fff;
-}
 
-.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
-  background: #ea9629;
-}
-
-.hentry .mejs-controls .mejs-time-rail .mejs-time-total,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
-  background: #595959;
-}
-
-.hentry .mejs-controls .mejs-time-rail span,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-  border-radius: 0;
-}
-
-/* I think custom galleries maybe? */
-.template-gallery {
-  margin-bottom: 24px;
-}
-
-.template-gallery a {
-  float: left;
-  width: 25%;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0 0 4px 4px;
-}
-
-.gallery-wrapper {
-  position: relative;
-  left: -4px;
-  width: 100%;
-  width: -moz-calc(100% + 4px);
-  width: -webkit-calc(100% + 4px);
-  width: calc(100% + 4px);
-}
-
-.template-gallery a:first-child {
-  width: 50%;
-}
-
-.template-gallery a:nth-child(6) {
-  clear: left;
-}
-
-.gallery-wrapper:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.template-gallery a img {
-  width: 100%;
-  vertical-align: bottom;
-}
-
-@media only screen and (max-width : 340px) {
-  .template-gallery a {
-    width: 50%;
-  }
-
-  .template-gallery a:first-child {
-    width: 100%;
+/* Tablets and up */
+@media only screen and (min-width : 641px) {
+  .format-image .entry-media,
+  .entry-audio-embed,
+  .format-video > .entry-media,
+  .oversized, 
+  .gallery {
+    margin-left: -2em;
+    margin-right: -2em;
+    width: calc(100% + 4em);
   }
 }
 
-/* fancybox */
-.fancybox-default-overlay {
-  background: #f7f7f5;
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-
-.fancybox-default-skin-open {
-  box-shadow: none;
-}
-
-.fancybox-default-skin {
-  border-color: #f7f7f5;
-  background: #f7f7f5;
-}
-
-a.fancybox-close {
-  position: fixed;
-  top: 30px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-size: 20px;
-  line-height: 30px;
-  background-image: none;
-}
-
-a.fancybox-close:after {
-  content: '✕';
-  color: #adadad;
-  font-size: 26px;
-  text-align: center;
-}
-
-a.fancybox-nav {
-  position: fixed;
-  top: 50%;
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  margin-top: 50px;
-  text-align: center;
-  font-size: 19px;
-  font-weight: normal;
-  color: #adadad;
-}
-
-a.fancybox-prev {
-  left: 20px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-
-  -webkit-transform-origin: 0% 0%;
-  -moz-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
-  -o-transform-origin: 0% 0%;
-  transform-origin: 0% 0%;
-}
-
-a.fancybox-next {
-  right: 20px;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-
-  -webkit-transform-origin: 100% 0%;
-  -moz-transform-origin: 100% 0%;
-  -ms-transform-origin: 100% 0%;
-  -o-transform-origin: 100% 0%;
-  transform-origin: 100% 0%;
-}
-
-.fancybox-title-outside-wrap {
-  margin-top: -30px;
-  text-shadow: none;
-  color: #adadad;
-  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Baskerville, Georgia, serif;
-  font-weight: normal;
-  font-size: 20px;
-}
-
-.fancybox-inner img {
-  cursor: pointer;
+/* Desktops and stuff */
+@media only screen and (min-width: 860px) {
+  .format-image .entry-media,
+  .entry-audio-embed,
+  .format-video > .entry-media,
+  .oversized, 
+  .gallery {
+    margin-left: -6em;
+    margin-right: -6em;
+    width: calc(100% + 12em);
+  }
 }

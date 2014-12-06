@@ -42,7 +42,7 @@
 
 		// We'll make it super-big if a big image has been uploaded. Otherwise, let's just center it.
 		if ( $thumbnail_width > 920 ) {
-		  $thumbnail_class = "readly_big";
+		  $thumbnail_class = "oversized";
 		} else {
 		  $thumbnail_class = "aligncenter";
 		}

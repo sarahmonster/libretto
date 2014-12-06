@@ -15,9 +15,6 @@ object {
   max-width: 100%;
 }
 
-
-
-
 /* Tablets and up */
 @media only screen and (min-width : 641px) {
   .format-image .entry-media,

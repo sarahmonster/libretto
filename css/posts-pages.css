@@ -111,6 +111,12 @@
   vertical-align: middle;
 }
 
+/* Featured image */
+.featured-image,
+.featured-image.aligncenter {
+  margin: -4rem auto 2rem;
+}
+
 /* Entry content */
 article + article {
   margin-top: 16rem;

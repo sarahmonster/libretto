@@ -26,7 +26,8 @@
   content: ')';
   content: 's';
   background: #d9d9cf;
-  border: 2px solid #5e5e4b;
+  border: 1px solid #b3b3a0;
+  box-shadow: 0 0 0 4px #d9d9cf;
   border-radius: 50%;
   display: inline-block;
   font-family: readly-icons;
@@ -84,9 +85,16 @@
   font-style: italic;
 }
 
-.format-link .entry-header {
-  margin-bottom: 0;
+.entry-header .entry-meta:before,
+.entry-header .entry-meta:after {
+  border-bottom: 1px solid #cacabc;
+  content: '';
+  display: inline-block;
+  margin: 0 1rem;
+  vertical-align: middle;
+  width: 2rem;
 }
+
 
 .page-header {
   padding: 0 2em 2em 2em;

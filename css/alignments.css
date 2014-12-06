@@ -19,11 +19,11 @@
 /* Tablets and up */
 @media only screen and (min-width: 641px) {
   .alignleft {
-    margin-left: -2em;
+    margin-left: -3em;
   }
 
   .alignright {
-    margin-right: -2em;
+    margin-right: -3em;
   }
 }
 

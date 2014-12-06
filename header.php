@@ -32,7 +32,7 @@
 		// Show a custom header if one is set
 		if ( '' != get_header_image() || has_post_thumbnail() ): ?>
 		<div class="header-image">
-		<?php if ( has_post_thumbnail() ):
+		<?php if ( has_post_thumbnail() && is_single() ):
 			// Show the featured image instead
 			the_post_thumbnail( 'full' );
 		else: ?> 

@@ -246,8 +246,8 @@ add_action('admin_enqueue_scripts', 'readly_admin_scripts_styles');
 function readly_password_form() {
     global $post;
     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $password_form = __( "This post is password-protected. To read it, please enter the password below." ) .
-    '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:" ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit" ) . '" /></p>
+    $password_form = __( "This post is password-protected. To read it, please enter the password below.", 'readly' ) .
+    '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:", 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
     </form>';
     return $password_form;
 }

@@ -211,7 +211,6 @@
   font-style: italic;
 }
 
-
 /* Post-by-post navigation */
 .previous a, .next a {
   display: inline-block;
@@ -280,10 +279,11 @@
 
   [class*="navigation"] .previous {
     text-align: left;
-    border-right: 1px solid #dcdcdc;
   }
 
   [class*="navigation"] .next {
+    border-left: 1px solid #dcdcdc;
+    min-height: 4.8rem;
     text-align: right;
   }
 }

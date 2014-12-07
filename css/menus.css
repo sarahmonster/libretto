@@ -188,30 +188,14 @@
   line-height: 1.6;
 }
 
-[class*="navigation"] .previous_total {
-  border-right: none;
+[class*="navigation"] .previous {
+  text-align: left;
 }
 
-[class*="navigation"] .previous_total, [class*="navigation"] .next_total {
-  width: 40%;
-  padding: 0;
+[class*="navigation"] .next {
+  text-align: right;
 }
 
-[class*="navigation"] .total {
-  display: table-cell;
-  vertical-align: top;
-  text-align: center;
-  line-height: 1.4em;
-  color: #adadae;
-  width: 20%;
-}
-
-[class*="navigation"] .total span {
-  color: #dcdcdc;
-  font-style: italic;
-}
-
-/* Post-by-post navigation */
 .previous a, .next a {
   display: inline-block;
   position: relative;
@@ -252,16 +236,35 @@
   border-width: 4px 0 4px 4px;
 }
 
+
+
+
 /* Phones */
 @media only screen and (max-width: 641px) {
-  [class*="navigation"] .previous, [class*="navigation"] .next {
+  .navigation-post .previous, 
+  .navigation-post .next {
     width: 100%;
     text-align: center;
     padding: 1rem 0;
   }
 
-  [class*="navigation"] .previous {
+  .navigation-post .previous {
     border-bottom: 1px solid #dcdcdc;
+  }
+
+  .navigation-post .previous,
+  .navigation-post .next {
+    text-align: center;
+  }
+
+  .navigation-paging .page-number {
+    display: none;
+  }
+
+  .navigation-paging .previous, 
+  .navigation-paging .next {
+    float: left;
+    width: 50%;
   }
 }
 
@@ -271,19 +274,41 @@
     border-top: 1px solid #dcdcdc;
   }
 
-  [class*="navigation"] .previous, [class*="navigation"] .next {
+  [class*="navigation"] .previous, 
+  [class*="navigation"] .next {
     width: 50%;
     float: left;
     margin: 2rem 0;
   }
 
-  [class*="navigation"] .previous {
-    text-align: left;
-  }
-
   [class*="navigation"] .next {
     border-left: 1px solid #dcdcdc;
     min-height: 4.8rem;
-    text-align: right;
   }
+
+  /* Archive page navigation */
+  .navigation-paging .next,
+  .navigation-paging .previous {
+    border: none;
+    margin: 1rem 0;
+    width: 40%;
+  }
+
+  [class*="navigation"] .page-number {
+    color: #adadae;
+    float: left;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 1rem 0;
+    text-align: center;
+    width: 20%;
+  }
+
+  [class*="navigation"] .page-number span {
+    color: #dcdcdc;
+    font-style: italic;
+    font-weight: normal;
+    padding: 0 0.2rem 0 .1rem;
+  }
+
 }

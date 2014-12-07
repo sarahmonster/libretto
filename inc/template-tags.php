@@ -5,25 +5,23 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package Readly
- * @since Readly 1.0
  */
 
-if (!function_exists('readly_content_nav')):
+if ( !function_exists('readly_content_nav') ):
 /**
  * Display navigation to next/previous pages when applicable
  *
  * @since Readly 1.0
  */
-function readly_content_nav($nav_id) {
+function readly_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
-	if (is_single()) {
-		$previous = (is_attachment()) ? get_post($post->post_parent) : get_adjacent_post(false, '', true);
-		$next = get_adjacent_post(false, '', false);
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
 
-		if (!$next && !$previous)
-			return;
+	if ( ! $next && ! $previous ) {
+		return;
 	}
 
 	// Don't print empty markup in archives if there's only one page.
@@ -84,17 +82,17 @@ function readly_content_nav($nav_id) {
 					});
 				</script>
 			<?php else: ?>
-				<div class="previous previous_total">
+				<div class="previous">
 				<?php if (get_next_posts_link()): ?>
-					<?php next_posts_link(__('<span class="meta-nav"></span>Older posts', 'readly')); ?>
+					<?php next_posts_link( __( '<span class="meta-nav">Older posts</span>', 'readly' ) ); ?>
 				<?php endif; ?>
 				</div>
 
-				<div class="total"><?php global $paged; echo $paged; ?> <span>of</span> <?php echo $wp_query->max_num_pages; ?></div>
+				<div class="page-number"><?php global $paged; echo $paged; ?> <span>of</span> <?php echo $wp_query->max_num_pages; ?></div>
 
-				<div class="next next_total">
-				<?php if (get_previous_posts_link()): ?>
-					<?php previous_posts_link(__('Newer posts<span class="meta-nav"></span>', 'readly')); ?>
+				<div class="next">
+				<?php if ( get_previous_posts_link() ): ?>
+					<?php previous_posts_link( __( '<span class="meta-nav">Newer posts</span>', 'readly') ); ?>
 				<?php endif; ?>
 				</div>
 			<?php endif; ?>

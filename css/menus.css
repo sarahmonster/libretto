@@ -183,33 +183,9 @@
 
 
 
-
-.site-content [class*="navigation"] {
-  margin: 0 0 1.5em;
-}
-
-#nav-below-separator {
-  display: table;
-  width: 100%;
-  padding-top: 20px;
-  border-top: 1px solid #dcdcdc;
-}
-
-[class*="navigation"] .previous, [class*="navigation"] .next {
-  width: 50%;
-  line-height: 1.4em;
-  display: table-cell;
-  vertical-align: top;
-}
-
-[class*="navigation"] .previous {
-  padding-right: 1em;
-  border-right: 1px solid #dcdcdc;
-}
-
-[class*="navigation"] .next {
-  padding-left: 1em;
-  text-align: right;
+/* In-page or in-post navigation */
+[class*="navigation"] {
+  line-height: 1.6;
 }
 
 [class*="navigation"] .previous_total {
@@ -244,7 +220,8 @@
   font-style: italic;
 }
 
-.previous .meta-nav, .next .meta-nav {
+.previous .meta-nav, 
+.next .meta-nav {
   color: #424242;
   display: block;
   font-family: Montserrat;
@@ -255,33 +232,58 @@
   text-transform: uppercase;
 }
 
-.previous .meta-nav:before, .next .meta-nav:before {
-  content: '';
-  position: absolute;
-  top: 0.5em;
-  width: 0;
-  height: 0;
+.previous .meta-nav:before, 
+.next .meta-nav:after {
   border: solid transparent;
+  content: '';
+  display: inline-block;
+  height: 0;
+  margin: 0 0.5rem;
+  top: 0.8em;
+  width: 0;
 }
 
 .previous .meta-nav:before {
-  left: -10px;
   border-right-color: #dcdcdb;
   border-width: 4px 4px 4px 0;
 }
 
-.next .meta-nav:before {
-  right: -10px;
+.next .meta-nav:after {
   border-left-color: #dcdcdb;
   border-width: 4px 0 4px 4px;
 }
 
-#image-navigation {
-  display: table;
-  width: 100%;
+/* Phones */
+@media only screen and (max-width: 641px) {
+  [class*="navigation"] .previous, [class*="navigation"] .next {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  [class*="navigation"] .previous {
+    border-bottom: 1px solid #dcdcdc;
+  }
 }
 
-#image-navigation .previous, #image-navigation .next {
-  display: table-cell;
-  position: relative;
+/* Tablets and up */
+@media only screen and (min-width: 641px) {
+  .site-content [class*="navigation"] {
+    border-top: 1px solid #dcdcdc;
+  }
+
+  [class*="navigation"] .previous, [class*="navigation"] .next {
+    width: 50%;
+    float: left;
+    margin: 2rem 0;
+  }
+
+  [class*="navigation"] .previous {
+    text-align: left;
+    border-right: 1px solid #dcdcdc;
+  }
+
+  [class*="navigation"] .next {
+    text-align: right;
+  }
 }

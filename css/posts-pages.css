@@ -180,6 +180,7 @@ article + article {
   margin-bottom: 1.5em;
 }
 
+/* Quote format */
 .format-quote .entry-content {
   position: relative;
   font-size: 26px;
@@ -204,6 +205,7 @@ article + article {
   border-bottom: none;
 }
 
+/* Link format */
 .format-link .link_post_p:after {
   content: 'c';
   font-family: readly;
@@ -223,6 +225,7 @@ article + article {
   color: #424242;
 }
 
+/* "Read more" link */
 .more-link {
   background: #dcdcdb;
   border-bottom: none;
@@ -266,6 +269,11 @@ article + article {
   top: -9999px;
 }
 
+/* Entry footers */
+footer.entry-meta {
+  margin-top: 1.75em;
+}
+
 /* Tablets and up */
 @media only screen and (min-width: 641px) {
   .password-protected input[type="password"] {
@@ -281,11 +289,6 @@ article + article {
   .password-protected input[type="submit"] {
     width: 100%;
   }
-}
-
-/* Entry footers */
-footer.entry-meta {
-  margin-top: 1.75em;
 }
 
 

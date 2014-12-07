@@ -20,9 +20,7 @@
     max-width: none;
   }
 
-  .entry-header .entry-meta {
-    margin-bottom: 0.5em;
-  }
+
   .entry-title, .page-title {
     font-size: 28px;
     font-size: 2.8rem;
@@ -37,9 +35,7 @@
     padding: 20px;
   }
 
-  .previous .meta-nav:before, .next .meta-nav:before {
-    top: 0.45em;
-  }
+
 
   .format-quote .entry-content {
     font-size: 18px;

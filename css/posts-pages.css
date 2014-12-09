@@ -1,6 +1,7 @@
 .sticky {
   background: #faf9f5;
-  border-radius: 3px;
+  border-radius: 35px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .byline {
@@ -40,33 +41,47 @@
 .format-aside .entry-header:before {
   content: 'd';
 }
+
 .format-audio .entry-header:before {
   content: ',';
 }
+
 .format-chat .entry-header:before {
   content: 'b';
 }
+
 .format-gallery .entry-header:before {
   content: '+';
 }
+
 .format-image .entry-header:before {
   content: 'k';
 }
+
 .format-link .entry-header:before {
   content: ':';
 }
+
 .format-quote .entry-header:before {
   content: 'q';
 }
+
 .format-status .entry-header:before {
   content: 'm';
 }
+
 .format-video .entry-header:before {
   content: 'i';
 }
+
 .sticky .entry-header:before {
+  background: #eae9e6;
+  border-color: #faf9f5;
+  box-shadow: 0 0 0 4px #eae9e6;
+  color: #a09a92;
   content: ')';
 }
+
 .password-protected .entry-header:before {
   content: 'q';
 }

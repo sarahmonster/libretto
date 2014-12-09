@@ -75,10 +75,16 @@
 
   /* Halfies on the overlap */
   .format-aside .entry-content,
-  .format-quote .entry-content {
+  .format-quote .entry-content, 
+  .sticky {
     margin-left: -1.5em;
     margin-right: -1.5em;
     max-width: calc(100% + 3em);    
+  }
+
+  /* Adjust padding for sticky posts */
+  .sticky {
+    padding: 1.5em;
   }
 
   /* Aligned items overlap, too */
@@ -168,10 +174,16 @@
 
   /* Halfies on the overlap */
   .format-aside .entry-content,
-  .format-quote .entry-content {
+  .format-quote .entry-content,
+  .sticky {
     margin-left: -3em;
     margin-right: -3em;
     max-width: calc(100% + 6em);    
+  }
+
+  /* Adjust padding for sticky posts */
+  .sticky {
+    padding: 3em;
   }
 
   /* Aligned items overlap, too */

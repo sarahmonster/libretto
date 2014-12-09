@@ -14,7 +14,3 @@ select,
   margin: 4rem auto;
   max-width: 680px;
 }
-
-#content > article, #comments {
-  padding: 20px 40px;
-}

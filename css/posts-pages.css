@@ -96,7 +96,6 @@
   width: 2rem;
 }
 
-
 .page-header {
   padding: 0 2em 2em 2em;
 }
@@ -180,51 +179,6 @@ article + article {
   margin-bottom: 1.5em;
 }
 
-/* Quote format */
-.format-quote .entry-content {
-  position: relative;
-  font-size: 26px;
-  font-size: 2.6rem;
-  line-height: 1.5em;
-}
-
-.format-quote .entry-content:before {
-  content: '“';
-  position: absolute;
-  top: -6px;
-  left: -57px;
-  color: #dcdcdc;
-  font-family: Georgia, Serif;
-  font-size: 104px;
-  font-size: 10.4rem;
-  line-height: 1em;
-  font-style: normal;
-}
-
-.format-quote footer.entry-meta a {
-  border-bottom: none;
-}
-
-/* Link format */
-.format-link .link_post_p:after {
-  content: 'c';
-  font-family: readly;
-  color: #adadad;
-  font-size: 15px;
-  font-size: 1.5rem;
-  position: relative;
-  top: -3px;
-  left: 8px;
-}
-
-.format-link .link_post_p a {
-  font-size: 36px;
-  font-size: 3.6rem;
-  line-height: 1.22em;
-  border-bottom: 1px solid #adadae;
-  color: #424242;
-}
-
 /* "Read more" link */
 .more-link {
   background: #dcdcdb;
@@ -255,6 +209,23 @@ article + article {
   width: 0;
 }
 
+/* Post formats */
+.format-aside .entry-content {
+  color: #8d8d71;
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-style: italic;
+}
+
+.format-status {
+  font-size: 2rem;
+}
+
+.format-link .entry-content {
+  font-size: 21px;
+  font-size: 2.1rem;
+  text-align: center;
+}
 
 /* Password-protected posts */
 .password-protected .entry-content {

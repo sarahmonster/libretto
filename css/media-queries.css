@@ -1,12 +1,7 @@
-/* Tablets and up */
-@media only screen and (min-width : 641px) {
-
-}
-
-
 /* Phone-sized devices */
 @media only screen and (max-width: 640px) {
-  
+
+  /* Tweak font sizes and margins -- needs review */
   body {
     font-size: 18px;
     font-size: 1.8rem;
@@ -19,7 +14,6 @@
     margin: 0;
     max-width: none;
   }
-
 
   .entry-title, .page-title {
     font-size: 28px;
@@ -34,15 +28,54 @@
   #content > article, #nav-below, #comments {
     padding: 20px;
   }
+}
 
 
-
-  .format-quote .entry-content {
-    font-size: 18px;
-    font-size: 1.8rem;
+/* Tablets and up */
+@media only screen and (min-width: 641px) {
+  /* Overlap content width for certain items */
+  .content-area img.alignnone,
+  .format-image .entry-media,
+  .format-video > .entry-media,
+  .entry-audio-embed,
+  .gallery,
+  .oversized,
+  .wp-caption.alignnone {
+    margin-left: -3em;
+    margin-right: -3em;
+    max-width: calc(100% + 6em);
   }
-  .format-link .link_post_p a {
-    font-size: 28px;
-    font-size: 2.8rem;
+
+  /* Halfies on the overlap */
+  .format-aside .entry-content,
+  .format-quote .entry-content {
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    max-width: calc(100% + 3em);    
+  }
+}
+
+/* Desktops and stuff */
+@media only screen and (min-width: 860px) {
+  /* Overlap content width a bit more for larger screens */
+  .content-area img.alignnone,
+  .format-aside .entry-content,
+  .format-image .entry-media,
+  .format-video > .entry-media,
+  .entry-audio-embed,
+  .gallery,
+  .oversized,
+  .wp-caption.alignnone {
+    margin-left: -6em;
+    margin-right: -6em;
+    max-width: calc(100% + 12em);
+  }
+
+  /* Halfies on the overlap */
+  .format-aside .entry-content,
+  .format-quote .entry-content {
+    margin-left: -3em;
+    margin-right: -3em;
+    max-width: calc(100% + 6em);    
   }
 }

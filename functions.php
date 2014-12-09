@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset($content_width) ) {
-	$content_width = 920; /* pixels */
+	$content_width = 720; /* 680px wide plus a 40px buffer */
 }
 
 // Adds gallery shortcode defaults of size="medium" and columns="2"  

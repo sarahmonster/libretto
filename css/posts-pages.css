@@ -82,8 +82,7 @@
 
 .entry-meta {
   color: #cacabc;
-  font-family: Montserrat;
-  font-size: 1.6rem;
+  font-style: italic;
 }
 
 .entry-header .entry-meta:before,
@@ -242,24 +241,6 @@ article + article {
 
 /* Entry footers */
 footer.entry-meta {
-  margin-top: 1.75em;
+  margin: 1.75rem 0;
+  text-align: center;
 }
-
-/* Tablets and up */
-@media only screen and (min-width: 641px) {
-  .password-protected input[type="password"] {
-    width: 60%;
-  }
-
-  .password-protected .form-submit {
-    display: inline-block;
-    margin-left: 1%;
-    width: 37%;
-  }
-
-  .password-protected input[type="submit"] {
-    width: 100%;
-  }
-}
-
-

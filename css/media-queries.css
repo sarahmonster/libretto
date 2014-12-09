@@ -112,7 +112,7 @@
   }
 
   /* In-page navigation can be arranged in floats and take up a bit more space */
-  .site-content [class*="navigation"] {
+  [class*="navigation"] {
     border-top: 1px solid #d9d6d0;
   }
 
@@ -129,6 +129,10 @@
   }
 
   /* Archive page navigation */
+  .navigation-paging {
+    margin-top: 10rem;
+  }
+  
   .navigation-paging .next,
   .navigation-paging .previous {
     border: none;

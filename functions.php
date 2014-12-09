@@ -151,7 +151,7 @@ function readly_fonts_url() {
 		    }
 
 		    if ( 'off' !== $montserrat ) {
-		        $font_families[] = 'Montserrat:400,700,400italic';
+		        $font_families[] = 'Montserrat:400,700';
 		    }
 
 		    $query_args = array(

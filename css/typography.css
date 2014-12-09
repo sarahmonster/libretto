@@ -36,9 +36,41 @@ i {
 }
 
 blockquote {
-  padding-left: 1.2em;
-  border-left: 5px solid #dcdcdc;
+  color: #7a7a62;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+  font-size: 3.6rem;
   font-style: italic;
+  line-height: 1.4;
+  position: relative;
+}
+
+blockquote:before {
+  color: #cacabc;
+  content: '\201C';
+  display: block;
+  font-size: 104px;
+  font-size: 10.4rem;
+  font-style: normal;
+  left: -50px;
+  line-height: 1;
+  position: absolute;
+  top: -10px;
+}
+
+blockquote cite {
+  float: right;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+blockquote cite:before {
+  content: '\2013';
+  display: inline;
 }
 
 address {

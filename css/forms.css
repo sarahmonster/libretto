@@ -113,9 +113,9 @@ input[type="submit"], button {
 }
 
 input[type="submit"]:hover, button:hover {
-  background: #635d55;
+  background: #a09a92;
   color: #faf9f5;
-  outline: 2px solid #635d55;
+  outline: 2px solid #a09a92;
 }
 
 input[type="submit"]:active, button:active {

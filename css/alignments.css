@@ -15,25 +15,3 @@
   display: block;
   margin: 0 auto;
 }
-
-/* Tablets and up */
-@media only screen and (min-width: 641px) {
-  .alignleft {
-    margin-left: -3em;
-  }
-
-  .alignright {
-    margin-right: -3em;
-  }
-}
-
-/* Desktops and stuff */
-@media only screen and (min-width: 860px) {
-  .alignleft {
-    margin-left: -6em;
-  }
-
-  .alignright {
-    margin-right: -6em;
-  }
-}

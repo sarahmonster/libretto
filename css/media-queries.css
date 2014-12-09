@@ -28,6 +28,33 @@
   #content > article, #nav-below, #comments {
     padding: 20px;
   }
+
+  /* In-page navigation should be pretty simple */
+  .navigation-post .previous, 
+  .navigation-post .next {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navigation-post .previous {
+    border-bottom: 1px solid #d9d6d0;
+  }
+
+  .navigation-post .previous,
+  .navigation-post .next {
+    text-align: center;
+  }
+
+  .navigation-paging .page-number {
+    display: none;
+  }
+
+  .navigation-paging .previous, 
+  .navigation-paging .next {
+    float: left;
+    width: 50%;
+  }
 }
 
 
@@ -54,6 +81,15 @@
     max-width: calc(100% + 3em);    
   }
 
+  /* Aligned items overlap, too */
+  .alignleft {
+    margin-left: -3em;
+  }
+
+  .alignright {
+    margin-right: -3em;
+  }
+
   /* Password protected posts should show form on a single line */
   .password-protected input[type="password"] {
     width: 60%;
@@ -67,6 +103,48 @@
 
   .password-protected input[type="submit"] {
     width: 100%;
+  }
+
+  /* In-page navigation can be arranged in floats and take up a bit more space */
+  .site-content [class*="navigation"] {
+    border-top: 1px solid #d9d6d0;
+  }
+
+  [class*="navigation"] .previous, 
+  [class*="navigation"] .next {
+    width: 50%;
+    float: left;
+    margin: 2rem 0;
+  }
+
+  [class*="navigation"] .next {
+    border-left: 1px solid #d9d6d0;
+    min-height: 4.8rem;
+  }
+
+  /* Archive page navigation */
+  .navigation-paging .next,
+  .navigation-paging .previous {
+    border: none;
+    margin: 1rem 0;
+    width: 40%;
+  }
+
+  [class*="navigation"] .page-number {
+    color: #a09a92;
+    float: left;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 1rem 0;
+    text-align: center;
+    width: 20%;
+  }
+
+  [class*="navigation"] .page-number span {
+    color: #d9d6d0;
+    font-style: italic;
+    font-weight: normal;
+    padding: 0 0.2rem 0 .1rem;
   }
 }
 
@@ -94,5 +172,14 @@
     margin-left: -3em;
     margin-right: -3em;
     max-width: calc(100% + 6em);    
+  }
+
+  /* Aligned items overlap, too */
+  .alignleft {
+    margin-left: -6em;
+  }
+
+  .alignright {
+    margin-right: -6em;
   }
 }

@@ -1,56 +1,14 @@
 a {
-  color: #1E83CB;
+  color: #932817;
   text-decoration: none;
 }
 
 a:visited {
-  color: #155d90;
+  color: #943526;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #58abe6;
-}
-
-#masthead a, .entry-title a {
-  color: #424242;
-}
-.entry-meta a, #comments a {
-  color: #adadae;
-}
-#comments cite a {
-  color: #424242;
-  border-bottom: 1px solid transparent;
-}
-#comments cite a:hover {
-  color: #424242;
-  border-bottom: 1px solid;
-}
-
-footer.entry-meta a {
-  border-bottom: 1px solid #adadae;
-}
-
-footer.entry-meta .edit-link:before, .comment-meta .edit-link:before {
-  content: '· ';
-  color: #dcdcdc;
-}
-
-.entry-content > *:last-child {
-  margin-bottom: 0;
-}
-
-.reply a {
-  color: #adadae;
-  font-size: 18px;
-  font-size: 1.8rem;
-}
-
-#comments a#cancel-comment-reply-link {
-  float: right;
-  color: #F94235;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 2em;
+  color: #712012;
 }

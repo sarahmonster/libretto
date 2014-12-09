@@ -1,5 +1,5 @@
 hr {
-  background-color: #ccc;
+  background-color: #d9d6d0;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -48,7 +48,7 @@ table {
 
 th, 
 td {
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid #d9d6d0;
   padding: 0.25em 0;
 }
 

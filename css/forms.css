@@ -50,10 +50,10 @@ input[type="email"],
 input[type="password"],
 input[type="search"],
 textarea {
-  background: #fff;
+  background: #faf9f5;
   border: 0;
-  border-bottom: 2px solid #a4a48d;
-  color: #a4a48d;
+  border-bottom: 2px solid #a09a92;
+  color: #a09a92;
   font-size: 1.4rem;
   line-height: 1.6;
   width: 100%;
@@ -69,8 +69,8 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #7a7a62;
-  border: 1px solid #7a7a62;
+  color: #363431;
+  border: 1px solid #363431;
   box-shadow: 0 0 5px rgba(255, 255, 255, 1);
   outline: none;
 }
@@ -83,15 +83,15 @@ textarea {
 
 /* Vendor prefixes for placeholder text */
 ::-webkit-input-placeholder {
-   color: #d9d9cf;
+   color: #d9d6d0;
 }
 
 ::-moz-placeholder { 
-   color: #cacabc;  
+   color: #d9d6d0;  
 }
 
 :-ms-input-placeholder {  
-   color: #cacabc;  
+   color: #dcacabc;  
 }
 
 /* Submit buttons */
@@ -100,31 +100,32 @@ textarea {
 }
 
 input[type="submit"], button {
-  background: #a4a48d;
-  border: 1px solid #efefec;
-  color: #fff;
+  background: #a09a92;
+  border: 1px solid #eae9e6;
+  color: #eae9e6;
   font-size: 1.2rem;
   letter-spacing: 1px;
   min-width: 15em;
-  outline: 4px solid #a4a48d;
+  outline: 4px solid #a09a92;
   padding: 1.15rem 1.4rem;
   position: relative;
   text-transform: uppercase;
 }
 
 input[type="submit"]:hover, button:hover {
-  background: #7a7a62;
-  outline: 2px solid #7a7a62;
+  background: #635d55;
+  color: #faf9f5;
+  outline: 2px solid #635d55;
 }
 
 input[type="submit"]:active, button:active {
-  background: #b3b3a0;
-  outline: 5px solid #b3b3a0;
+  background: #363431;
+  outline: 5px solid #363431;
 }
 
 /* Labels */
 label {
-  color: #95957a;
+  color: #a09a92;
   font-size: 1.8rem;
   font-style: italic;
 }

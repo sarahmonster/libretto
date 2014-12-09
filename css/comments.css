@@ -33,7 +33,7 @@ ul.children {
   font-size: 2.6rem;
 }
 .comment-author .says {
-  color: #dcdcdc;
+  color: #a09a92;
   font-style: italic;
   font-size: 18px;
   font-size: 1.8rem;
@@ -54,4 +54,16 @@ ul.children {
   padding-bottom: 1em;
 }
 
+.reply a {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+#comments a#cancel-comment-reply-link {
+  float: right;
+  color: #faf9f5;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 2em;
+}
 

@@ -1,6 +1,6 @@
 .gallery {
   margin-bottom: 0.5em;
-  background: #fff;
+  background: #faf9f5;
   padding: 1rem 0 0 1rem;
   padding: 0.5rem;
 }
@@ -97,9 +97,9 @@
 
 .gallery-caption {
   background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid #c2c2b3;
+  border: 1px solid #a09a92;
   bottom: 10%;
-  color: #554;
+  color: #635d55;
   font-size: 1.2rem;
   left: 10%;
   line-height: 1.5;

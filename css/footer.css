@@ -1,12 +1,12 @@
 #colophon .site-info {
-  color: #adadae;
+  color: #a09a92;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.6;
 }
 
-.site-info a {
-  color: #adadae;
+#colophon a {
+  color: #635d55;
 }
 
 .site-info a[rel="generator"] {
@@ -14,8 +14,8 @@
 }
 
 #social a {
-  color: #fff;
-  background: #d1d1c6;
+  color: #faf9f5;
+  background: #d9d6d0;
   border-radius: 2px;
   display: inline-block;
   font-family: readly;

@@ -3,7 +3,7 @@ button,
 input,
 select,
 textarea {
-  color: #424242;
+  color: #363431;
   font-family: "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif;
   font-size: 18px;
   font-size: 1.8rem;
@@ -36,7 +36,7 @@ i {
 }
 
 blockquote {
-  color: #7a7a62;
+  color: #a09a92;
   font-family: "Playfair Display", Georgia, serif;
   font-size: 36px;
   font-size: 3.6rem;
@@ -46,7 +46,7 @@ blockquote {
 }
 
 blockquote:before {
-  color: #cacabc;
+  color: #d9d6d0;
   content: '\201C';
   display: block;
   font-size: 104px;
@@ -78,7 +78,7 @@ address {
 }
 
 pre {
-  background: #eee;
+  background: #d9d6d0;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 1.5rem;
@@ -91,18 +91,20 @@ pre {
 }
 
 code, kbd, tt, var {
-  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 abbr, 
 acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #a09a92;
   cursor: help;
 }
 
 mark, 
 ins {
-  background: #fff9c0;
+  background: #faf9f5;
   text-decoration: none;
 }
 

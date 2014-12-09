@@ -24,6 +24,7 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+0.1 Colour scheme
 1.0 Reset
 2.0 Typography
 3.0 Elements
@@ -47,6 +48,21 @@ and Blueprint http://www.blueprintcss.org/
 	13.1 Captions
 	13.2 Galleries
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+0.1 Colour scheme
+---------------------------------------------------------------- 
+  Dark red: #712012;
+  Lighter red: #932817;
+
+  Off-white: #faf9f5;
+  Cream: #eae9e6;
+  Light grey: #d9d6d0;
+
+  Medium grey: #a09a92;
+  Darker grey: #635d55;
+  Charcoal: #363431;
+  Black-ish: #26231e;
 
 /*--------------------------------------------------------------
 1.0 Reset

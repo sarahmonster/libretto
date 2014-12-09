@@ -1,7 +1,6 @@
 .sticky {
-  background: #f0f0ed;
+  background: #faf9f5;
   border-radius: 3px;
-  margin-bottom: 4em;
 }
 
 .byline {
@@ -23,12 +22,13 @@
 
 /* Post format icons */
 .entry-header:before {
+  background: #faf9f5;
+  border: 1px solid #d9d6d0;
+  box-shadow: 0 0 0 4px #faf9f5;
+  border-radius: 50%;
+  color: #a09a92;
   content: ')';
   content: 's';
-  background: #d9d9cf;
-  border: 1px solid #b3b3a0;
-  box-shadow: 0 0 0 4px #d9d9cf;
-  border-radius: 50%;
   display: inline-block;
   font-family: readly-icons;
   font-size: 21px;
@@ -73,7 +73,7 @@
 
 /* Entry headers */
 .entry-header {
-  border-bottom: 1px solid #cacabc;
+  border-bottom: 1px solid #d9d6d0;
   margin-bottom: 8rem;
   padding-bottom: 2rem;
   text-align: center;
@@ -81,13 +81,17 @@
 }
 
 .entry-meta {
-  color: #cacabc;
+  color: #a09a92;
   font-style: italic;
+}
+
+.entry-meta a {
+  color: #a09a92;
 }
 
 .entry-header .entry-meta:before,
 .entry-header .entry-meta:after {
-  border-bottom: 1px solid #cacabc;
+  border-bottom: 1px solid #d9d6d0;
   content: '';
   display: inline-block;
   margin: 0 1rem;
@@ -99,7 +103,11 @@
   padding: 0 2em 2em 2em;
 }
 
-.entry-title, .page-title {
+.entry-title,
+.entry-title a,
+.page-title,
+.page-title a {
+  color: #635d55;
   font-family: "Playfair Display";
   font-size: 44px;
   font-size: 4.4rem;
@@ -134,45 +142,43 @@ article + article {
   word-wrap: break-word;
 }
 
-.entry-content a {
-  border-bottom: 1px solid transparent;
-}
-
-.entry-content a.image_link:hover {
-  border-bottom-color: #f7f7f5;
-}
-
 .entry-content h1 {
+  color: #a09a92;
   font-size: 36px;
   font-size: 3.6rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h2 {
+  color: #a09a92;
   font-size: 28px;
   font-size: 2.8rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h3 {
+  color: #635d55;
   font-size: 25px;
   font-size: 2.5rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h4 {
+  color: #635d55;
   font-size: 18px;
   font-size: 1.8rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h5 {
+  color: #635d55;
   font-size: 18px;
   font-size: 1.8rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h6 {
+  color: #635d55;
   font-size: 16px;
   font-size: 1.6rem;
   margin-bottom: 1.5em;
@@ -180,11 +186,11 @@ article + article {
 
 /* "Read more" link */
 .more-link {
-  background: #dcdcdb;
+  background: #a09a92;
   border-bottom: none;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
-  color: #fff;
+  color: #faf9f5;
   display: inline-block;
   font-size: 12px;
   font-size: 1.6rem;
@@ -196,7 +202,7 @@ article + article {
 
 .more-link:after {
   border: solid transparent;
-  border-left-color: #dcdcdb;
+  border-left-color: #a09a92;
   border-width: 1.95rem 0 1.95rem 1.5rem;
   content: '';
   display: block;
@@ -208,9 +214,18 @@ article + article {
   width: 0;
 }
 
+.more-link:hover {
+  background: #635d55;
+  color: #eae9e6;
+}
+
+.more-link:hover:after {
+  border-left-color: #635d55;
+}
+
 /* Post formats */
 .format-aside .entry-content {
-  color: #8d8d71;
+  color: #635d55;
   font-size: 21px;
   font-size: 2.1rem;
   font-style: italic;
@@ -228,9 +243,10 @@ article + article {
 
 /* Password-protected posts */
 .password-protected .entry-content {
-  color: #95957a;
+  color: #a09a92;
   font-size: 1.8rem;
   font-style: italic;
+  text-align: center;
 }
 
 .password-protected label {
@@ -243,4 +259,10 @@ article + article {
 footer.entry-meta {
   margin: 1.75rem 0;
   text-align: center;
+}
+
+footer.entry-meta .edit-link:before, 
+.comment-meta .edit-link:before {
+  content: '· ';
+  color: #d9d6d0;
 }

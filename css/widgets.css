@@ -1,5 +1,5 @@
 #footer-sidebar {
-  background: #fffffe;
+  background: #faf9f5;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
   margin: 0 0 2rem 0;
   width: 100%;
@@ -74,7 +74,7 @@
 }
 
 .widget-title {
-  border-bottom: 1px solid #4b4b3c;
+  border-bottom: 1px solid #d9d6d0;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;

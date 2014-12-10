@@ -270,6 +270,31 @@ article + article {
   top: -9999px;
 }
 
+/* Post pagination */
+.page-links {
+  color: #d9d6d0;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.page-links span {
+  background: #faf9f5;
+  border-radius: 50%;
+  color: #d9d6d0;
+  display: inline-block;
+  height: 25px;
+  padding: 0.5rem;
+  line-height: 1;
+  width: 25px;
+}
+
+.page-links a span {
+  background: #eae9e6;
+  color: #a09a92;
+}
+
 /* Entry footers */
 footer.entry-meta {
   margin: 1.75rem 0;

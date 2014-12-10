@@ -266,3 +266,9 @@ function readly_password_protected_class( $classes ) {
 	return $classes;
 }
 add_filter( 'post_class', 'readly_password_protected_class' );
+
+// Customize the excerpt a smidge 
+function readly_excerpt_more( $more ) {
+	return '&hellip;';
+}
+add_filter( 'excerpt_more', 'readly_excerpt_more' );

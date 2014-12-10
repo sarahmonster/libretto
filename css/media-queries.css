@@ -31,18 +31,23 @@
 
   /* In-page navigation should be pretty simple */
   .navigation-post .previous, 
-  .navigation-post .next {
+  .navigation-post .next, 
+  .navigation-image .previous, 
+  .navigation-image .next {
     width: 100%;
     text-align: center;
     padding: 1rem 0;
   }
 
-  .navigation-post .previous {
+  .navigation-post .previous, 
+  .navigation-image .previous {
     border-bottom: 1px solid #d9d6d0;
   }
 
   .navigation-post .previous,
-  .navigation-post .next {
+  .navigation-post .next,
+  .navigation-image .previous,
+  .navigation-image .next {
     text-align: center;
   }
 

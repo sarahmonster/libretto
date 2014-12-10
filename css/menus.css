@@ -197,7 +197,7 @@
 }
 
 .previous a, .next a {
-  display: inline-block;
+  display: block;
   position: relative;
   color: #a09a92;
   font-style: italic;

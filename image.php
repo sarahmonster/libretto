@@ -16,8 +16,6 @@ get_header();
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-
 					<div class="entry-meta">
 						<?php
 							$metadata = wp_get_attachment_metadata();
@@ -33,11 +31,7 @@ get_header();
 							);
 						?>
 					</div><!-- .entry-meta -->
-
-					<nav id="image-navigation" class="navigation-image">
-						<span class="previous"><span class="meta-nav"></span><?php previous_image_link(false, __('Previous', 'readly')); ?></span>
-						<span class="next"><span class="meta-nav"></span><?php next_image_link(false, __('Next', 'readly')); ?></span>
-					</nav><!-- #image-navigation -->
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
@@ -94,6 +88,18 @@ get_header();
 					<?php wp_link_pages(array('before' => '<div class="page-links">'.__('Pages:', 'readly'), 'after' => '</div>')); ?>
 
 				</div><!-- .entry-content -->
+
+				<nav role="navigation" id="image-navigation" class="navigation-image">
+					<h1 class="assistive-text"><?php _e('Image navigation', 'readly'); ?></h1>
+					<div class="previous">
+						<?php previous_image_link( false, __( '<span class="meta-nav">Previous image</span>', 'readly' ) ); ?>
+						<?php previous_image_link( false ); ?>
+					</div>
+					<div class="next">
+						<?php next_image_link( false, __( '<span class="meta-nav">Next image</span>', 'readly' ) ); ?>
+						<?php next_image_link( false ); ?>
+					</div>
+				</nav><!-- #image-navigation -->
 
 				<footer class="entry-meta">
 					<?php if (comments_open() && pings_open()): // Comments and trackbacks open ?>

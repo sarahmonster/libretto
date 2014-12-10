@@ -76,6 +76,14 @@ function readly_setup() {
 	));
 
 	/**
+	 * Enable support for Infinite Scroll
+	 */
+	add_theme_support( 'infinite-scroll', array(
+    'container' => 'content',
+    'footer' 		=> 'page'
+	) );
+
+	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -190,10 +198,6 @@ function readly_scripts() {
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	// Infinite Scroll (TODO: review)
-	if ( !is_singular() && 'infinite-scroll' == get_theme_mod( 'page_navigation' ) )
-		wp_enqueue_script( 'infinite-scroll', get_template_directory_uri().'/js/jquery.infinitescroll.min.js', array( 'jquery' ), '2.0b.110415', true );
 }
 add_action( 'wp_enqueue_scripts', 'readly_scripts' );
 
@@ -262,32 +266,3 @@ function readly_password_protected_class( $classes ) {
 	return $classes;
 }
 add_filter( 'post_class', 'readly_password_protected_class' );
-
-// infinite scroll
-function readly_infinite_scroll_js() {
-	if (is_singular() || 'infinite-scroll' != get_theme_mod('page_navigation')) return;
-?>
-	<script type="text/javascript">
-		jQuery(function() {
-			var infinite_scroll = {
-				loading: {
-					img: "<?php echo get_stylesheet_directory_uri(); ?>/icons/loadmore.svg",
-					msgText: "",
-					finishedMsg: "<?php _e('The End', 'readly'); ?>"
-				},
-				'nextSelector': '#nav-below .previous a',
-				'navSelector': '#nav-below',
-				'itemSelector': 'article',
-				'contentSelector': '#content'
-			};
-			jQuery(infinite_scroll.contentSelector).infinitescroll(infinite_scroll, function(arrayOfNewElems) {
-				fixLinks();
-				var items = jQuery(arrayOfNewElems);
-				items.find('.entry-video').wpShowerResponsiveVideos();
-				items.find('audio,video').mediaelementplayer();
-			});
-		});
-	</script>
-<?php
-}
-add_action('wp_footer', 'readly_infinite_scroll_js', 100);

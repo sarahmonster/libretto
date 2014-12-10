@@ -17,8 +17,8 @@
 
 <?php
 
-if ( get_option('readly_social') ):
-	$options = get_option('readly_social');
+if ( get_option( 'readly_social' ) ):
+	$options = get_option( 'readly_social' );
 	$social = array();
 	foreach ( $options as $key => $value ):
 		if ($options[$key] != '') {
@@ -29,22 +29,22 @@ endif;
 
 if ( !empty( $social ) ):
 	$array = array(
-		'twitter' => 'w',
-		'facebook' => 'f',
+		'twitter' 	=> 'w',
+		'facebook' 	=> 'f',
 		'instagram' => 'h',
 		'pinterest' => 'p',
-		'dribbble' => 'd',
-		'google' => 'g',
-		'vimeo' => 'v',
-		'flickr' => '8',
-		'rss' => 'r'
+		'dribbble' 	=> 'd',
+		'google' 		=> 'g',
+		'vimeo' 		=> 'v',
+		'flickr' 		=> '8'
 	);
-
 ?>
+
 	<div id="social">
 	<?php foreach ( $social as $social_network_name => $social_network_link ): ?>
 		<a href="<?php echo $social_network_link; ?>" class="<?php echo $social_network_name; ?>"><?php echo $array[$social_network_name]; ?></a>
 	<?php endforeach; ?>
+		<a href="<?php echo get_feed_link(); ?>" class="rss"><?php _e( 'r', 'readly' ); ?></a>
 	</div><!-- #social -->
 <?php endif; ?>
 

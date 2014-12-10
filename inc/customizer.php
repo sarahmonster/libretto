@@ -62,39 +62,42 @@ function readly_theme_customizer($wp_customize) {
 		)
 	));
 
-	// Social networks
-	$wp_customize->add_section('readly_social', array(
-		'title' => __('Social networks', 'readly'),
-		'priority' => 95,
-		'capability' => 'edit_theme_options',
-		'description' => __('Allows you to customize social network links.', 'readly')
+	// Allow user to enter social network links to display on footer
+	$wp_customize->add_section( 'readly_social', array(
+		'title' 			=> __( 'Social network links', 'readly' ),
+		'priority'  	=> 95,
+		'capability' 	=> 'edit_theme_options',
+		'description' => __( 'Any social networks you add below will appear in the footer of your theme. Make sure to enter the full URL! (ie "http://twitter.com/yourname")', 'readly' )
 	));
-	$array = array(
-		'twitter' => 'Twitter',
-		'facebook' => 'Facebook',
-		'instagram' => 'Instagram',
-		'pinterest' => 'Pinterest',
-		'dribbble' => 'Dribbble',
-		'google' => 'Google+',
-		'vimeo' => 'Vimeo',
-		'flickr' => 'Flickr',
-		'rss' => 'RSS'
+
+	$networks = array(
+		'twitter' 	=> __( 'Twitter', 'readly'),
+		'facebook' 	=> __( 'Facebook', 'readly'),
+		'instagram' => __( 'Instagram', 'readly'),
+		'pinterest' => __( 'Pinterest', 'readly'),
+		'dribbble' 	=> __( 'Dribbble', 'readly'),
+		'google' 		=> __( 'Google+', 'readly'),
+		'vimeo' 		=> __( 'Vimeo', 'readly'),
+		'flickr' 		=> __( 'Flickr', 'readly')
 	);
-	$i = 0;
-	foreach ($array as $key => $value) {
-		$i++;
-		$wp_customize->add_setting('readly_social['.$key.']', array(
-			'default' => '',
-			'type' => 'option',
-			'capability' => 'edit_theme_options',
-			'transport' => 'postMessage'
-		));
-		$wp_customize->add_control('readly_social['.$key.']', array(
-			'label' => __($value, 'readly'),
-			'section' => 'readly_social',
-			'type' => 'text',
-			'priority' => $i
-		));
+
+	$priority = 0;
+	foreach ($networks as $key => $value) {
+		$priority++;
+
+		$wp_customize->add_setting( 'readly_social['.$key.']', array(
+			'default' 					=> '',
+			'type' 							=> 'option',
+			'capability' 				=> 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_social_networks'
+		) );
+
+		$wp_customize->add_control( 'readly_social['.$key.']', array(
+			'label' 		=> $value,
+			'section' 	=> 'readly_social',
+			'type' 			=> 'text',
+			'priority' 	=> $priority
+		) );
 	}
 
 	// Page navigation
@@ -126,6 +129,12 @@ function readly_sanitize_blog_index( $content ) {
 	} else {
 		return 'excerpt';
 	}
+}
+
+// Sanitize user-entered social media links 
+// TODO: Parse URLS to ensure they're correct? 
+function readly_sanitize_social_networks( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
 }
 
 function readly_header_output() {
@@ -217,6 +226,6 @@ add_action('wp_head', 'readly_header_output');
  *
  */
 function readly_customize_preview_js() {
-	wp_enqueue_script('readly_customizer', get_template_directory_uri().'/js/customizer.js', array('customize-preview'), '20140331', true);
+	wp_enqueue_script( 'readly_customizer', get_template_directory_uri().'/js/customizer.js', array( 'customize-preview' ), '20140331', true );
 }
 add_action('customize_preview_init', 'readly_customize_preview_js');

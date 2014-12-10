@@ -276,6 +276,10 @@ footer.entry-meta {
   text-align: center;
 }
 
+footer.entry-meta a {
+  color: #635d55;
+}
+
 footer.entry-meta .edit-link:before, 
 .comment-meta .edit-link:before {
   content: '· ';

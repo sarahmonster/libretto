@@ -76,6 +76,12 @@ function readly_theme_customizer($wp_customize) {
 		) );
 	}
 
+	// Set various built-in site settings to be previewed live in the customizer
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
 }
 add_action('customize_register', 'readly_theme_customizer');
 
@@ -95,16 +101,10 @@ function readly_sanitize_social_networks( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function readly_header_output() {
-}
-
-add_action('wp_head', 'readly_header_output');
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
  */
 function readly_customize_preview_js() {
-	wp_enqueue_script( 'readly_customizer', get_template_directory_uri().'/js/customizer.js', array( 'customize-preview' ), '20140331', true );
+	wp_enqueue_script( 'readly_customizer', get_template_directory_uri() . '/js/readly-customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action('customize_preview_init', 'readly_customize_preview_js');
+add_action( 'customize_preview_init', 'readly_customize_preview_js' );

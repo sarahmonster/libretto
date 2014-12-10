@@ -84,6 +84,17 @@ function readly_setup() {
 	) );
 
 	/**
+	 * Enable support for custom background
+	 */
+	add_theme_support( 'custom-background', array(
+		'default-color'          => '#eae9e6',
+		'default-image'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => ''
+	) );
+
+	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */

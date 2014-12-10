@@ -89,7 +89,7 @@ function readly_theme_customizer($wp_customize) {
 			'default' 					=> '',
 			'type' 							=> 'option',
 			'capability' 				=> 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_social_networks'
+			'sanitize_callback' => 'readly_sanitize_social_networks'
 		) );
 
 		$wp_customize->add_control( 'readly_social['.$key.']', array(

@@ -18,13 +18,9 @@ get_header();
 				<header class="entry-header">
 					<div class="entry-meta">
 						<?php
-							$metadata = wp_get_attachment_metadata();
-							printf(__('Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'readly'),
+							printf(__('Posted <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> via <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a>', 'readly'),
 								esc_attr(get_the_date('c')),
 								esc_html(get_the_date()),
-								wp_get_attachment_url(),
-								$metadata['width'],
-								$metadata['height'],
 								get_permalink($post->post_parent),
 								esc_attr(get_the_title($post->post_parent)),
 								get_the_title($post->post_parent)
@@ -72,8 +68,14 @@ get_header();
 							?>
 
 							<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr(get_the_title()); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters('readly_attachment_size', array(1200, 1200)); // Filterable image size.
-								echo wp_get_attachment_image($post->ID, $attachment_size);
+								$attachment_size = apply_filters( 'readly_attachment_size', array(1200, 1200) ); // Filterable image size.
+								$attachment_meta = wp_get_attachment_metadata( $post->ID );
+								if ( $attachment_meta['width'] > 920) {
+									$class = "oversized";
+								} else {
+									$class = "aligncenter";
+								}
+								echo wp_get_attachment_image( $post->ID, $attachment_size, false, array( 'class' => $class ) );
 							?></a>
 						</div><!-- .attachment -->
 

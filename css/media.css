@@ -14,3 +14,7 @@ iframe,
 object {
   max-width: 100%;
 }
+
+.attachment {
+  margin-bottom: 1em;
+}

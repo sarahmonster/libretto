@@ -52,7 +52,12 @@
 	?>
 
 	<div class="entry-content">
-		<?php the_content(__('Read more', 'readly')); ?>
+	<?php if ( 'content' == get_theme_mod( 'readly_blog_index' ) ) :
+    the_content( __( 'Read more', 'readly' ) );
+	else :
+    the_excerpt();
+	endif;
+	?>
 	</div><!-- .entry-content -->
 
 	<?php if ( 'post' == get_post_type() ): // Hide category and tag text for pages on Search ?>

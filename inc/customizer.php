@@ -13,7 +13,31 @@
  *
  * @since Readly 1.2
  */
-function readly_customize_register($wp_customize) {
+function readly_theme_customizer($wp_customize) {
+
+	// Allow user to select if they'd like to display excerpts, or full post content on index pages
+	$wp_customize->add_section( 'readly_layout_section' , array(
+    'title'       => __( 'Blog Layout', 'readly' ),
+    'priority'    => 30,
+    'description' => __( 'Would you like to show excerpts, or full post content on your blog page?', 'readly' )
+  ) );
+
+	$wp_customize->add_setting( 'readly_blog_index', array(
+    'default'   => 'excerpt',
+    'sanitize_callback' => 'readly_sanitize_blog_index'
+  ) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'readly_blog_index', array(
+	  'label'     => __( 'Blog index display', 'readly' ),
+	  'section'   => 'readly_layout_section',
+	  'settings'  => 'readly_blog_index',
+	  'type'      => 'radio',
+	  'choices'   => array(
+	      'excerpt'   => __( 'Excerpts', 'readly' ),
+	      'content'   => __( 'Full content', 'readly' )
+	      )
+  ) ) );
+
 	// Colors
 	$wp_customize->add_section('readly_colors', array(
 		'title' => __('Colors', 'readly'),
@@ -92,7 +116,17 @@ function readly_customize_register($wp_customize) {
 		),
 	));
 }
-add_action('customize_register', 'readly_customize_register');
+add_action('customize_register', 'readly_theme_customizer');
+
+
+/* Sanitize value for blog index option */
+function readly_sanitize_blog_index( $content ) {
+	if ( 'content' == $content ) {
+		return 'content';
+	} else {
+		return 'excerpt';
+	}
+}
 
 function readly_header_output() {
 	/*

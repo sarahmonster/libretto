@@ -76,14 +76,6 @@ function readly_setup() {
 	));
 
 	/**
-	 * Enable support for Infinite Scroll
-	 */
-	add_theme_support( 'infinite-scroll', array(
-    'container' => 'content',
-    'footer' 		=> 'page'
-	) );
-
-	/**
 	 * Enable support for custom background
 	 */
 	add_theme_support( 'custom-background', array(
@@ -197,11 +189,8 @@ function readly_scripts() {
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
 	wp_enqueue_style( 'custom-icons', 'https://fontastic.s3.amazonaws.com/MpssqMLH2xJjPZ9ercTgGh/icons.css', array(), null );
 
-	// JQuery & JQuery UI
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'jquery-ui', get_template_directory_uri().'/js/jquery-ui-1.10.2.custom.min.js', array(), '20130317' );
 	
-	// Navigation (TODO: simplify)
+	// Navigation
 	wp_enqueue_script( 'navigation', get_template_directory_uri().'/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
 

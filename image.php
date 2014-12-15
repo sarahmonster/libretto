@@ -92,7 +92,7 @@ get_header();
 				</div><!-- .entry-content -->
 
 				<nav role="navigation" id="image-navigation" class="navigation-image">
-					<h1 class="assistive-text"><?php _e('Image navigation', 'readly'); ?></h1>
+					<h1 class="screen-reader-text"><?php _e('Image navigation', 'readly'); ?></h1>
 					<div class="previous">
 						<?php previous_image_link( false, __( '<span class="meta-nav">Previous image</span>', 'readly' ) ); ?>
 						<?php previous_image_link( false ); ?>

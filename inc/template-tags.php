@@ -32,7 +32,7 @@ function readly_content_nav( $nav_id ) {
 	?>
 
 	<nav role="navigation" id="<?php echo esc_attr($nav_id); ?>" class="<?php echo $nav_class; ?><?php if ('infinite-scroll' == get_theme_mod('page_navigation') && !is_single()) echo ' infinite-scroll' ?>">
-		<h1 class="assistive-text"><?php _e('Post navigation', 'readly'); ?></h1>
+		<h1 class="screen-reader-text"><?php _e('Post navigation', 'readly'); ?></h1>
 
 		<?php if (is_single()): // navigation links for single posts ?>
 

@@ -120,7 +120,7 @@
 
 .entry-title,
 .entry-title a {
-  color: #635d55;
+  color: #787065;
   font-family: "Playfair Display";
   font-size: 44px;
   font-size: 4.4rem;
@@ -161,28 +161,28 @@ article + article {
 }
 
 .entry-content h3 {
-  color: #635d55;
+  color: #787065;
   font-size: 25px;
   font-size: 2.5rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h4 {
-  color: #635d55;
+  color: #787065;
   font-size: 18px;
   font-size: 1.8rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h5 {
-  color: #635d55;
+  color: #787065;
   font-size: 18px;
   font-size: 1.8rem;
   margin-bottom: 1.5em;
 }
 
 .entry-content h6 {
-  color: #635d55;
+  color: #787065;
   font-size: 16px;
   font-size: 1.6rem;
   margin-bottom: 1.5em;
@@ -219,17 +219,17 @@ article + article {
 }
 
 .more-link:hover {
-  background: #635d55;
+  background: #787065;
   color: #eae9e6;
 }
 
 .more-link:hover:after {
-  border-left-color: #635d55;
+  border-left-color: #787065;
 }
 
 /* Post formats */
 .format-aside .entry-content {
-  color: #635d55;
+  color: #787065;
   font-size: 21px;
   font-size: 2.1rem;
   font-style: italic;
@@ -291,7 +291,7 @@ footer.entry-meta {
 }
 
 footer.entry-meta a {
-  color: #635d55;
+  color: #787065;
 }
 
 footer.entry-meta .edit-link:before, 

@@ -44,7 +44,7 @@
 }
 
 .fn a {
-  color: #635d55;
+  color: #363431;
 } 
 
 .says {
@@ -53,7 +53,7 @@
 }
 
 .comment-metadata a {
-  color: #a09a92;
+  color: #787065;
 }
 
 .comment-metadata {
@@ -65,8 +65,8 @@
 
 .comment-content {
   clear: both;
-  color: #635d55;
-  margin-top: 1rem;
+  color: #363431;
+  margin: 1rem 0;
 }
 
 .comment-reply-link {

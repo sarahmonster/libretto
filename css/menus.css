@@ -30,7 +30,7 @@
 
   .menu-toggle {
     background: #363431;
-    border-bottom: 2px solid #635d55;
+    border-bottom: 2px solid #787065;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     color: #eae9e6;
     cursor: pointer;
@@ -52,7 +52,7 @@
   } 
 
   #site-navigation .menu li {
-    border-top: 1px solid #635d55;
+    border-top: 1px solid #787065;
     display: block;
     text-align: left;
   }
@@ -74,7 +74,7 @@
   }
 
   #site-navigation a {
-    color: #635d55;
+    color: #787065;
   }
 
   #site-navigation .menu > li {
@@ -205,7 +205,7 @@
 
 .previous .meta-nav, 
 .next .meta-nav {
-  color: #635d55;
+  color: #787065;
   display: block;
   font-family: Montserrat;
   font-size: 12px;

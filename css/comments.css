@@ -77,6 +77,16 @@
   font-style: italic;
 }
 
+/* Form */
+
+label[for="comment"] {
+  margin-bottom: 0;
+}
+
+.form-allowed-tags {
+  line-height: 2;
+}
+
 
 
 

@@ -106,6 +106,26 @@
     margin-right: -3em;
   }
 
+  /* Line up labels and input fields */
+  form p {
+    clear: both;
+  }
+
+  label {
+    float: left;
+    margin: 0.25em 2% 1em 0;
+    width: 20%;
+  }
+
+  label + input[type="text"],
+  label + input[type="email"],
+  label + input[type="password"],
+  label + input[type="search"],
+  label + input[type="url"] {
+    float: left;
+    width: 78%;
+  }
+
   /* Password protected posts should show form on a single line */
   .password-protected input[type="password"] {
     width: 60%;

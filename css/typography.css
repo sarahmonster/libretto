@@ -17,6 +17,64 @@ h4,
 h5,
 h6 {
   clear: both;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #a09a92;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 42px;
+  font-size: 4.2rem;
+  font-style: italic;
+  margin: 1em 0 0.5em;
+}
+
+h2 {
+  border-bottom: 1px solid #787065;
+  color: #787065;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+  margin: 3em 0 1.5em;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #a09a92;
+  font-size: 25px;
+  font-size: 2.5rem;
+  font-style: italic;
+  margin: 2em 0 1em;
+}
+
+h4 {
+  color: #787065;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  margin: 3em 0 1.5em;
+  text-transform: uppercase;
+}
+
+h5 {
+  color: #a09a92;
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-style: italic;
+  margin: 1.5em 0 0.75em;
+}
+
+h6 {
+  color: #787065;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin: 1.5em 0 0.75em;
+  text-transform: uppercase;
 }
 
 p {

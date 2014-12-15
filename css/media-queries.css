@@ -87,6 +87,11 @@
     max-width: calc(100% + 3em);    
   }
 
+  /* Out-dent headers a smidge */
+  .entry-content h1 {
+    margin-left: -0.75em;
+  }
+
   /* Adjust padding for sticky posts */
   .sticky {
     padding: 1.5em;
@@ -193,6 +198,11 @@
     margin-left: -3em;
     margin-right: -3em;
     max-width: calc(100% + 6em);    
+  }
+
+  /* Out-dent headers a smidge */
+  .entry-content h1 {
+    margin-left: -1.5em;
   }
 
   /* Adjust padding for sticky posts */

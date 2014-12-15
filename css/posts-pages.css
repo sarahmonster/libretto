@@ -124,7 +124,9 @@
   font-family: "Playfair Display";
   font-size: 44px;
   font-size: 4.4rem;
-  line-height: 1.28em;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .entry-title img {
@@ -144,48 +146,6 @@ article + article {
 
 .entry-content {
   word-wrap: break-word;
-}
-
-.entry-content h1 {
-  color: #a09a92;
-  font-size: 36px;
-  font-size: 3.6rem;
-  margin-bottom: 1.5em;
-}
-
-.entry-content h2 {
-  color: #a09a92;
-  font-size: 28px;
-  font-size: 2.8rem;
-  margin-bottom: 1.5em;
-}
-
-.entry-content h3 {
-  color: #787065;
-  font-size: 25px;
-  font-size: 2.5rem;
-  margin-bottom: 1.5em;
-}
-
-.entry-content h4 {
-  color: #787065;
-  font-size: 18px;
-  font-size: 1.8rem;
-  margin-bottom: 1.5em;
-}
-
-.entry-content h5 {
-  color: #787065;
-  font-size: 18px;
-  font-size: 1.8rem;
-  margin-bottom: 1.5em;
-}
-
-.entry-content h6 {
-  color: #787065;
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin-bottom: 1.5em;
 }
 
 /* "Read more" link */

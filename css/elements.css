@@ -7,21 +7,34 @@ hr {
 
 ul, 
 ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 0;
 }
 
 ul {
-  list-style: disc;
+  list-style: disc inside;
+}
+
+ul ul {
+  list-style: circle inside;
 }
 
 ol {
-  list-style: decimal;
+  list-style: decimal inside;
+}
+
+ol ol {
+  list-style: lower-alpha inside;
+}
+
+li {
+  line-height: 1.6;
+  margin: 0.5em 0;
 }
 
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
+  margin-left: 1em;
 }
 
 dt {

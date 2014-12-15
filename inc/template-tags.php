@@ -46,42 +46,6 @@ function readly_content_nav( $nav_id ) {
 
 		<?php elseif ($wp_query->max_num_pages > 1 && (is_home() || is_archive() || is_search())): // navigation links for home, archive, and search pages ?>
 
-			<?php if ('ajax-fetch' == get_theme_mod('page_navigation')): ?>
-				<div class="load-more">
-					<?php next_posts_link(__('<span class="img loader"></span><span class="img loader2"></span><span class="text">Load more posts</span>', 'readly')); ?>
-				</div>
-				<script type="text/javascript">
-					jQuery(function() {
-						jQuery('.load-more').on('click', 'a', function(e) {
-							e.preventDefault();
-							var link = jQuery(this);
-							link.addClass('loading').find('.text').text('Loading...');
-							jQuery.ajax({
-								type: 'GET',
-								url: jQuery(this).attr('href') + '#content',
-								dataType: 'html',
-								success: function(out) {
-									result = jQuery(out).find('#content .hentry');
-									nextLink = jQuery(out).find('.load-more a').attr('href');
-									var nav = jQuery('#nav-below');
-									result.each(function() {
-										jQuery(this).insertBefore(nav);
-									});
-									if (undefined != nextLink) {
-										link.removeClass('loading').attr('href', nextLink).find('.text').text('Load more posts');
-									}
-									else {
-										jQuery('#nav-below').remove();
-									}
-									fixLinks();
-									result.find('.entry-video').wpShowerResponsiveVideos();
-									result.find('audio,video').mediaelementplayer();
-								}
-							});
-						});
-					});
-				</script>
-			<?php else: ?>
 				<div class="previous">
 				<?php if (get_next_posts_link()): ?>
 					<?php next_posts_link( __( '<span class="meta-nav">Older posts</span>', 'readly' ) ); ?>
@@ -95,64 +59,12 @@ function readly_content_nav( $nav_id ) {
 					<?php previous_posts_link( __( '<span class="meta-nav">Newer posts</span>', 'readly') ); ?>
 				<?php endif; ?>
 				</div>
-			<?php endif; ?>
 		<?php endif; ?>
-		</div>
 	</nav><!-- #<?php echo esc_html($nav_id); ?> -->
 	<?php
 }
 endif; // readly_content_nav
 
-if (!function_exists('readly_comment')):
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since Readly 1.0
- */
-function readly_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	switch ($comment->comment_type):
-		case 'pingback':
-		case 'trackback':
-	?>
-	<li class="post pingback">
-		<p><?php _e('Pingback:', 'readly'); ?> <?php comment_author_link(); ?><?php edit_comment_link(__('Edit', 'readly'), '<span class="edit-link">', '<span>'); ?></p>
-	<?php
-			break;
-		default:
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer>
-				<div class="comment-author vcard">
-					<?php printf(__('%s <span class="says">on</span>', 'readly'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())); ?>
-					<span class="comment-meta commentmetadata">
-						<a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"><time datetime="<?php comment_time('F jS, Y'); ?>">
-								<?php printf(_x('%1$s %2$s', '1: date, 2: time', 'readly'), get_comment_date(), get_comment_time()); ?>
-							</time></a>
-						<?php edit_comment_link(__('Edit', 'readly'), '<span class="edit-link">', '<span>'); ?>
-					</span><!-- .comment-meta .commentmetadata -->
-				</div><!-- .comment-author .vcard -->
-				<?php if ($comment->comment_approved == '0'): ?>
-					<em><?php _e('Your comment is awaiting moderation.', 'readly'); ?></em>
-					<br />
-				<?php endif; ?>
-			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-				<?php comment_reply_link(array_merge($args, array('reply_text' => '&#8618; Reply', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
-
-	<?php
-			break;
-	endswitch;
-}
-endif; // ends check for readly_comment()
 
 if (!function_exists('readly_posted_on')):
 /**

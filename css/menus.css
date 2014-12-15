@@ -196,7 +196,8 @@
   text-align: right;
 }
 
-.previous a, .next a {
+.previous a[rel="prev"], 
+.next a[rel="next"] {
   display: block;
   position: relative;
   color: #a09a92;
@@ -213,6 +214,11 @@
   font-style: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.previous .meta-nav a, 
+.next .meta-nav a {
+  color: #787065;
 }
 
 .previous .meta-nav:before, 

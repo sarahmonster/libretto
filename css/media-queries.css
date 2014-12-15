@@ -133,6 +133,11 @@
     min-height: 4.8rem;
   }
 
+  .comment-navigation .next {
+    border-left: none;
+    min-height: none;
+  }
+
   /* Archive page navigation */
   .navigation-paging {
     margin-top: 10rem;

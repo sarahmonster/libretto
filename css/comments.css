@@ -14,6 +14,16 @@
   margin-left: 0;
 }
 
+.comments-title {
+  margin-bottom: 0;
+}
+
+/* Top navigation */
+#comment-nav-above {
+  border-top: none;
+  margin-top: 0;
+}
+
 /* Comment header */
 .comment-author {
   line-height: 1;

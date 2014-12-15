@@ -196,8 +196,8 @@
   text-align: right;
 }
 
-.previous a[rel="prev"], 
-.next a[rel="next"] {
+[class*="navigation"] .previous a, 
+[class*="navigation"] .next a {
   display: block;
   position: relative;
   color: #a09a92;
@@ -219,6 +219,8 @@
 .previous .meta-nav a, 
 .next .meta-nav a {
   color: #787065;
+  display: inline;
+  font-style: normal;
 }
 
 .previous .meta-nav:before, 

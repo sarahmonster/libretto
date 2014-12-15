@@ -94,11 +94,11 @@ get_header();
 				<nav role="navigation" id="image-navigation" class="navigation-image">
 					<h1 class="screen-reader-text"><?php _e('Image navigation', 'readly'); ?></h1>
 					<div class="previous">
-						<?php previous_image_link( false, __( '<span class="meta-nav">Previous image</span>', 'readly' ) ); ?>
+						<span class="meta-nav"><?php previous_image_link( false, __( 'Previous image', 'readly' ) ); ?></span>
 						<?php previous_image_link( false ); ?>
 					</div>
 					<div class="next">
-						<?php next_image_link( false, __( '<span class="meta-nav">Next image</span>', 'readly' ) ); ?>
+						<span class="meta-nav"><?php next_image_link( false, __( 'Next image', 'readly' ) ); ?></span>
 						<?php next_image_link( false ); ?>
 					</div>
 				</nav><!-- #image-navigation -->

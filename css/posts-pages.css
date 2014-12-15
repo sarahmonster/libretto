@@ -22,7 +22,7 @@
 }
 
 /* Post format icons */
-.entry-header:before {
+.post .entry-header:before {
   background: #faf9f5;
   border: 1px solid #d9d6d0;
   box-shadow: 0 0 0 4px #faf9f5;
@@ -114,14 +114,12 @@
   width: 2rem;
 }
 
-.page-header {
-  padding: 0 2em 2em 2em;
+.page .entry-header {
+  margin-top: 5em;
 }
 
 .entry-title,
-.entry-title a,
-.page-title,
-.page-title a {
+.entry-title a {
   color: #635d55;
   font-family: "Playfair Display";
   font-size: 44px;
@@ -129,16 +127,7 @@
   line-height: 1.28em;
 }
 
-.page-title {
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-.page-title span {
-  font-style: italic;
-}
-
-.entry-title img, .page-title img {
+.entry-title img {
   vertical-align: middle;
 }
 

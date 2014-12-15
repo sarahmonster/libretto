@@ -64,7 +64,11 @@
   clear: both;
   color: #363431;
   font-size: 0.9em;
-  margin: 1em 0 0;
+  margin: 0;
+}
+
+.comment + .comment {
+  margin-top: 2rem;
 }
 
 .comment-content p:last-of-type {
@@ -96,9 +100,26 @@
 
 /* Child comments */
 .children {
+  background: rgba(255, 255, 255, 0.5);
   border-left: 4px solid #d9d6d0;
-  padding-left: 2rem;
-  margin-left: 3rem;
+  padding: 2rem 0 0 2rem;
+  margin: -4rem 0 2rem 3rem;
+}
+
+.children .children,
+.children .children .children .children,
+.children .children .children .children .children .children,
+.children .children .children .children .children .children .children .children {
+  background: #eae9e6;
+  border-color: #a09a92;
+}
+
+.children .children .children,
+.children .children .children .children .children,
+.children .children .children .children .children .children .children,
+.children .children .children .children .children .children .children .children .children {
+  background: #faf9f5;
+  border-color: #d9d6d0;
 }
 
 /* Form */

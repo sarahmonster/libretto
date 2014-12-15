@@ -60,6 +60,17 @@
     float: left;
     width: 50%;
   }
+
+  /* Comments shouldn't be nested quite so enthusiastically */
+  .comment-content {
+    margin: 1rem 0.5rem;
+  }
+  .children {
+    border-left: 0;
+    border-top: 4px solid #d9d6d0;
+    margin: 0;
+    padding: 2rem 0 0;
+  }
 }
 
 

@@ -73,7 +73,8 @@
   margin: 0;
 }
 
-.comment + .comment {
+.comment + .comment,
+.pingback + .comment {
   margin-top: 6rem;
 }
 
@@ -138,7 +139,25 @@
   border: 3px solid #faf9f5;
 }
 
+/* Pingbacks */
+.pingback {
+  color: #a09a92;
+  font-size: 0.85em;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 2rem 0;
+}
+
+.pingback a {
+  color: #787065;
+}
+
 /* Comment form */
+.comment-reply-title,
+.no-comments {
+  text-align: center;
+}
+
 label[for="comment"] {
   margin-bottom: 0;
 }
@@ -146,7 +165,3 @@ label[for="comment"] {
 .form-allowed-tags {
   line-height: 2;
 }
-
-
-
-

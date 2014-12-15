@@ -11,8 +11,8 @@
 	// Determine the post type, so we can adjust the display accordingly
 	$post_format = get_post_format();
 
-	// All post types except for quotes show header data
-	if ( 'quote' != $post_format ):
+	// Only long-form posts will show header data
+	if ( 'quote' != $post_format && 'status' != $post_format && 'link' != $post_format && 'aside' != $post_format ):
 	?>
 	<header class="entry-header">
 		<div class="entry-meta">
@@ -60,9 +60,8 @@
 	?>
 	</div><!-- .entry-content -->
 
-	<?php if ( 'post' == get_post_type() ): // Hide category and tag text for pages on Search ?>
-		<?php if ( 'quote' == $post_format ): ?>
-		<footer class="entry-meta">
+	<?php if ( 'quote' == $post_format || 'status' == $post_format || 'link' == $post_format || 'aside' == $post_format ): // Only show post footers for shorter post types ?>
+		<footer class="entry-footer">
 			<?php readly_posted_on(); ?>
 
 			<?php if (!post_password_required() && (comments_open() && '0' != get_comments_number())): ?>
@@ -72,7 +71,6 @@
 
 			<?php edit_post_link(__('Edit', 'readly'), '<span class="edit-link">', '</span>'); ?>
 		</footer><!-- .entry-meta -->
-		<?php endif; ?>
 	<?php endif; ?>
 
 </article><!-- #post-## -->

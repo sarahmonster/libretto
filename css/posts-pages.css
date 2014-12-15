@@ -22,13 +22,13 @@
 }
 
 /* Post format icons */
-.post .entry-header:before {
+.post .entry-header:before,
+.entry-footer:before {
   background: #faf9f5;
   border: 1px solid #d9d6d0;
   box-shadow: 0 0 0 4px #faf9f5;
   border-radius: 50%;
   color: #a09a92;
-  content: ')';
   content: 's';
   display: inline-block;
   font-family: readly-icons;
@@ -38,7 +38,8 @@
   margin: 1rem auto 2rem;
 }
 
-.format-aside .entry-header:before {
+.format-aside .entry-header:before,
+.format-aside .entry-footer:before {
   content: 'd';
 }
 
@@ -58,15 +59,18 @@
   content: 'k';
 }
 
-.format-link .entry-header:before {
+.format-link .entry-header:before,
+.format-link .entry-footer:before {
   content: ':';
 }
 
-.format-quote .entry-header:before {
+.format-quote .entry-header:before,
+.format-quote .entry-footer:before {
   content: 'q';
 }
 
-.format-status .entry-header:before {
+.format-status .entry-header:before, 
+.format-status .entry-footer:before {
   content: 'm';
 }
 
@@ -244,7 +248,32 @@ article + article {
   color: #a09a92;
 }
 
-/* Entry footers */
+/* Abbreviated entry footers (only used for quote, aside, link, and status posts) */
+.entry-footer {
+  border-top: 2px solid #d9d6d0;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  padding-left: 60px;
+  position: relative;
+  margin-top: 2em;
+  text-transform: uppercase;
+}
+
+.entry-footer:before {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  text-transform: none;
+}
+
+.entry-footer .edit-link {
+  float: right;
+}
+
+/* Entry footers (on single entry pages) */
 footer.entry-meta {
   margin: 1.75rem 0;
   text-align: center;

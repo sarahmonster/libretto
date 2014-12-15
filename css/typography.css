@@ -117,12 +117,14 @@ blockquote:before {
 }
 
 blockquote cite {
+  color: #787065;
   float: right;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   font-style: normal;
   letter-spacing: 1px;
+  margin-top: 1em;
   text-transform: uppercase;
 }
 

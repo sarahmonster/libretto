@@ -7,10 +7,6 @@
   word-wrap: break-word;
 }
 
-.bypostauthor {
-  display: block;
-}
-
 .comment-list,
 .comment-list ol {
   clear: both;
@@ -68,7 +64,7 @@
 }
 
 .comment + .comment {
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 .comment-content p:last-of-type {
@@ -78,7 +74,7 @@
 /* Comment reply link */
 .reply {
   line-height: 1;
-  margin: 0 0 4em;
+  margin: 0;
 }
 
 .comment-reply-link {
@@ -103,7 +99,7 @@
   background: rgba(255, 255, 255, 0.5);
   border-left: 4px solid #d9d6d0;
   padding: 2rem 0 0 2rem;
-  margin: -4rem 0 2rem 3rem;
+  margin: 4rem 0 2rem 0;
 }
 
 .children .children,
@@ -122,7 +118,17 @@
   border-color: #d9d6d0;
 }
 
-/* Form */
+/* Author comments */
+.bypostauthor {
+  background: #d9d6d0;
+  padding: 2rem 1rem 1rem;
+}
+
+.bypostauthor .avatar {
+  border: 3px solid #faf9f5;
+}
+
+/* Comment form */
 label[for="comment"] {
   margin-bottom: 0;
 }

@@ -11,7 +11,7 @@
 .comment-list ol {
   clear: both;
   list-style: none;
-  margin-left: 0;
+  margin: 1.5em 0 0;
 }
 
 .comments-title {

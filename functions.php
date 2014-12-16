@@ -183,7 +183,7 @@ function readly_scripts() {
 
 	// General site stylesheet & JS
 	wp_enqueue_style( 'readly-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'readly-script', get_template_directory_uri().'/js/readly.js', array(), '20140331' );
+	//wp_enqueue_script( 'readly-script', get_template_directory_uri().'/js/readly.js', array(), '20140331' );
 
 	// Fonts
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );

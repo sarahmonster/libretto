@@ -19,6 +19,8 @@ endforeach;
 if ( 0 == $active_sidebars  ) {
   return;
 }
+
+return;
 ?>
 
 <section id="footer-sidebar" class="clear widget-area sidebar-count-<?php echo $active_sidebars; ?>" role="complementary">

@@ -15,36 +15,27 @@
 		<?php printf( __( 'Theme: %1$s by %2$s.', 'readly' ), 'Readly', '<a href="https://wordpress.com/themes/" rel="designer">WordPress.com</a>' ); ?> 
 	</div><!-- .site-info -->
 
-<?php
+	<?php
 
-if ( get_option( 'readly_social' ) ):
-	$options = get_option( 'readly_social' );
-	$social = array();
-	foreach ( $options as $key => $value ):
-		if ($options[$key] != '') {
-			$social[$key] = $value;
-		}
-	endforeach;
-endif;
+	if ( get_option( 'readly_social' ) ):
+		$options = get_option( 'readly_social' );
+		$social = array();
+		foreach ( $options as $key => $value ):
+			if ($options[$key] != '') {
+				$social[$key] = $value;
+			}
+		endforeach;
+	endif;
 
-if ( !empty( $social ) ):
-	$array = array(
-		'twitter' 	=> 'w',
-		'facebook' 	=> 'f',
-		'instagram' => 'h',
-		'pinterest' => 'p',
-		'dribbble' 	=> 'd',
-		'google' 		=> 'g',
-		'vimeo' 		=> 'v',
-		'flickr' 		=> '8'
-	);
-?>
+	if ( !empty( $social ) ): 
+
+	?>
 
 	<div id="social">
 	<?php foreach ( $social as $social_network_name => $social_network_link ): ?>
-		<a href="<?php echo $social_network_link; ?>" class="<?php echo $social_network_name; ?>"><?php echo $array[$social_network_name]; ?></a>
+		<a href="<?php echo $social_network_link; ?>" class="icon-<?php echo $social_network_name; ?>"><span><?php echo $social_network_name; ?></span></a>
 	<?php endforeach; ?>
-		<a href="<?php echo get_feed_link(); ?>" class="rss"><?php _e( 'r', 'readly' ); ?></a>
+		<a href="<?php echo get_feed_link(); ?>" class="icon-rss"><span><?php _e( 'RSS', 'readly' ); ?></span></a>
 	</div><!-- #social -->
 <?php endif; ?>
 

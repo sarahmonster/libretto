@@ -205,10 +205,10 @@ add_action( 'wp_enqueue_scripts', 'readly_scripts' );
  * Implement the Custom Header feature.
  */
 $args = array(
-	'flex-width'    => true,
-	'width'         => 980,
-	'flex-height'    => true,
-	'height'        => 200,
+	'flex-width'   => true,
+	'width'        => 980,
+	'flex-height'  => true,
+	'height'       => 200,
 );
 add_theme_support( 'custom-header', $args );
 
@@ -237,6 +237,14 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Remove Jetpack's sharing script.
+ */
+function readly_nix_sharedaddy_script() {
+    remove_action( 'wp_head', 'sharing_add_header', 1 );
+}
+add_action( 'template_redirect', 'readly_nix_sharedaddy_script' );
 
 // Editor admin styles
 function readly_admin_scripts_styles() {

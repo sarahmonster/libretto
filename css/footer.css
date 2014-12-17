@@ -59,48 +59,4 @@
     float: right;
     padding-top: .5rem;
   }
-
-  #social a.icon-twitter:hover {
-    background: #00aced;
-  }
-
-  #social a.icon-facebook:hover {
-    background: #3b5998;
-  }
-
-  #social a.icon-twitter:hover {
-    background: #00aced;
-  }
-  
-  #social a.icon-google:hover {
-    background: #dd4b39;
-  }
-
-  #social a.icon-youtube:hover {
-    background: #bb0000;
-  }
-  
-  #social a.icon-instagram:hover {
-    background: #517fa4;
-  }
-
-  #social a.icon-pinterest:hover {
-    background: #cb2027;
-  }
-  
-  #social a.icon-flickr:hover {
-    background: #ff0084;
-  }
-
-  #social a.icon-dribbble:hover {
-    background: #ea4c89;
-  }
-
-  #social a.icon-vimeo:hover {
-    background: #aad450;
-  }
-  
-  #social a.icon-rss:hover {
-    background: #FA9B39;
-  }
 }

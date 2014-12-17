@@ -5,7 +5,7 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul, 
+ul,
 ol {
   margin: 0 0 1.5em 0;
 }
@@ -65,7 +65,7 @@ tr:nth-of-type(odd) {
   background: rgba(255, 255, 255, 0.5);
 }
 
-th, 
+th,
 td {
   border-bottom: 1px solid #d9d6d0;
   padding: 0.8em 1em;
@@ -85,6 +85,79 @@ thead th {
   font-style: normal;
   font-weight: bold;
   padding: 0.4em 1em;
+}
+
+/* Social media colours; used in footer navigation as well as Jetpack's share module */
+#social a.icon-dribbble:hover {
+  background: #ea4c89;
+}
+
+li.share-email {
+  background: #3f9e51;
+}
+
+#social a.icon-facebook:hover,
+li.share-facebook {
+  background: #3b5998;
+}
+
+#social a.icon-flickr:hover {
+  background: #ff0084;
+}
+
+#social a.icon-google:hover,
+li.share-google-plus-1 {
+  background: #dd4b39;
+}
+
+#social a.icon-instagram:hover {
+  background: #517fa4;
+}
+
+li.share-linkedin {
+  background: #007bb6;
+}
+
+#social a.icon-pinterest:hover,
+li.share-pinterest {
+  background: #cb2027;
+}
+
+li.share-pocket {
+  background: #EF4056;
+}
+
+li.share-print {
+  background: #754c7c;
+}
+
+li.share-reddit {
+  background: #ff5700;
+}
+
+#social a.icon-rss:hover {
+  background: #FA9B39;
+}
+
+li.share-stumbleupon {
+  background: #eb4924;
+}
+
+li.share-tumblr {
+  background: #2c4762;
+}
+
+#social a.icon-twitter:hover,
+li.share-twitter {
+  background: #00aced;
+}
+
+#social a.icon-vimeo:hover {
+  background: #aad450;
+}
+
+#social a.icon-youtube:hover {
+  background: #bb0000;
 }
 
 

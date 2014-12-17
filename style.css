@@ -43,7 +43,7 @@ and Blueprint http://www.blueprintcss.org/
 9.0 Accessibility
 10.0 Alignments
 11.0 Clearings
-12.0 Infinite scroll
+12.0 Jetpack/WordPress.com
 13.0 Media
 	13.1 Captions
 	13.2 Galleries
@@ -51,7 +51,7 @@ and Blueprint http://www.blueprintcss.org/
 
 /*--------------------------------------------------------------
 0.1 Colour scheme
----------------------------------------------------------------- 
+----------------------------------------------------------------
   Dark red: #712012;
   Lighter red: #932817;
 
@@ -151,9 +151,9 @@ and Blueprint http://www.blueprintcss.org/
 @import url("css/clearings.css");
 
 /*--------------------------------------------------------------
-12.0 Infinite scroll
+12.0 Jetpack and WordPress.com
 --------------------------------------------------------------*/
-@import url("css/infinite-scroll.css");
+@import url("css/jetpack.css");
 
 /*--------------------------------------------------------------
 13.0 Media

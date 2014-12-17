@@ -38,6 +38,21 @@ function readly_theme_customizer($wp_customize) {
 	      )
   ) ) );
 
+  // Allow user to change the colour of links throughout the site
+	$wp_customize->add_setting( 'readly_link_colour', array(
+    'default' => '#932817',
+    'type' => 'theme_mod',
+    'transport' => 'postMessage',
+    'sanitize_callback' => 'readly_sanitize_hex_colour',
+   ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'readly_link_colour', array(
+		'label'    => __( 'Link colour', 'readly' ),
+		'section'  => 'colors',
+		'settings' => 'readly_link_colour',
+		'priority' => 10
+	) ) );
+
 	// Allow user to enter social network links to display on footer
 	$wp_customize->add_section( 'readly_social', array(
 		'title' 			=> __( 'Social network links', 'readly' ),
@@ -85,6 +100,18 @@ function readly_theme_customizer($wp_customize) {
 }
 add_action('customize_register', 'readly_theme_customizer');
 
+/* Add CSS in the head for various options set by the customizer */
+function readly_add_customizer_css() {
+	$colour = readly_sanitize_hex_colour( get_theme_mod( 'readly_link_colour' ) );
+?>
+<!-- Custom styles -->
+<style>
+	a, a:visited {
+		color: <?php echo $colour; ?>;
+	}
+</style>
+<?php }
+add_action( 'wp_head', 'readly_add_customizer_css' );
 
 /* Sanitize value for blog index option */
 function readly_sanitize_blog_index( $content ) {
@@ -95,8 +122,18 @@ function readly_sanitize_blog_index( $content ) {
 	}
 }
 
-// Sanitize user-entered social media links 
-// TODO: Parse URLS to ensure they're correct? 
+/* Sanitize hex colours */
+function readly_sanitize_hex_colour( $colour ) {
+if ( '' === $colour )
+	return '';
+// 3 or 6 hex digits, or the empty string.
+if ( preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $colour ) )
+	return $colour;
+	return null;
+}
+
+/* Sanitize user-entered social media links */
+// TODO: Parse URLS to ensure they're correct?
 function readly_sanitize_social_networks( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }

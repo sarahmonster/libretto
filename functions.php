@@ -12,19 +12,19 @@ if ( ! isset($content_width) ) {
 	$content_width = 720; /* 680px wide plus a 40px buffer */
 }
 
-// Adds gallery shortcode defaults of size="medium" and columns="2"  
+// Adds gallery shortcode defaults of size="medium" and columns="2"
 
 function readly_gallery_atts( $out, $pairs, $atts ) {
     $atts = shortcode_atts( array(
       'columns' => '3',
       'size' => 'gallery',
     ), $atts );
- 
+
     $out['columns'] = $atts['columns'];
     $out['size'] = $atts['size'];
- 
+
     return $out;
- 
+
 }
 add_filter( 'shortcode_atts_gallery', 'readly_gallery_atts', 10, 3 );
 
@@ -141,7 +141,7 @@ add_action('widgets_init', 'readly_widgets_init');
  */
 function readly_fonts_url() {
     $fonts_url = '';
-		 
+
 		/* Translators: If there are characters in your language that are not
 		* supported by Open Sans, translate this to 'off'. Do not translate
 		* into your own language.
@@ -149,10 +149,10 @@ function readly_fonts_url() {
 		$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
 		$montserrat = _x( 'on', 'Montserrat font: on or off', 'ready' );
 		$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'ready' );
-    
+
 		if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display ) {
 		    $font_families = array();
-		 
+
 		    if ( 'off' !== $libre_baskerville ) {
 		        $font_families[] = 'Libre Baskerville:400,700,400italic';
 		    }
@@ -189,7 +189,7 @@ function readly_scripts() {
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
 	wp_enqueue_style( 'custom-icons', 'https://fontastic.s3.amazonaws.com/MpssqMLH2xJjPZ9ercTgGh/icons.css', array(), null );
 
-	
+
 	// Navigation
 	wp_enqueue_script( 'navigation', get_template_directory_uri().'/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -204,19 +204,7 @@ add_action( 'wp_enqueue_scripts', 'readly_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-$args = array(
-	'flex-width'   => true,
-	'width'        => 980,
-	'flex-height'  => true,
-	'height'       => 200,
-);
-add_theme_support( 'custom-header', $args );
-
-
-function readly_custom_header_fonts() {
-    wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
-}
-add_action( 'admin_print_styles-appearance_page_custom-header', 'readly_scripts_styles' );
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -275,7 +263,7 @@ function readly_password_protected_class( $classes ) {
 }
 add_filter( 'post_class', 'readly_password_protected_class' );
 
-// Customize the excerpt a smidge 
+// Customize the excerpt a smidge
 function readly_excerpt_more( $more ) {
 	return '&hellip;';
 }

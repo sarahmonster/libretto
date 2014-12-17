@@ -35,7 +35,7 @@
   margin: -1rem 1rem 1rem 0;
 }
 
-.fn, 
+.fn,
 .comment-metadata {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -47,7 +47,7 @@
 
 .fn a {
   color: #363431;
-} 
+}
 
 .says {
   color: #a09a92;
@@ -95,7 +95,7 @@
 }
 
 .comment-reply-link:before {
-  content: '>';
+  content: 'r';
   display: inline;
   font-family: readly-icons;
   font-size: 18px;

@@ -24,27 +24,8 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-	
-		<?php do_action( 'before' ); ?>
-		<header id="masthead" class="site-header" role="banner">
 
-		<?php 
-		// Show a custom header if one is set
-		if ( '' != get_header_image() || has_post_thumbnail() ): ?>
-		<div class="header-image">
-		<?php if ( has_post_thumbnail() && is_single() ):
-			// Show the featured image instead
-			the_post_thumbnail( 'full' );
-		else: ?> 
-			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
-		<?php endif; ?>
-		</div>
-		<?php endif; ?>
-
-
-		
-		<div class="header-bar">
-
+		<header class="nav-bar">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 			</div>
@@ -56,7 +37,20 @@
 				</div>
 				<?php wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => false)); ?>
 			</nav><!-- .site-navigation -->
+		</header><!-- .header-bar -->
 
+		<header id="masthead" class="site-header" role="banner">
+		<?php
+		// Show a custom header if one is set
+		if ( '' != get_header_image() || has_post_thumbnail() ): ?>
+		<div class="header-image">
+		<?php if ( has_post_thumbnail() && is_single() ):
+			// Show the featured image instead
+			the_post_thumbnail( 'full' );
+		else: ?>
+			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+		<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
 		</header><!-- #masthead -->

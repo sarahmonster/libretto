@@ -6,14 +6,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<div class="entry-meta">
-			<?php readly_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php if ('link' !== get_post_format()): ?>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<?php endif; ?>
-	</header><!-- .entry-header -->
 
 	<?php
 		$post_format = get_post_format();

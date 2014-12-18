@@ -23,7 +23,8 @@
 
 /* Post format icons */
 .post .entry-header:before,
-.entry-footer:before {
+.entry-footer:before,
+.single .title-block:before {
   background: #faf9f5;
   border: 1px solid #d9d6d0;
   box-shadow: 0 0 0 4px #faf9f5;
@@ -39,42 +40,51 @@
 }
 
 .format-aside .entry-header:before,
-.format-aside .entry-footer:before {
+.format-aside .entry-footer:before,
+.format-aside .title-block:before {
   content: 'a';
 }
 
-.format-audio .entry-header:before {
+.format-audio .entry-header:before,
+.format-audio .title-block:before {
   content: 'u';
 }
 
-.format-chat .entry-header:before {
+.format-chat .entry-header:before,
+.format-chat .title-block:before {
   content: 'c';
 }
 
-.format-gallery .entry-header:before {
+.format-gallery .entry-header:before,
+.format-gallery .title-block:before {
   content: 'g';
 }
 
-.format-image .entry-header:before {
+.format-image .entry-header:before,
+.format-image .title-block:before {
   content: 'i';
 }
 
 .format-link .entry-header:before,
-.format-link .entry-footer:before {
+.format-link .entry-footer:before,
+.format-link .title-block:before {
   content: 'l';
 }
 
 .format-quote .entry-header:before,
-.format-quote .entry-footer:before {
+.format-quote .entry-footer:before,
+.format-quote .title-block:before {
   content: 'q';
 }
 
 .format-status .entry-header:before,
-.format-status .entry-footer:before {
+.format-status .entry-footer:before,
+.format-status .title-block:before {
   content: 's';
 }
 
-.format-video .entry-header:before {
+.format-video .entry-header:before,
+.format-video .title-block:before {
   content: 'v';
 }
 
@@ -86,7 +96,8 @@
   content: 'y';
 }
 
-.password-protected .entry-header:before {
+.password-protected .entry-header:before,
+.password-protected .title-block:before {
   content: 'w';
 }
 

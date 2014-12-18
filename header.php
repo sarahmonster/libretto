@@ -50,7 +50,23 @@
 		else: ?>
 			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
 		<?php endif; ?>
-		</div>
+
+		<div class="title-block">
+		<?php if ( is_home() ): // Show the site title & tagline ?>
+			<h1><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+			<h3><?php bloginfo('description'); ?></h3>
+
+		<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
+			<div class="entry-meta">
+				<?php readly_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<h1><?php the_title(); ?></h1>
+
+		<?php elseif ( is_page() ): // Show the page title for pages ?>
+			<h1><?php the_title(); ?></h1>
+		<?php endif; ?>
+
+		</div><!-- .title-block -->
 		<?php endif; ?>
 
 		</header><!-- #masthead -->

@@ -1,44 +1,58 @@
 /* Phone-sized devices */
 @media only screen and (max-width: 640px) {
 
-  /* Tweak font sizes and margins -- needs review */
+  /* Tweak font sizes and margins */
   body {
-    font-size: 18px;
-    font-size: 1.8rem;
-    line-height: 1.5em;
+    font-size: 16px;
+    font-size: 1.6rem;
   }
 
   #content {
+    font-size: 16px;
+    font-size: 1.6rem;
     min-width: 320px;
-    padding: 0;
+    padding: 0 10px;
     margin: 0;
     max-width: none;
   }
 
-  .entry-title, .page-title {
-    font-size: 28px;
-    font-size: 2.8rem;
-    line-height: 1.22em;
-  }
-  #reply-title {
-    font-size: 28px;
-    font-size: 2.8rem;
-  }
-
-  #content > article, #nav-below, #comments {
-    padding: 20px;
-  }
-
   /* Header and nav should be simplified */
   #masthead {
-    margin: 0;
+    margin: 6rem 0 2rem 0;
+    overflow: hidden;
     padding: 0;
   }
 
   .site-branding {
-    text-align: center;
-    margin: 8rem 0 0 0;
-    width: 100%;
+    display: none;
+  }
+
+  .title-block {
+    left: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .single .title-block:before {
+    display: none;
+  }
+
+  .entry-meta,
+  .title-block .entry-meta {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .title-block h3 {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+
+  .title-block h1,
+  .entry-title,
+  .entry-title a {
+    font-size: 28px;
+    font-size: 2.8rem;
   }
 
   /* Use a condensed mobile menu */
@@ -60,6 +74,8 @@
     color: #eae9e6;
     cursor: pointer;
     display: block;
+    font-size: 19px;
+    font-size: 1.9rem;
     margin: 0;
     padding: 1.5rem 1.5rem;
   }

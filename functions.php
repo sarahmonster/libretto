@@ -263,8 +263,32 @@ function readly_password_protected_class( $classes ) {
 }
 add_filter( 'post_class', 'readly_password_protected_class' );
 
-// Customize the excerpt a smidge
+// Let's make excerpts make more sense in context
+function readly_better_excerpt($text) { // Fakes an excerpt if needed
+  global $post;
+  if ( '' == $text ) {
+    $text = get_the_content( '' );
+    $text = apply_filters( 'the_content', $text );
+    $text = str_replace('\]\]\>', ']]&gt;', $text);
+    $text = strip_tags( $text, '<p><img><blockquote><cite><figure><figcaption><a>' ); // Allow certain HTML tags only
+    $excerpt_length = 40;
+    $words = explode( ' ', $text, $excerpt_length + 1 );
+    if ( count( $words ) > $excerpt_length ) {
+      array_pop( $words );
+      $text = implode( ' ', $words )  . '&hellip;';
+    }
+  }
+return $text;
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'readly_better_excerpt');
+
+
+
 function readly_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'readly_excerpt_more' );
+
+
+

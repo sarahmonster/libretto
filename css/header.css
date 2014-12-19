@@ -32,6 +32,10 @@
 /* Masthead area shows header or featured image, plus page title */
 #masthead {
   position: relative;
+  background: purple;
+  line-height: 0;
+  text-align: center;
+  width: 100%;
 }
 
 #masthead:after {
@@ -50,14 +54,7 @@
   z-index: 300;
 }
 
-.header-image {
-  background: purple;
-  line-height: 0;
-  text-align: center;
-  width: 100%;
-}
-
-.header-image img {
+#masthead img {
   margin: 0 auto;
 }
 

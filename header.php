@@ -43,7 +43,6 @@
 		<?php
 		// Show a custom header if one is set
 		if ( '' != get_header_image() || has_post_thumbnail() ): ?>
-		<div class="header-image">
 		<?php if ( has_post_thumbnail() && is_single() ):
 			// Show the featured image instead
 			the_post_thumbnail( 'full' );
@@ -53,8 +52,8 @@
 
 		<div class="title-block">
 		<?php if ( is_home() ): // Show the site title & tagline ?>
-			<h1><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-			<h3><?php bloginfo('description'); ?></h3>
+			<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+			<h3 class="site-description"><?php bloginfo('description'); ?></h3>
 
 		<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
 			<div class="entry-meta">

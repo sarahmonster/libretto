@@ -96,21 +96,27 @@ function readly_theme_customizer($wp_customize) {
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
 }
 add_action('customize_register', 'readly_theme_customizer');
 
 /* Add CSS in the head for various options set by the customizer */
 function readly_add_customizer_css() {
-	$colour = readly_sanitize_hex_colour( get_theme_mod( 'readly_link_colour' ) );
-?>
-<!-- Custom styles -->
-<style>
-	a, a:visited {
-		color: <?php echo $colour; ?>;
-	}
-</style>
-<?php }
+	$link_colour = readly_sanitize_hex_colour( get_theme_mod( 'readly_link_colour' ) );
+	?>
+	<!-- Custom styles -->
+	<style>
+		.entry-content a,
+		.entry-content a:visited {
+			color: <?php echo $link_colour; ?>;
+		}
+		.title-block h1,
+		.title-block h3,
+		.title-block h1 a {
+			color: #<?php echo get_theme_mod( 'header_textcolor' ); ?>;
+		}
+	</style>
+	<?php
+}
 add_action( 'wp_head', 'readly_add_customizer_css' );
 
 /* Sanitize value for blog index option */

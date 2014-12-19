@@ -33,6 +33,7 @@
 					'color': to,
 					'position': 'relative'
 				} );
+				$( '.site-title a' ).css( { 'color': to } );
 			}
 		} );
 	} );
@@ -40,8 +41,8 @@
 	// Link colours
 	wp.customize( 'readly_link_colour', function( value ) {
 		value.bind( function( to ) {
-			$( 'a' ).css( { 'color': to } ),
-			$( 'a:visited' ).css( { 'color': to } );
+			$( '.entry-content a' ).css( { 'color': to } ),
+			$( '.entry-content a:visited' ).css( { 'color': to } );
 		} );
 	} );
 

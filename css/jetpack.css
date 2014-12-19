@@ -45,7 +45,8 @@
   text-transform: uppercase;
 }
 
-.sd-content a {
+.sd-content a,
+.entry-content .sd-content a {
   color: #faf9f5;
 }
 

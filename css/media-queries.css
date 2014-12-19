@@ -160,10 +160,17 @@
     padding: 0.5rem 0 0 4rem;
   }
 
+  /* Main menu is styled differently from mobile */
+  .menu-toggle {
+    display: none;
+  }
+
   #site-navigation {
     display: block;
+    font-size: 16px;
+    font-size: 1.6rem;
     float: right;
-    padding: 0 4rem 0 0;
+    padding: 1.5rem 4rem 0.5rem;
   }
 
   #site-navigation:before,
@@ -172,27 +179,14 @@
     display: table;
   }
 
-  /* Main menu is styled differently from mobile */
-  .menu-toggle {
-    display: none;
-  }
-
-  #site-navigation {
-    font-size: 16px;
-    font-size: 1.6rem;
-  }
-
-  #site-navigation a {
-    color: #787065;
-  }
-
   #site-navigation .menu > li {
     display: inline-block;
     position: relative;
   }
 
   #site-navigation li a {
-    padding: 2.5rem 2rem 1.25rem 0;
+    color: #787065;
+    padding: 1.5rem 2rem 1.25rem 0;
     margin-top: -1rem;
   }
 

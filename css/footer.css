@@ -33,30 +33,3 @@
   left: -99999px;
   position: absolute;
 }
-
-/* For phones and little screens */
-@media only screen and (max-width: 640px) {
-  #colophon .site-info,
-  #social {
-    padding: 1rem .5rem 2rem;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-/* Tablets and up */
-@media only screen and (min-width: 641px) {
-  #colophon {
-    padding: 2rem 4rem;
-    width: 100%;
-  }
-
-  #colophon .site-info {
-    float: left;
-  }
-
-  #social {
-    float: right;
-    padding-top: .5rem;
-  }
-}

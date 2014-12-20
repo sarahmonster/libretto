@@ -187,7 +187,7 @@ function readly_scripts() {
 
 	// Fonts
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
-	wp_enqueue_style( 'custom-icons', 'https://fontastic.s3.amazonaws.com/MpssqMLH2xJjPZ9ercTgGh/icons.css', array(), null );
+	wp_enqueue_style( 'custom-icons', get_template_directory_uri().'/readly-icons/icons.css', array(), null );
 
 
 	// Navigation
@@ -271,7 +271,7 @@ function readly_better_excerpt($text) { // Fakes an excerpt if needed
     $text = apply_filters( 'the_content', $text );
     $text = str_replace('\]\]\>', ']]&gt;', $text);
     $text = strip_tags( $text, '<p><img><blockquote><cite><figure><figcaption><a>' ); // Allow certain HTML tags only
-    $excerpt_length = 40;
+    $excerpt_length = 45;
     $words = explode( ' ', $text, $excerpt_length + 1 );
     if ( count( $words ) > $excerpt_length ) {
       array_pop( $words );

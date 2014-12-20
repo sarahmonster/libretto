@@ -27,7 +27,11 @@
     display: none;
   }
 
-  .title-block {
+  .site-description {
+    display: none;
+  }
+
+  .header-image .title-block {
     left: 10px;
     width: calc(100% - 20px);
   }
@@ -40,7 +44,6 @@
   .title-block .entry-meta {
     font-size: 14px;
     font-size: 1.4rem;
-    line-height: 1.8;
   }
 
   .title-block h3 {
@@ -163,12 +166,16 @@
 /* Tablets and up */
 @media only screen and (min-width: 641px) {
   /* Header has more space, so let's use it */
-  #masthead {
+  #masthead.header-image {
     border-bottom: 1px solid #f8f8f7;
     -moz-box-shadow: inset 0 -10px 10px -10px #ededeb;
     -webkit-box-shadow: inset 0 -10px 10px -10px #ededeb;
     box-shadow: inset 0 -10px 10px -10px #ededeb;
     margin-bottom: 6em;
+  }
+
+  .empty .title-block {
+    margin: 10rem auto;
   }
 
   .site-branding {

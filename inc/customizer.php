@@ -117,7 +117,7 @@ function readly_add_customizer_css() {
 	</style>
 	<?php
 }
-add_action( 'wp_head', 'readly_add_customizer_css' );
+//add_action( 'wp_head', 'readly_add_customizer_css' );
 
 /* Sanitize value for blog index option */
 function readly_sanitize_blog_index( $content ) {

@@ -39,33 +39,39 @@
 			</nav><!-- .site-navigation -->
 		</header><!-- .header-bar -->
 
-		<header id="masthead" class="site-header" role="banner">
 		<?php
-		// Show a custom header if one is set
-		if ( '' != get_header_image() || has_post_thumbnail() ): ?>
-		<?php if ( has_post_thumbnail() && is_single() ):
-			// Show the featured image instead
-			the_post_thumbnail( 'full' );
-		else: ?>
-			<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+		if ( '' != get_header_image() ) {
+			$header_class = "header-image";
+		} else {
+			$header_class = "empty";
+		}
+		?>
+
+		<header id="masthead" class="site-header <?php echo $header_class; ?>" role="banner">
+		<?php if ( 'header-image' == $header_class ): //  Display images here only if user has selected a site-wide header image
+			if ( has_post_thumbnail() && is_single() ): // If there's a featured image set, show it
+				the_post_thumbnail( 'full' );
+			else: // Otherwise, display the header image
+			?>
+				<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+			<?php endif; ?>
 		<?php endif; ?>
 
-		<div class="title-block">
-		<?php if ( is_home() ): // Show the site title & tagline ?>
-			<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-			<h3 class="site-description"><?php bloginfo('description'); ?></h3>
+			<div class="title-block">
+			<?php if ( is_home() ): // Show the site title & tagline ?>
+				<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+				<h3 class="site-description"><?php bloginfo('description'); ?></h3>
 
-		<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
-			<div class="entry-meta">
-				<?php readly_posted_on(); ?>
-			</div><!-- .entry-meta -->
-			<h1><?php the_title(); ?></h1>
+			<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
+				<div class="entry-meta">
+					<?php readly_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<h1><?php the_title(); ?></h1>
 
-		<?php elseif ( is_page() ): // Show the page title for pages ?>
-			<h1><?php the_title(); ?></h1>
-		<?php endif; ?>
+			<?php elseif ( is_page() ): // Show the page title for pages ?>
+				<h1><?php the_title(); ?></h1>
+			<?php endif; ?>
 
-		</div><!-- .title-block -->
-		<?php endif; ?>
+			</div><!-- .title-block -->
 
 		</header><!-- #masthead -->

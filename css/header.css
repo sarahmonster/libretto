@@ -29,8 +29,26 @@
   margin: 0;
 }
 
-/* Masthead area shows header or featured image, plus page title */
-#masthead {
+/* Style page title blocks */
+.title-block {
+  text-align: center;
+}
+
+.title-block h1 {
+  font-size: 48px;
+  font-size: 4.8rem;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.title-block h3,
+.title-block .entry-meta {
+  margin: 0;
+}
+
+/* Style a bit differently if a header image is present */
+#masthead.header-image {
   position: relative;
   background: purple;
   line-height: 0;
@@ -38,12 +56,11 @@
   width: 100%;
 }
 
-#masthead:after {
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.5)
-    );
+#masthead.header-image:after {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5)
+  );
   content: '';
   display: block;
   height: 100%;
@@ -58,36 +75,27 @@
   margin: 0 auto;
 }
 
-.title-block {
+.header-image .title-block {
   bottom: 10%;
   color: #faf9f5;
   left: 20%;
   position: absolute;
-  text-align: center;
   text-shadow: 0 1px 0 #000;
   width: 60%;
   z-index: 4000;
 }
 
-.title-block h1 {
-  color: #faf9f5;
-  font-size: 48px;
-  font-size: 4.8rem;
-  font-style: normal;
-  font-weight: bolder;
-  line-height: 1.2;
-  margin: 0;
-}
-
-.title-block a,
-.title-block h1 a,
-.title-block .entry-meta a {
+.header-image .title-block a,
+.header-image .title-block h1 a,
+.header-image .title-block .entry-meta a,
+.header-image .title-block h1,
+.header-image .title-block h3,
+.header-image .title-block .entry-meta {
   color: #faf9f5;
 }
 
-.title-block h3,
-.title-block .entry-meta {
-  color: #faf9f5;
-  line-height: 2.4;
-  margin: 0;
+/* And if it is not */
+.empty .title-block {
+  margin: 2rem auto;
+  max-width: 680px;
 }

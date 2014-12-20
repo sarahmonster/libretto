@@ -7,7 +7,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-	
+
 	// Determine the post type, so we can adjust the display accordingly
 	$post_format = get_post_format();
 
@@ -30,7 +30,7 @@
 	</header><!-- .entry-header -->
 	<?php endif; ?>
 
-	
+
 	<?php
 	// Show the featured image, for posts that have one and aren't already image, video, or gallery posts 
 	if ( has_post_thumbnail() and 'image' != $post_format and 'gallery' != $post_format and 'video' != $post_format ):
@@ -52,7 +52,7 @@
 	?>
 
 	<div class="entry-content">
-	<?php if ( 'content' == get_theme_mod( 'readly_blog_index' ) ) :
+	<?php if ( 'content' == get_theme_mod( 'readly_blog_index' ) || 'gallery' == $post_format || 'image' == $post_format ) :
     the_content( __( 'Read more', 'readly' ) );
 	else :
     the_excerpt();

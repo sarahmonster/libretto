@@ -121,13 +121,23 @@
 }
 
 .entry-header .entry-meta:before,
-.entry-header .entry-meta:after {
-  border-bottom: 1px solid #d9d6d0;
-  content: '';
+.entry-header .entry-meta:after,
+.title-block .entry-meta:before,
+.title-block .entry-meta:after {
+  content: '~';
+  color: #D9D6D0;
   display: inline-block;
-  margin: 0 1rem;
+  font-family: readly-icons;
+  font-size: 24px;
+  margin: 0 0.25rem;
+  text-shadow: none;
   vertical-align: middle;
-  width: 2rem;
+}
+
+.entry-header .entry-meta:after,
+.title-block .entry-meta:after {
+  content: '`';
+  margin-left: -4px;
 }
 
 .page .entry-header {

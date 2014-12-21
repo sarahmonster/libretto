@@ -18,3 +18,10 @@ object {
 .attachment {
   margin-bottom: 1em;
 }
+
+/* remove borders from audio player buttons */
+
+.mejs-controls button {
+  border: none;
+  outline: transparent;
+}

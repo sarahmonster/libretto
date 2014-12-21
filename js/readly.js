@@ -6,17 +6,24 @@
 
 jQuery(function() {
 
-	/* If image is wider than our content area, give it a class to have it overlap */
 	jQuery(window).load(function() {
+		/* If image is wider than our content area, give it a class to have it overlap */
 		jQuery('img').each(function() {
-			// Determine actual, rather than computed, width of image, by creating a new image instance
-			var computedImage = jQuery('img');
-			var actualImage = new Image();
-			actualImage.src = computedImage.attr("src")
-			var imageWidth = actualImage.width;
-			console.log(imageWidth);
-			if (imageWidth > 895) {
-			 jQuery(this).addClass('oversized');
+
+			// Never give overlap class to gallery images or video, unless you want things to implode
+			// && ! jQuery(this).parents('.tiled-gallery-item')
+			if ( ! jQuery(this).hasClass('attachment-gallery') && ! jQuery(this).hasClass('videopress-poster') ) {
+
+				// Determine actual, rather than computed, width of image, by creating a new image instance
+				var computedImage = jQuery('img');
+				var actualImage = new Image();
+				actualImage.src = computedImage.attr('src')
+				var imageWidth = actualImage.width;
+
+				// If it's big enough, give it the oversized class for the overlap
+				if (imageWidth > 895) {
+				 jQuery(this).addClass('oversized');
+				}
 			}
 		});
 	});

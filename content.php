@@ -52,7 +52,7 @@
 	?>
 
 	<div class="entry-content">
-	<?php if ( 'content' == get_theme_mod( 'readly_blog_index' ) || 'gallery' == $post_format || 'image' == $post_format ) :
+	<?php if ( 'content' == get_theme_mod( 'readly_blog_index' ) || 'gallery' == $post_format || 'image' == $post_format || 'video' == $post_format || 'audio' == $post_format ) :
     the_content( __( 'Read more', 'readly' ) );
 	else :
     the_excerpt();

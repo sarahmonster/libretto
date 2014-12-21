@@ -355,21 +355,27 @@
   label + input[type="text"],
   label + input[type="email"],
   label + input[type="password"],
-  label + input[type="search"],
+  label:not('.screen-reader-text') + input[type="search"],
   label + input[type="url"] {
     float: left;
     width: 78%;
   }
 
-  /* Password protected posts should show form on a single line */
-  .password-protected input[type="password"] {
+  /* Password protected posts and search boxes should show form on a single line */
+  .password-protected input[type="password"],
+  input[type="search"] {
     width: 60%;
   }
 
-  .password-protected .form-submit {
+  .password-protected .form-submit,
+  input[type="search"] + input[type="submit"] {
     display: inline-block;
     margin-left: 1%;
     width: 37%;
+  }
+
+  input[type="search"] + input[type="submit"] {
+    width: 33%;
   }
 
   .password-protected input[type="submit"] {

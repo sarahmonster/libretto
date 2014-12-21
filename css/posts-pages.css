@@ -103,7 +103,8 @@
 }
 
 /* Entry headers */
-.entry-header {
+.entry-header,
+.empty .title-block {
   border-bottom: 1px solid #d9d6d0;
   margin-bottom: 8rem;
   padding-bottom: 2rem;
@@ -114,7 +115,7 @@
 .entry-meta {
   color: #a09a92;
   font-style: italic;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 .entry-meta a {

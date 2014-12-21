@@ -306,13 +306,8 @@
   }
 
   /* Overlap content width for certain items */
-  .content-area img.alignnone,
-  .format-image .entry-media,
-  .format-video > .entry-media,
-  .entry-audio-embed,
   .gallery,
-  .oversized,
-  .wp-caption.alignnone {
+  .oversized {
     margin-left: -3em;
     margin-right: -3em;
     max-width: calc(100% + 6em);
@@ -453,14 +448,8 @@
 /* Desktops and big things */
 @media only screen and (min-width: 860px) {
   /* Overlap content width a bit more for larger screens */
-  .content-area img.alignnone,
-  .format-aside .entry-content,
-  .format-image .entry-media,
-  .format-video > .entry-media,
-  .entry-audio-embed,
   .gallery,
-  .oversized,
-  .wp-caption.alignnone {
+  .oversized {
     margin-left: -6em;
     margin-right: -6em;
     max-width: calc(100% + 12em);

@@ -234,7 +234,7 @@ article + article {
 }
 
 /* Password-protected posts */
-.password-protected .entry-content {
+.password-protected .entry-content p {
   color: #a09a92;
   font-size: 1.8rem;
   font-style: italic;
@@ -307,7 +307,7 @@ footer.entry-meta a {
   color: #787065;
 }
 
-footer.entry-meta .edit-link:before, 
+footer.entry-meta .edit-link:before,
 .comment-meta .edit-link:before {
   content: '· ';
   color: #d9d6d0;

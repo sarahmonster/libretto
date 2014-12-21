@@ -10,9 +10,7 @@
 ?>
 
 <article id="post-0" class="post no-results not-found">
-	<header class="entry-header">
-		<h1 class="entry-title"><?php _e('Nothing Found', 'readly'); ?></h1>
-	</header><!-- .entry-header -->
+		<h1><?php _e('No results', 'readly'); ?></h1>
 
 	<div class="entry-content">
 		<?php if (is_home() && current_user_can('publish_posts')): ?>

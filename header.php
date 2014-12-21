@@ -82,8 +82,12 @@
 				?>
 
 			<?php elseif ( is_404() ): // Show "page not found" ?>
-				<h1>Uh oh!</h1>
-				<h3>Page not found</h3>
+				<h1><?php _e( 'Uh oh!', 'readly'); ?></h1>
+				<h3><?php _e( 'Page not found', 'readly' ); ?></h3>
+
+			<?php elseif ( is_search() ): // Search results ?>
+				<h1><?php _e( 'Search results', 'readly' ); ?></h1>
+				<h3><?php printf( __( 'You searched for %s', 'readly'), '<span>' . get_search_query() . '</span>' ); ?></h3>
 
 			<?php elseif ( is_tag() ): // Show the tag name ?>
 				<h1><?php printf( __( 'Tagged <em>with</em> %s', 'readly' ), single_tag_title( '', false ) ); ?></h1>

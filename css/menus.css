@@ -20,6 +20,12 @@
   padding: 1.5rem 1.5rem;
 }
 
+/* Highlight current page (or section) */
+#site-navigation .current_page_item > a,
+#site-navigation .current_page_parent > a {
+  color: #a09a92;
+}
+
 /* In-page or in-post navigation */
 [class*="navigation"] {
   line-height: 1.6;

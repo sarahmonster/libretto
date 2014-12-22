@@ -221,6 +221,7 @@ article + article {
   font-size: 21px;
   font-size: 2.1rem;
   font-style: italic;
+  position: relative;
 }
 
 .format-status {

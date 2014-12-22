@@ -129,6 +129,13 @@
     text-indent: 2rem;
   }
 
+  /* Sticky posts should be full-width, plus padding */
+  .sticky {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    padding: 10px;
+  }
+
   /* In-page navigation should be pretty simple */
   .navigation-post .previous,
   .navigation-post .next,

@@ -16,6 +16,23 @@
     max-width: none;
   }
 
+  blockquote {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+
+  .empty .title-block {
+    margin-bottom: 2rem;
+  }
+
+  .entry-header {
+    margin-bottom: 4rem;
+  }
+
+  article + article {
+    margin-top: 8rem;
+  }
+
   /* Header and nav should be simplified */
   #masthead {
     margin: 6rem 0 2rem 0;
@@ -78,17 +95,19 @@
     cursor: pointer;
     display: block;
     font-size: 19px;
-    font-size: 1.9rem;
+    font-size: 2.1rem;
+    line-height: 1.4;
     margin: 0;
     padding: 1.5rem 1.5rem;
   }
 
   .menu-toggle span {
     float: right;
-    padding-right: 20px;
+    padding-right: 10px;
     font-style: normal;
     font-family: readly-icons;
     font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   #site-navigation .menu {

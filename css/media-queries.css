@@ -241,7 +241,7 @@
 
   /* Hover effects are only relevant if you're on a larger device */
   #site-navigation a:hover {
-    background: #363431;
+    color: #363431;
   }
 
   /* Sub-menus will display via drop-down menus */

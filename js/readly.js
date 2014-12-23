@@ -8,7 +8,7 @@ jQuery(function() {
 
 	jQuery(window).load(function() {
 		/* If image is wider than our content area, give it a class to have it overlap */
-		jQuery('img').each(function() {
+		jQuery('.entry-content img').each(function() {
 
 			// Never give overlap class to gallery images or video, unless you want things to implode
 			// && ! jQuery(this).parents('.tiled-gallery-item')

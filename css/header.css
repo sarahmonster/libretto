@@ -50,7 +50,7 @@
 /* Style a bit differently if a header image is present */
 #masthead.header-image {
   position: relative;
-  background: purple;
+  background: #d9d6d0 url('../images/grain.jpg');
   line-height: 0;
   text-align: center;
   width: 100%;

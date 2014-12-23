@@ -17,7 +17,7 @@ function readly_custom_header_setup() {
     'default-image'          => '',
     'default-text-color'     => '000000',
     'width'                  => 1600,
-    'height'                 => 300,
+    'height'                 => 475,
     'flex-height'            => true,
     'flex-width'             => true,
     'wp-head-callback'       => 'readly_header_style',

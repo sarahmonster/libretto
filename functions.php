@@ -87,6 +87,11 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		) );
 
 		/**
+		 * Enable support for proper titles
+		 */
+	  add_theme_support( 'title-tag' );
+
+		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */

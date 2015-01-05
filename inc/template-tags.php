@@ -79,7 +79,7 @@ if ( ! function_exists( 'readly_posted_on' ) ):
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
 			esc_attr( get_the_date( 'F jS, Y' ) ),
-			esc_html( get_the_date( 'F jS, Y' ) ),
+			esc_html( get_the_date( 'F jS, Y' ) )
 		);
 	}
 endif;

@@ -3,33 +3,30 @@
  * The template for displaying Search Results pages.
  *
  * @package Readly
- * @since Readly 1.0
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+<section id="primary" class="content-area">
+	<div id="content" class="site-content" role="main">
 
-		<?php if (have_posts()): ?>
+	<?php if ( have_posts() ): ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while (have_posts()): the_post(); ?>
+		<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ): the_post(); ?>
+			<?php get_template_part( 'content', 'search' ); ?>
+		<?php endwhile; ?>
 
-				<?php get_template_part('content', 'search'); ?>
+		<?php readly_content_nav( 'nav-below' ); ?>
 
-			<?php endwhile; ?>
+	<?php else: // If search returns no results ?>
 
-			<?php readly_content_nav('nav-below'); ?>
+		<?php get_template_part( 'no-results', 'search' ); ?>
 
-		<?php else: ?>
+	<?php endif; ?>
 
-			<?php get_template_part('no-results', 'search'); ?>
-
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</section><!-- #primary -->
+	</div><!-- #content -->
+</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

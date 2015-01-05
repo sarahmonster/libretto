@@ -8,172 +8,173 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset($content_width) ) {
+if ( ! isset( $content_width ) ) {
 	$content_width = 720; /* 680px wide plus a 40px buffer */
 }
 
-// Adds gallery shortcode defaults of size="medium" and columns="2"
-
+/**
+ * Set gallery shortcode defaults
+ */
 function readly_gallery_atts( $out, $pairs, $atts ) {
-    $atts = shortcode_atts( array(
-      'columns' => '3',
-      'size' => 'gallery',
-    ), $atts );
+	$atts = shortcode_atts( array(
+		'columns' => '3',
+		'size'    => 'gallery',
+	), $atts );
 
-    $out['columns'] = $atts['columns'];
-    $out['size'] = $atts['size'];
+	$out['columns'] = $atts['columns'];
+	$out['size'] = $atts['size'];
 
-    return $out;
-
+	return $out;
 }
 add_filter( 'shortcode_atts_gallery', 'readly_gallery_atts', 10, 3 );
 
-if ( ! function_exists('readly_setup') ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function readly_setup() {
-
+if ( ! function_exists( 'readly_setup' ) ) :
 	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on Readly, use a find and replace
-	 * to change 'readly' to the name of your theme in all the template files
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which runs
+	 * before the init hook. The init hook is too late for some features, such as indicating
+	 * support post thumbnails.
 	 */
-	load_theme_textdomain('readly', get_template_directory().'/languages');
+	function readly_setup() {
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
-	add_theme_support('automatic-feed-links');
+		/**
+		 * Make theme available for translation
+		 * Translations can be filed in the /languages/ directory
+		 * If you're building a theme based on Readly, use a find and replace
+		 * to change 'readly' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'readly', get_template_directory().'/languages' );
 
-	/**
-	 * Enable support for Post Thumbnails
-	 */
-	add_theme_support('post-thumbnails');
+		/**
+		 * Add default posts and comments RSS feed links to head
+		 */
+		add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Add an image size for galleries
-	 */
-	add_image_size('gallery', 400, 400, true);
+		/**
+		 * Enable support for Post Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus(array(
-		'primary' => __('Primary Menu', 'readly'),
-	));
+		/**
+		 * Add an image size for galleries
+		 */
+		add_image_size( 'gallery', 400, 400, true );
 
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support('post-formats', array(
-		'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status', 'link', 'video'
-	));
+		/**
+		 * This theme uses wp_nav_menu() in one location.
+		 */
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', 'readly' ),
+		) );
 
-	/**
-	 * Enable support for custom background
-	 */
-	add_theme_support( 'custom-background', array(
-		'default-color'          => '#eae9e6',
-		'default-image'          => '',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => ''
-	) );
+		/**
+		 * Enable support for Post Formats
+		 */
+		add_theme_support( 'post-formats', array(
+			'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status', 'link', 'video',
+		) );
 
-	/**
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
-}
-endif; // readly_setup
-add_action('after_setup_theme', 'readly_setup');
+		/**
+		 * Enable support for custom background
+		 */
+		add_theme_support( 'custom-background', array(
+			'default-color'          => '#eae9e6',
+			'default-image'          => '',
+			'wp-head-callback'       => '_custom_background_cb',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => '',
+		) );
+
+		/**
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		) );
+
+	} // readly_setup()
+endif;
+add_action( 'after_setup_theme', 'readly_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
 function readly_widgets_init() {
 	register_sidebar( array(
-		'name'          => __('First Footer Sidebar', 'readly'),
+		'name'          => __( 'First Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	));
+	) );
 	register_sidebar( array(
-		'name'          => __('Second Footer Sidebar', 'readly'),
+		'name'          => __( 'Second Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	));
+	) );
 	register_sidebar( array(
-		'name'          => __('Third Footer Sidebar', 'readly'),
+		'name'          => __( 'Third Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	));
+	) );
 	register_sidebar( array(
-		'name'          => __('Fourth Footer Sidebar', 'readly'),
+		'name'          => __( 'Fourth Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
-	));
+	) );
 }
-add_action('widgets_init', 'readly_widgets_init');
+add_action( 'widgets_init', 'readly_widgets_init' );
 
 /**
  * Generate URLs for our custom fonts (via Google)
  */
 function readly_fonts_url() {
-    $fonts_url = '';
+	$fonts_url = '';
 
-		/* Translators: If there are characters in your language that are not
-		* supported by Open Sans, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
-		$montserrat = _x( 'on', 'Montserrat font: on or off', 'ready' );
-		$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'ready' );
+	/* Translators: If there are characters in your language that are not
+	 * supported by Open Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
+	$montserrat = _x( 'on', 'Montserrat font: on or off', 'ready' );
+	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'ready' );
 
-		if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display ) {
-		    $font_families = array();
+	if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display ):
+		$font_families = array();
 
-		    if ( 'off' !== $libre_baskerville ) {
-		        $font_families[] = 'Libre Baskerville:400,700,400italic';
-		    }
-
-		    if ( 'off' !== $playfair_display ) {
-		        $font_families[] = 'Playfair Display:400,700,900,400italic,700italic,900italic';
-		    }
-
-		    if ( 'off' !== $montserrat ) {
-		        $font_families[] = 'Montserrat:400,700';
-		    }
-
-		    $query_args = array(
-    			'family' => urlencode( implode( '|', $font_families ) ),
-    			'subset' => urlencode( 'latin,latin-ext' ),
-				);
-
-				$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		if ( 'off' !== $libre_baskerville ) {
+			$font_families[] = 'Libre Baskerville:400,700,400italic';
 		}
 
-    return $fonts_url;
+		if ( 'off' !== $playfair_display ) {
+			$font_families[] = 'Playfair Display:400,700,900,400italic,700italic,900italic';
+		}
+
+		if ( 'off' !== $montserrat ) {
+			$font_families[] = 'Montserrat:400,700';
+		}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	endif;
+
+	return $fonts_url;
 }
 
 /**
@@ -195,7 +196,7 @@ function readly_scripts() {
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	// Comments
-	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
@@ -227,68 +228,71 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Remove Jetpack's sharing script.
+ * Remove scripts for Jetpack's sharing function
  */
 function readly_nix_sharedaddy_script() {
-    remove_action( 'wp_head', 'sharing_add_header', 1 );
+	remove_action( 'wp_head', 'sharing_add_header', 1 );
 }
 add_action( 'template_redirect', 'readly_nix_sharedaddy_script' );
 
-// Editor admin styles
+/**
+ * Use editor admin styles.
+ */
 function readly_admin_scripts_styles() {
 	wp_enqueue_style( 'readly-admin-style', get_template_directory_uri().'/admin.css' );
 	wp_enqueue_script( 'readly-admin', get_template_directory_uri().'/js/admin.js', array(), '20140331', true );
 	add_editor_style( array( 'editor-style.css', readly_fonts_url() ) );
 }
-add_action('admin_enqueue_scripts', 'readly_admin_scripts_styles');
+add_action( 'admin_enqueue_scripts', 'readly_admin_scripts_styles' );
 
-// Customize the password form just a smidge
+/**
+ * Customize the password form a smidge
+ */
 function readly_password_form() {
-    global $post;
-    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $password_form = __( "This post is password-protected. To read it, please enter the password below.", 'readly' ) .
-    '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:", 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
+	global $post;
+	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+	$password_form = __( "This post is password-protected. To read it, please enter the password below.", 'readly' ) .
+		'<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:", 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
     </form>';
-    return $password_form;
+	return $password_form;
 }
 add_filter( 'the_password_form', 'readly_password_form' );
 
-// Add custom post class for password-protected posts
+/**
+ * Add custom post class for password-protected posts
+ */
 function readly_password_protected_class( $classes ) {
 	global $post;
 	if ( post_password_required( $post ) ) {
-		$classes[] = "password-protected";
+		$classes[] = 'password-protected';
 	}
 	return $classes;
 }
 add_filter( 'post_class', 'readly_password_protected_class' );
 
-// Let's make excerpts make more sense in context
-function readly_better_excerpt($text) { // Fakes an excerpt if needed
-  global $post;
-  if ( '' == $text ) {
-    $text = get_the_content( '' );
-    $text = apply_filters( 'the_content', $text );
-    $text = str_replace('\]\]\>', ']]&gt;', $text);
-    $text = strip_tags( $text, '<p><img><blockquote><cite><figure><figcaption><a>' ); // Allow certain HTML tags only
-    $excerpt_length = 45;
-    $words = explode( ' ', $text, $excerpt_length + 1 );
-    if ( count( $words ) > $excerpt_length ) {
-      array_pop( $words );
-      $text = implode( ' ', $words )  . '&hellip;';
-    }
-  }
-return $text;
+/**
+ * Improve excerpt display and output
+ */
+ function readly_better_excerpt( $text ) { // Fakes an excerpt if needed
+	global $post;
+	if ( '' === $text ) {
+		$text = get_the_content( '' );
+		$text = apply_filters( 'the_content', $text );
+		$text = str_replace( '\]\]\>', ']]&gt;', $text );
+		$text = strip_tags( $text, '<p><img><blockquote><cite><figure><figcaption><a>' ); // Allow certain HTML tags only
+		$excerpt_length = 45;
+		$words = explode( ' ', $text, $excerpt_length + 1 );
+		if ( count( $words ) > $excerpt_length ) {
+			array_pop( $words );
+			$text = implode( ' ', $words )  . '&hellip;';
+		}
+	}
+	return $text;
 }
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'readly_better_excerpt');
-
-
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', 'readly_better_excerpt' );
 
 function readly_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'readly_excerpt_more' );
-
-
-

@@ -81,14 +81,14 @@ p {
   margin-bottom: 1.5em;
 }
 
-b, 
+b,
 strong {
   font-weight: bold;
 }
 
-dfn, 
-cite, 
-em, 
+dfn,
+cite,
+em,
 i {
   font-style: italic;
 }
@@ -156,13 +156,13 @@ code, kbd, tt, var {
   font-size: 1.5rem;
 }
 
-abbr, 
+abbr,
 acronym {
   border-bottom: 1px dotted #a09a92;
   cursor: help;
 }
 
-mark, 
+mark,
 ins {
   background: #faf9f5;
   text-decoration: none;
@@ -193,8 +193,8 @@ big {
   font-size: 125%;
 }
 
-strong em, 
-em strong, 
+strong em,
+em strong,
 b i,
 i b,
 b em,
@@ -209,4 +209,12 @@ i strong {
   letter-spacing: 1px;
   padding: 2px 0;
   text-transform: uppercase;
+}
+
+em code,
+strong code,
+i code,
+b code {
+  font-style: normal;
+  font-weight: normal;
 }

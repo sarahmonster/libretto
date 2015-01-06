@@ -252,27 +252,28 @@ article + article {
 
 /* Post pagination */
 .page-links {
-  color: #d9d6d0;
+  color: #a09a92;
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 12px;
   text-align: center;
 }
 
 .page-links span {
   background: #faf9f5;
   border-radius: 50%;
-  color: #d9d6d0;
+  color: #a09a92;
   display: inline-block;
-  height: 25px;
-  padding: 0.5rem;
+  height: 30px;
+  padding: 9px 0;
   line-height: 1;
-  width: 25px;
+  width: 30px;
 }
 
 .page-links a span {
   background: #eae9e6;
-  color: #a09a92;
+  color: #787065;
+  padding: 0 5px;
+  width: auto;
 }
 
 /* Abbreviated entry footers (only used for quote, aside, link, and status posts) */

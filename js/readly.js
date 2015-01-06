@@ -6,10 +6,13 @@
 
 jQuery(function() {
 
-	jQuery(window).load(function() {
-		/* If image is wider than our content area, give it a class to have it overlap */
-		jQuery('.entry-content img').each(function() {
+	/* This calculates the size of each image in the entry content,
+	 * then gives it a class to overlap the content area if it's wide enough.
+	 * Certain images are ignored—mostly those in galleries or video previews
+	 */
+	function formatImages() {
 
+		jQuery('.entry-content img').each(function() {
 			// Never give overlap class to gallery images or video, unless you want things to implode
 			// && ! jQuery(this).parents('.tiled-gallery-item')
 			if ( ! jQuery(this).hasClass('attachment-gallery') && ! jQuery(this).hasClass('videopress-poster') ) {
@@ -28,6 +31,16 @@ jQuery(function() {
 				}
 			}
 		});
+	}
+
+	// Format images on page load
+	jQuery(window).load(function() {
+		formatImages();
+	});
+
+	// Format images on each subsequent Infinite Scroll load, as well
+	jQuery(document).on('post-load', function() {
+		formatImages();
 	});
 
 

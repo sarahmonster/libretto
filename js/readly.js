@@ -4,44 +4,50 @@
  * Handles custom functions, primarily for images
  */
 
-jQuery(function() {
-
+( function( $ ) {
 	/* This calculates the size of each image in the entry content,
 	 * then gives it a class to overlap the content area if it's wide enough.
 	 * Certain images are ignored—mostly those in galleries or video previews
 	 */
 	function formatImages() {
 
-		jQuery('.entry-content img').each(function() {
+		$( '.entry-content img' ).each( function() {
 			// Never give overlap class to gallery images or video, unless you want things to implode
-			// && ! jQuery(this).parents('.tiled-gallery-item')
-			if ( ! jQuery(this).hasClass('attachment-gallery') && ! jQuery(this).hasClass('videopress-poster') ) {
+			// "Medium" and "large" images are also excluded for logical reasons, as well as smileys
+			if ( ! $( this ).hasClass( 'attachment-gallery' ) && ! $( this ).hasClass( 'videopress-poster' ) && ! $( this ).parents( '.tiled-gallery-item' ).length && ! $( this ).hasClass( 'size-thumbnail' ) && ! $( this ).hasClass( 'size-medium' ) && ! $( this ).hasClass( 'wp-smiley' ) ) {
 
 				// Determine actual, rather than computed, width of image, by creating a new image instance
-				var computedImage = jQuery('img');
+				var computedImage = $( this );
 				var actualImage = new Image();
-				actualImage.src = computedImage.attr('src')
+				actualImage.src = computedImage.attr( 'src' )
 				var imageWidth = actualImage.width;
 
+				console.log ( computedImage );
+				console.log ( imageWidth );
 				// If it's big enough, give it the oversized class for the overlap, and remove height & width attributes
-				if (imageWidth > 895) {
-					jQuery(this).addClass('oversized');
-					jQuery(this).removeAttr('width');
-					jQuery(this).removeAttr('height');
+				if ( imageWidth > 895 ) {
+					// If we're inside a caption, the oversized class should instead be added to our caption.
+					// We'll also remove the width property
+					if ( $( this).parents( 'figure' ).length ) {
+						$( this ).parents( 'figure' ).addClass( 'oversized');
+						$( this ).parents( 'figure' ).css( "width", "" );
+					} else {
+						$( this ).addClass( 'oversized' );
+					}
+					$( this ).removeAttr( 'width' );
+					$( this ).removeAttr( 'height' );
 				}
 			}
 		});
 	}
 
 	// Format images on page load
-	jQuery(window).load(function() {
+	$( window ).load( function() {
 		formatImages();
 	});
 
 	// Format images on each subsequent Infinite Scroll load, as well
-	jQuery(document).on('post-load', function() {
+	$( document ).on( 'post-load', function() {
 		formatImages();
 	});
-
-
-});
+} )( jQuery );

@@ -78,3 +78,18 @@ blockquote cite:before {
   border-left: 4px solid #a09a92;
   border-right: 0;
 }
+
+/* More link */
+.more-link {
+  float: left;
+}
+.more-link:after {
+  border-right: 19px solid #a09a92;
+  border-left: 0;
+  left: inherit;
+  right: 100%;
+}
+
+.more-link:hover:after {
+  border-right-color: #787065;
+}

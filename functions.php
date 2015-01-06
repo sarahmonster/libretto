@@ -301,3 +301,19 @@ function readly_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'readly_excerpt_more' );
+
+/**
+ * Make sure quote post types use a blockquote
+ */
+function add_blockquote_to_quote( $content ) {
+	if ( is_singular() || is_archive() || is_home() ):
+		// Only run on quote post types, and only for those that don't already contain a blockquote
+		// Note: we look for "<blockquote" specifically so as to catch instances of blockquotes with additional attributes
+		if ( 'quote' === get_post_format() && strpos( $content, '<blockquote' ) === false) {
+	    $content = "<blockquote>$content</blockquote>";
+		}
+	endif;
+	return $content;
+}
+add_filter( 'the_content', 'add_blockquote_to_quote' );
+add_filter( 'get_the_excerpt', 'add_blockquote_to_quote' );

@@ -139,9 +139,9 @@ address {
 
 pre {
   background: #d9d6d0;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 1.5rem;
+  font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   padding: 1.6em;
@@ -151,9 +151,9 @@ pre {
 }
 
 code, kbd, tt, var {
-  font-family: "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 1.5rem;
+  font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 abbr,

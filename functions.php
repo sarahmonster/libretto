@@ -152,11 +152,12 @@ function readly_fonts_url() {
 	 * supported by Open Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'ready' );
-	$montserrat = _x( 'on', 'Montserrat font: on or off', 'ready' );
-	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'ready' );
+	$libre_baskerville = _x( 'on', 'Libre Baskerville font: on or off', 'readly' );
+	$montserrat = _x( 'on', 'Montserrat font: on or off', 'readly' );
+	$playfair_display = _x( 'on', 'Playfair Display font: on or off', 'readly' );
+	$droid_mono = _x( 'on', 'Droid Sans Mono font: on or off', 'readly' );
 
-	if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display ):
+	if ( 'off' !== $libre_baskerville || 'off' !== $montserrat || 'off' !== $playfair_display || 'off' !== $droid_mono ):
 		$font_families = array();
 
 		if ( 'off' !== $libre_baskerville ) {
@@ -169,6 +170,10 @@ function readly_fonts_url() {
 
 		if ( 'off' !== $montserrat ) {
 			$font_families[] = 'Montserrat:400,700';
+		}
+
+		if ( 'off' !== $droid_mono ) {
+			$font_families[] = 'Droid Sans Mono:400';
 		}
 
 		$query_args = array(
@@ -239,6 +244,15 @@ function readly_nix_sharedaddy_script() {
 	remove_action( 'wp_head', 'sharing_add_header', 1 );
 }
 add_action( 'template_redirect', 'readly_nix_sharedaddy_script' );
+
+/**
+ * Remove styles for contact form
+ */
+function remove_jetpack_stylesheets() {
+    wp_deregister_style('grunion.css');
+}
+add_action('wp_enqueue_scripts', 'remove_jetpack_stylesheets');
+
 
 /**
  * Use editor admin styles.

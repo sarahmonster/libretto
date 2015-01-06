@@ -88,16 +88,19 @@ textarea {
    color: #d9d6d0;
 }
 
-::-moz-placeholder { 
-   color: #d9d6d0;  
+::-moz-placeholder {
+   color: #d9d6d0;
 }
 
-:-ms-input-placeholder {  
-   color: #dcacabc;  
+:-ms-input-placeholder {
+   color: #dcacabc;
 }
 
 /* Submit buttons */
-.form-submit {
+.form-submit,
+.contact-submit,
+form p {
+  margin: 1em 0;
   text-align: center;
 }
 
@@ -130,7 +133,14 @@ label {
   color: #a09a92;
   font-size: 1.8rem;
   font-style: italic;
+  text-align: left;
 }
+
+label span {
+  font-size: .9em;
+  padding-left: 2px;
+}
+
 input + input[type="submit"] {
   margin-left: 1rem;
 }

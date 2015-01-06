@@ -15,10 +15,6 @@ body {
 	unicode-bidi: embed;
 }
 
-label {
-  float: right;
-}
-
 /* Mobile menu */
 .menu-toggle span {
   padding-left: 10px;
@@ -92,4 +88,15 @@ blockquote cite:before {
 
 .more-link:hover:after {
   border-right-color: #787065;
+}
+
+/* Forms */
+label {
+  float: right;
+  text-align: right;
+}
+
+label span {
+  padding-left: 0;
+  padding-right: 2px;
 }

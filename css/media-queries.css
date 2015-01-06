@@ -380,18 +380,21 @@
   /* Line up labels and input fields */
   form p {
     clear: both;
+    text-align: center;
   }
 
   label {
+    clear: both;
     float: left;
     margin: 0.25em 2% 1em 0;
     width: 20%;
   }
 
+  label + input,
   label + input[type="text"],
   label + input[type="email"],
   label + input[type="password"],
-  label:not('.screen-reader-text') + input[type="search"],
+  label:not(.screen-reader-text) + input[type="search"],
   label + input[type="url"] {
     float: left;
     width: 78%;

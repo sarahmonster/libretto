@@ -20,9 +20,11 @@ jQuery(function() {
 				actualImage.src = computedImage.attr('src')
 				var imageWidth = actualImage.width;
 
-				// If it's big enough, give it the oversized class for the overlap
+				// If it's big enough, give it the oversized class for the overlap, and remove height & width attributes
 				if (imageWidth > 895) {
-				 jQuery(this).addClass('oversized');
+					jQuery(this).addClass('oversized');
+					jQuery(this).removeAttr('width');
+					jQuery(this).removeAttr('height');
 				}
 			}
 		});

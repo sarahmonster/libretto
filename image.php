@@ -12,26 +12,7 @@ get_header();
 	<div id="content" class="site-content" role="main">
 
 	<?php while ( have_posts() ): the_post(); ?>
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<header class="entry-header">
-				<div class="entry-meta">
-				<?php
-					printf( __( 'Posted <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> via <a href="%3$s" title="Return to %4$s" rel="gallery">%5$s</a>', 'readly' ),
-					esc_attr( get_the_date( 'c' ) ),
-					esc_html( get_the_date() ),
-					get_permalink( $post->post_parent ),
-					esc_attr( get_the_title( $post->post_parent ) ),
-					get_the_title( $post->post_parent )
-					);
-				?>
-				</div><!-- .entry-meta -->
-
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header><!-- .entry-header -->
-
 			<div class="entry-content">
-
 				<div class="entry-attachment">
 					<div class="attachment">
 						<?php
@@ -48,7 +29,7 @@ get_header();
 							'orderby'        => 'menu_order ID',
 						) ) );
 						foreach ( $attachments as $k => $attachment ) {
-							if ( $attachment->ID == $post->ID )
+							if ( $attachment->ID === $post->ID )
 								break;
 							}
 						$k++;

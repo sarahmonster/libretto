@@ -62,6 +62,25 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
 
+			<?php elseif ( is_attachment() ): // Show image attachment data ?>
+				<div class="entry-meta">
+				<?php
+					printf( __( 'Posted <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>', 'readly' ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() )
+					);
+				// Check to see if we have a parent properly set
+				if ( $post->post_parent ) {
+					printf( __( ' in <a href="%1$s" title="Return to %2$s" rel="gallery">%3$s</a>', 'readly' ),
+					get_permalink( $post->post_parent ),
+					esc_attr( get_the_title( $post->post_parent ) ),
+					get_the_title( $post->post_parent )
+					);
+				}
+				?>
+				</div>
+				<h1><?php the_title(); ?></h1>
+
 			<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
 				<div class="entry-meta">
 					<?php readly_posted_on(); ?>

@@ -78,7 +78,7 @@ if ( ! function_exists( 'readly_posted_on' ) ):
 		printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'readly' ),
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'F jS, Y' ) ),
+			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_date( 'F jS, Y' ) )
 		);
 	}

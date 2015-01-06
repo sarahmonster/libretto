@@ -93,7 +93,8 @@
 }
 
 .password-protected .entry-header:before,
-.single-password-protected .title-block:before {
+.single-password-protected .title-block:before,
+.status-private .entry-header:before {
   content: 'w';
 }
 

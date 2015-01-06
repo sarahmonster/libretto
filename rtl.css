@@ -9,9 +9,72 @@ http://codex.wordpress.org/Right_to_Left_Language_Support
 
 */
 
-/*
+
 body {
 	direction: rtl;
 	unicode-bidi: embed;
 }
-*/
+
+label {
+  float: right;
+}
+
+/* Mobile menu */
+.menu-toggle span {
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+/* Blockquotes */
+blockquote:before {
+  content: '\201D';
+  right: -50px;
+}
+
+blockquote cite {
+  float: left;
+}
+
+blockquote cite:before {
+  float: left;
+}
+
+/* Post footers */
+.entry-footer {
+  padding-left: 0;
+  padding-right: 60px;
+}
+
+.entry-footer::before {
+  left: inherit;
+  right: 0;
+}
+
+.entry-footer .edit-link {
+  float: left;
+}
+
+/* Prev/next navigation */
+[class*="navigation"] .previous {
+  float: right;
+  text-align: right;
+}
+
+[class*="navigation"] .next {
+  border-left: 0;
+  border-right: 1px solid #D9D6D0;
+  float: left;
+  text-align: left;
+}
+
+.next .meta-nav a:after,
+.next a .meta-nav:after {
+  border-right: 4px solid #a09a92;
+  border-left: 0;
+}
+
+.previous .meta-nav a:before,
+.previous a .meta-nav:before {
+  border-left: 4px solid #a09a92;
+  border-right: 0;
+}

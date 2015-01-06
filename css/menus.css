@@ -70,7 +70,7 @@
 .next .meta-nav a:after,
 .previous a .meta-nav:before,
 .next a .meta-nav:after {
-  border: solid transparent;
+  border: solid transparent 4px;
   content: '';
   display: inline-block;
   height: 0;
@@ -82,11 +82,11 @@
 .previous .meta-nav a:before,
 .previous a .meta-nav:before {
   border-right-color: #a09a92;
-  border-width: 4px 4px 4px 0;
+  border-left: 0;
 }
 
 .next .meta-nav a:after,
 .next a .meta-nav:after {
   border-left-color: #a09a92;
-  border-width: 4px 0 4px 4px;
+  border-right: 0;
 }

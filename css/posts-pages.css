@@ -147,13 +147,17 @@
 
 .entry-title,
 .entry-title a {
+  border: none;
   color: #787065;
   font-family: "Playfair Display";
   font-size: 44px;
   font-size: 4.4rem;
   font-style: normal;
   line-height: 1.2;
+  letter-spacing: 0;
   margin: 0;
+  padding: 0;
+  text-transform: none;
 }
 
 .entry-title img {

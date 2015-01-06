@@ -155,6 +155,7 @@
   letter-spacing: 0;
   margin: 0;
   padding: 0;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
   text-transform: none;
 }
 

@@ -25,6 +25,11 @@
     margin-bottom: 2rem;
   }
 
+  .title-block {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .entry-header {
     margin-bottom: 4rem;
   }
@@ -201,7 +206,7 @@
   }
 
   .empty .title-block {
-    margin: 10rem auto;
+    margin: 10rem auto 4rem;
   }
 
   .site-branding {

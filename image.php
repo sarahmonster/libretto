@@ -6,6 +6,14 @@
  */
 
 get_header();
+
+/**
+ * Set the content width if it hasn't already been determined
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 720; /* 680px wide plus a 40px buffer */
+}
+
 ?>
 
 <div id="primary" class="content-area image-attachment">

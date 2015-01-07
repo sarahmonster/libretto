@@ -22,8 +22,6 @@
 				actualImage.src = computedImage.attr( 'src' )
 				var imageWidth = actualImage.width;
 
-				console.log ( computedImage );
-				console.log ( imageWidth );
 				// If it's big enough, give it the oversized class for the overlap, and remove height & width attributes
 				if ( imageWidth > 895 ) {
 					// If we're inside a caption, the oversized class should instead be added to our caption.
@@ -50,4 +48,28 @@
 	$( document ).on( 'post-load', function() {
 		formatImages();
 	});
+
+	$( document ).ready( function() {
+		// Pull out the search bar when clicked
+		$( '#site-navigation .search-form label' ).click( function() {
+			var searchInput = $( this ).siblings( 'input[type="search"]' );
+			if ( searchInput.hasClass( 'open' ) ) {
+				searchInput.animate( {
+						opacity: 0,
+						width: "0"
+					}, 500, function() {
+						$( this ).removeClass( 'open' );
+					});
+			} else {
+				searchInput.animate( {
+						opacity: 1,
+						width: "300"
+					}, 500, function() {
+						$( this ).addClass( 'open' );
+					});
+			}
+		});
+	});
+
+
 } )( jQuery );

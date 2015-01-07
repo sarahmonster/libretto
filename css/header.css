@@ -102,17 +102,31 @@
 #site-navigation .search-form input[type="submit"] {
   display: none;
 }
+
 #site-navigation .search-form {
   position: relative;
 }
 
-#site-navigation .search-form:before {
+#site-navigation .search-form label {
   color: #787065;
+  display: inline-block;
+  font-size: 18px;
+  clip: auto;
+  height: 20px;
+  width: 20px;
+}
+
+#site-navigation .search-form label:before {
   content: 'o';
   display: inline-block;
   font-family: readly-icons;
-  font-size: 18px;
-  position: absolute;
-  top: 20px;
-  left: 15px;
+  font-style: normal;
+}
+
+#site-navigation .search-form label:hover {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: normal;
+  padding: 0;
 }

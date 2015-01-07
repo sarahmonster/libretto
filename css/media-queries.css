@@ -92,6 +92,12 @@
     color: #cacabc;
   }
 
+  #site-navigation .search-form input[type="search"] {
+    margin: .5rem;
+    text-indent: 20px;
+    width: calc(100% - 4rem);
+  }
+
   .menu-toggle {
     background: #363431;
     border-bottom: 2px solid #787065;

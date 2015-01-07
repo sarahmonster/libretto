@@ -267,6 +267,16 @@ add_action( 'admin_enqueue_scripts', 'readly_admin_scripts_styles' );
 /**
  * Customize the password form a smidge
  */
+function readly_add_search_box( $items, $args ) {
+  if ( 'primary' === $args->theme_location )
+  	$items .= '<li>' . get_search_form( false ) . '</li>';
+return $items;
+}
+add_filter( 'wp_nav_menu_items', 'readly_add_search_box', 10, 2 );
+
+/**
+ * Customize the password form a smidge
+ */
 function readly_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );

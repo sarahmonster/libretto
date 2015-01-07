@@ -97,3 +97,22 @@
   margin: 2rem auto;
   max-width: 680px;
 }
+
+/* Don't show button for search form */
+#site-navigation .search-form input[type="submit"] {
+  display: none;
+}
+#site-navigation .search-form {
+  position: relative;
+}
+
+#site-navigation .search-form:before {
+  color: #787065;
+  content: 'o';
+  display: inline-block;
+  font-family: readly-icons;
+  font-size: 18px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+}

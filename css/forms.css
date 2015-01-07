@@ -8,12 +8,6 @@ textarea {
 }
 
 button,
-input {
-  line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-  *overflow: visible; /* Corrects inner spacing displayed oddly in IE6/7 */
-}
-
-button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -93,7 +87,7 @@ textarea {
 }
 
 :-ms-input-placeholder {
-   color: #dcacabc;
+   color: #d9d6d0;
 }
 
 /* Submit buttons */

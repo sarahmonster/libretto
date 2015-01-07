@@ -200,7 +200,8 @@ i b,
 b em,
 em b,
 strong i,
-i strong {
+i strong,
+.wp-caption strong {
   background: #faf9f5;
   color: #a09a92;
   font-size: .8em;
@@ -217,4 +218,14 @@ i code,
 b code {
   font-style: normal;
   font-weight: normal;
+}
+
+/* Prettier select colours for insane people like me who select text constantly while reading */
+::selection  {
+  background: #faf9f5;
+  color: #787065;
+}
+::-moz-selection {
+  background: #faf9f5;
+  color: #787065;
 }

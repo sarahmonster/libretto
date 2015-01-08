@@ -203,17 +203,17 @@
   }
 
   #site-navigation .menu {
-    -webkit-transition: max-height 1s;
-    -moz-transition: max-height 1s;
-    -ms-transition: max-height 1s;
-    -o-transition: max-height 1s;
-    transition: max-height 1s;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -ms-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+    transition: max-height 0.5s;
     overflow: hidden;
     max-height: 0;
   }
 
   #site-navigation .menu.menu-visible {
-    max-height: 500px;
+    max-height: 1500px;
     transition: max-height 0.25s ease-in;
   }
 

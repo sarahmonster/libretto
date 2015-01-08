@@ -11,6 +11,7 @@ jQuery(function() {
 		var menu = jQuery(this).parent().find('.menu');
 		menu.slideToggle('slow');
 		menu.toggleClass('menu-visible');
+		jQuery( this ).find( '#menu-icon' ).toggleClass('open');
 	});
 
 	/* Open sub-menus if we're using the teeny menu */

@@ -23,7 +23,9 @@
 /* Post format icons */
 .post .entry-header:before,
 .entry-footer:before,
-.single .title-block:before {
+.single .title-block:before,
+.page .entry-header:before,
+.page .title-block:before {
   background: #faf9f5;
   border: 1px solid #d9d6d0;
   box-shadow: 0 0 0 4px #faf9f5;
@@ -93,11 +95,18 @@
   content: 'y';
 }
 
+.page .entry-header:before,
+.page .title-block:before {
+  content: 'e';
+}
+
 .password-protected .entry-header:before,
 .single-password-protected .title-block:before,
 .status-private .entry-header:before {
   content: 'w';
 }
+
+
 
 /* Entry headers */
 .entry-header,

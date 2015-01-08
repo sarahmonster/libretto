@@ -215,3 +215,6 @@
 .icon-fleuron-right:before {
   content: "`";
 }
+.icon-document:before {
+  content: "e";
+}

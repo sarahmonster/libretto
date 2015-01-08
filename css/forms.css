@@ -106,7 +106,7 @@ input[type="submit"], button {
   letter-spacing: 1px;
   min-width: 15em;
   outline: 4px solid #a09a92;
-  padding: 1.15rem 1.4rem;
+  padding: 0.7rem 1.4rem;
   position: relative;
   text-transform: uppercase;
 }

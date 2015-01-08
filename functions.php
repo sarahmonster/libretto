@@ -93,6 +93,11 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 */
 	  add_theme_support( 'title-tag' );
 
+	  /**
+ 		* Use editor admin styles.
+ 		*/
+		add_editor_style( array( 'css/editor-style.css', readly_fonts_url() ) );
+
 		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -254,17 +259,6 @@ function remove_jetpack_stylesheets() {
     wp_deregister_style('grunion.css');
 }
 add_action('wp_enqueue_scripts', 'remove_jetpack_stylesheets');
-
-
-/**
- * Use editor admin styles.
- */
-function readly_admin_scripts_styles() {
-	wp_enqueue_style( 'readly-admin-style', get_template_directory_uri().'/admin.css' );
-	wp_enqueue_script( 'readly-admin', get_template_directory_uri().'/js/admin.js', array(), '20140331', true );
-	add_editor_style( array( 'editor-style.css', readly_fonts_url() ) );
-}
-add_action( 'admin_enqueue_scripts', 'readly_admin_scripts_styles' );
 
 /**
  * Add a search box to the primary menu, and an RSS link to the social media menu

@@ -25,7 +25,7 @@
 	$( window ).resize( function() {
 		var menu = $( '.menu-toggle' ).parent().find( '.menu' );
 		menu.removeClass ( 'menu-visible' );
-		$( '#menu-icon' ).removeClass( 'open' );
+		$( '#menu-icon' ).toggleClass( 'open' );
 	});
 
 } )( jQuery );

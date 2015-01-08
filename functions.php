@@ -62,10 +62,12 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		add_image_size( 'gallery', 400, 400, true );
 
 		/**
-		 * This theme uses wp_nav_menu() in one location.
+		 * This theme uses wp_nav_menu() in two locations:
+		 * one at the top of the page, and one for social media links in the footer
 		 */
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'readly' ),
+			'social' => __( 'Social Media Menu', 'readly' ),
 		) );
 
 		/**
@@ -265,14 +267,17 @@ function readly_admin_scripts_styles() {
 add_action( 'admin_enqueue_scripts', 'readly_admin_scripts_styles' );
 
 /**
- * Customize the password form a smidge
+ * Add a search box to the primary menu, and an RSS link to the social media menu
  */
-function readly_add_search_box( $items, $args ) {
-  if ( 'primary' === $args->theme_location )
+function readly_add_menu_items( $items, $args ) {
+  if ( 'primary' === $args->theme_location ):
   	$items .= '<li>' . get_search_form( false ) . '</li>';
+  elseif ( 'social' === $args->theme_location ):
+  	$items .= '<li><a href="' . get_feed_link() . '" class="icon-rss"><span>' . __( 'RSS', 'readly' ) . '</span></a>';
+  endif;
 return $items;
 }
-add_filter( 'wp_nav_menu_items', 'readly_add_search_box', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'readly_add_menu_items', 10, 2 );
 
 /**
  * Customize the password form a smidge
@@ -281,7 +286,7 @@ function readly_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$password_form = __( "This post is password-protected. To read it, please enter the password below.", 'readly' ) .
-		'<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( "Password:", 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
+		'<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( 'Password:', 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
     </form>';
 	return $password_form;
 }

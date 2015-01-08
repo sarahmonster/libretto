@@ -15,7 +15,7 @@ function readly_theme_customizer( $wp_customize ) {
 
 	// Allow user to select if they'd like to display excerpts, or full post content on index pages
 	$wp_customize->add_section( 'readly_layout_section' , array(
-		'title'       => __( 'Blog Layout', 'readly' ),
+		'title'       => __( 'Theme Options', 'readly' ),
 		'priority'    => 30,
 		'description' => __( 'Would you like to show excerpts, or full post content on your blog page?', 'readly' ),
 	) );
@@ -50,44 +50,6 @@ function readly_theme_customizer( $wp_customize ) {
 		'settings' => 'readly_link_colour',
 		'priority' => 10,
 	) ) );
-
-	// Allow user to enter social network links to display on footer
-	$wp_customize->add_section( 'readly_social', array(
-		'title'       => __( 'Social network links', 'readly' ),
-		'priority'    => 95,
-		'capability'  => 'edit_theme_options',
-		'description' => __( 'Any social networks you add below will appear in the footer of your theme. Make sure to enter the full URL! (ie "http://twitter.com/yourname")', 'readly' ),
-	) );
-
-	$networks = array(
-		'twitter'   => __( 'Twitter', 'readly' ),
-		'facebook'  => __( 'Facebook', 'readly' ),
-		'instagram' => __( 'Instagram', 'readly' ),
-		'pinterest' => __( 'Pinterest', 'readly' ),
-		'dribbble'  => __( 'Dribbble', 'readly' ),
-		'google'    => __( 'Google+', 'readly' ),
-		'vimeo'     => __( 'Vimeo', 'readly' ),
-		'flickr'    => __( 'Flickr', 'readly' )
-	);
-
-	$priority = 0;
-	foreach ( $networks as $key => $value ):
-		$priority++;
-
-		$wp_customize->add_setting( 'readly_social['.$key.']', array(
-			'default'      => '',
-			'type'        => 'option',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'readly_sanitize_social_networks'
-		) );
-
-		$wp_customize->add_control( 'readly_social['.$key.']', array(
-			'label'   => $value,
-			'section'  => 'readly_social',
-			'type'    => 'text',
-			'priority'  => $priority
-		) );
-	endforeach;
 
 	// Set various built-in site settings to be previewed live in the customizer
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
@@ -135,12 +97,6 @@ function readly_sanitize_hex_colour( $colour ) {
 	if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $colour ) )
 		return $colour;
 	return null;
-}
-
-/* Sanitize user-entered social media links */
-// TODO: Parse URLS to ensure they're correct?
-function readly_sanitize_social_networks( $input ) {
-	return wp_kses_post( force_balance_tags( $input ) );
 }
 
 /**

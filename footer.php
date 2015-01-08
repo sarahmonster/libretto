@@ -15,22 +15,15 @@
 
 			<?php
 			// Prepare social media nav
-			if ( get_option( 'readly_social' ) ):
-				$options = get_option( 'readly_social' );
-				$social = array();
-				foreach ( $options as $key => $value ):
-					if ( $options[$key] !== '' ) {
-						$social[$key] = $value;
-					}
-				endforeach;
-			endif;
-
-			if ( !empty( $social ) ): // Show social media nav ?>
+			if ( has_nav_menu( 'social' ) ): ?>
 				<div id="social">
-				<?php foreach ( $social as $social_network_name => $social_network_link ): ?>
-					<a href="<?php echo $social_network_link; ?>" class="icon-<?php echo $social_network_name; ?>"><span><?php echo $social_network_name; ?></span></a>
-				<?php endforeach; ?>
-					<a href="<?php echo get_feed_link(); ?>" class="icon-rss"><span><?php _e( 'RSS', 'readly' ); ?></span></a>
+				 <?php wp_nav_menu( array(
+						'theme_location' => 'social',
+					 	'link_before'    => '<span class="screen-reader-text">',
+						'link_after'      => '</span>',
+					 	'fallck_cb' => false,
+					) );
+				 	?>
 				</div><!-- #social -->
 			<?php endif; ?>
 

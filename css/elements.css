@@ -95,27 +95,27 @@ li.share-email a:before {
 }
 
 li.share-facebook a:before,
-a[href*="facebook.com"]:before {
+#social a[href*="facebook.com"]:before {
   content: 'F';
 }
 
 li.share-google-plus-1 a:before,
-a[href*="google.com"]:before {
+#social a[href*="google.com"]:before {
   content: 'G';
 }
 
 li.share-linkedin a:before,
-a[href*="linkedin.com"]:before {
+#social a[href*="linkedin.com"]:before {
   content: 'L';
 }
 
 li.share-pinterest a:before,
-a[href*="pinterest.com"]:before {
+#social a[href*="pinterest.com"]:before {
   content: 'N';
 }
 
 li.share-pocket a:before,
-a[href*="getpocket.com"]:before {
+#social a[href*="getpocket.com"]:before {
   content: 'O';
 }
 
@@ -124,22 +124,26 @@ li.share-print a:before {
 }
 
 li.share-reddit a:before,
-a[href*="reddit.com"]:before {
+#social a[href*="reddit.com"]:before {
   content: 'E';
 }
 
+#social a.icon-rss:before {
+  content: 'R';
+}
+
 li.share-stumbleupon a:before,
-a[href*="stumbleupon.com"]:before {
+#social a[href*="stumbleupon.com"]:before {
   content: 'S';
 }
 
 li.share-tumblr a:before,
-a[href*="tumblr.com"]:before {
+#social a[href*="tumblr.com"]:before {
   content: 'U';
 }
 
 li.share-twitter a:before,
-a[href*="twitter.com"]:before {
+#social a[href*="twitter.com"]:before {
   content: 'T';
 }
 

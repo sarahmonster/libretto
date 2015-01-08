@@ -23,6 +23,7 @@
 
 #social a:before {
   color: #faf9f5;
+  content: 'y';
   background: #d9d6d0;
   border-radius: 2px;
   display: inline-block;
@@ -35,6 +36,10 @@
   text-shadow: none;
   transition: background-color 0.75s ease;
   width: 30px;
+}
+
+#social a:hover:before {
+  background-color: #787065;
 }
 
 #social a span {

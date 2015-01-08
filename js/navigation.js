@@ -8,6 +8,7 @@ jQuery(function() {
 
 	/* Drop menu down from top of screen */
 	jQuery('.menu-toggle').on('click', function() {
+		alert('Hello! .menu-toggle');
 		var menu = jQuery(this).parent().find('.menu');
 		menu.slideToggle('slow');
 		menu.toggleClass('menu-visible');
@@ -16,7 +17,9 @@ jQuery(function() {
 
 	/* Open sub-menus if we're using the teeny menu */
 	if (jQuery('.menu-toggle').is(':visible')) {
+		alert('Hello! .menu-toggle is active');
 		jQuery('.menu-item-has-children a').on('click', function() {
+			alert('Hello! .menu-toggle has been activated');
 			jQuery(this).parent().find('.sub-menu').slideToggle('fast');
 			return false;
 		});

@@ -4,21 +4,28 @@
  * Handles toggling the navigation menu for small screens.
  */
 
-jQuery(function() {
+( function( $ ) {
 
 	/* Drop menu down from top of screen */
-	jQuery('.menu-toggle').on('click', function() {
-		var menu = jQuery(this).parent().find('.menu');
-		menu.slideToggle('slow');
-		menu.toggleClass('menu-visible');
-		jQuery( this ).find( '#menu-icon' ).toggleClass('open');
+	$( '.menu-toggle' ).on( 'click', function() {
+		var menu = $( this ).parent().find( '.menu' );
+		menu.toggleClass( 'menu-visible' );
+		$( this ).find( '#menu-icon' ).toggleClass( 'open' );
 	});
 
 	/* Open sub-menus if we're using the teeny menu */
-	if (jQuery('.menu-toggle').is(':visible')) {
-		jQuery('.menu-item-has-children a').on('click', function() {
-			jQuery(this).parent().find('.sub-menu').slideToggle('fast');
+	if ( $( '.menu-toggle' ).is( ':visible' ) ) {
+		$( '.menu-item-has-children a' ).on( 'click', function() {
+			$( this ).parent().find( '.sub-menu' ).slideToggle( 'fast' );
 			return false;
 		});
 	}
-});
+
+	/* Make sure to show the sub-menu on page resize */
+	$( window ).resize( function() {
+		var menu = $( '.menu-toggle' ).parent().find( '.menu' );
+		menu.removeClass ( 'menu-visible' );
+		$( '#menu-icon' ).removeClass( 'open' );
+	});
+
+} )( jQuery );

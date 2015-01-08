@@ -210,6 +210,7 @@ function readly_scripts() {
 
 	// Navigation
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'touche', get_template_directory_uri().'/js/touche.min.js', array(), '20150108', true );
 	wp_enqueue_script( 'navigation', get_template_directory_uri().'/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
 

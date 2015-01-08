@@ -30,13 +30,13 @@
 			</div>
 
 			<nav id="site-navigation" class="navigation-main" role="navigation">
-				<a class="menu-toggle"><?php bloginfo( 'name' ); ?>
-				<div id="menu-icon">
-				  <span></span>
-				  <span></span>
-				  <span></span>
-				</div>
-				</a>
+				<h1 class="menu-toggle"><?php bloginfo( 'name' ); ?>
+					<div id="menu-icon">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					</div>
+				</h1>
 				<div class="screen-reader-text skip-link">
 					<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'readly' ); ?>"><?php _e( 'Skip to content', 'readly' ); ?></a>
 				</div>

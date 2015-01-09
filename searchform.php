@@ -6,8 +6,10 @@
  */
 ?>
 
-<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-  <label for="s" class="screen-reader-text"><?php _ex( 'Search', 'assistive text', 'readly' ); ?></label>
-  <input type="search" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'readly' ); ?>" />
-  <input type="submit" class="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'readly' ); ?>" />
+<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+  <label class="screen-reader-text"><?php echo _x( 'Search for:', 'assistive text', 'readly' ) ?></label>
+  <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search for&hellip;', 'placeholder', 'readly' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'readly' ) ?>" />
+  <p class="search-submit">
+    <input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'readly' ) ?>" />
+  </p>
 </form>

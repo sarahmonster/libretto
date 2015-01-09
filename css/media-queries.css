@@ -532,18 +532,15 @@
   }
 
   .password-protected .form-submit,
-  input[type="search"] + input[type="submit"] {
+  input[type="search"] + .search-submit {
     display: inline-block;
-    margin-left: 1%;
+    margin-left: 2%;
     margin-top: 0;
     width: 37%;
   }
 
-  input[type="search"] + input[type="submit"] {
-    width: 33%;
-  }
-
-  .password-protected input[type="submit"] {
+  .form-submit input[type="submit"],
+  .search-submit input[type="submit"] {
     width: 100%;
   }
 
@@ -626,7 +623,8 @@
   }
 
   #site-navigation {
-    padding: 0.75rem 4rem 0.5rem 3rem;
+    padding-left: 3rem;
+    padding-right: 4rem;
   }
 
   /* Overlap content width a bit more for larger screens */

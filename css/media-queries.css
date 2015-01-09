@@ -359,7 +359,7 @@
     border-bottom: 2px solid #eae9e6;
     display: none;
     margin: 0;
-    min-width: 15rem;
+    min-width: 20rem;
     padding: 0;
     position: absolute;
     top: 100%;
@@ -412,25 +412,17 @@
   }
 
   /* Third-level menus */
-
-
-  .sub-menu:before {
-    border-bottom: 6px solid #faf9f5;
-  }
-
-    .sub-menu li li {
+  .sub-menu li li {
     padding: 0;
   }
 
   #site-navigation .sub-menu .sub-menu {
+    background: #a09a92;
+    border-bottom-width: 1px;
     left: 100%;
     margin-left: 6px;
     min-width: 10rem;
     top: 0.75rem;
-  }
-
-  #site-navigation .sub-menu .sub-menu li a {
-    padding: 0.75rem 1.25rem;
   }
 
   #site-navigation .sub-menu .menu-item-has-children {
@@ -439,9 +431,9 @@
 
   #site-navigation .sub-menu .menu-item-has-children:hover:after {
     border-top: 6px solid transparent;
-    border-right: 0;
+    border-right: 6px solid #a09a92;
     border-bottom: 6px solid transparent;
-    border-left: 6px solid #faf9f5;
+    border-left: 0;
     left: 100%;
     top: calc(50% - 6px);
   }

@@ -16,8 +16,7 @@
 	/* Open sub-menus if we're using the teeny menu */
 	if ( $( '.menu-toggle' ).is( ':visible' ) ) {
 		$( '.menu-item-has-children > a' ).on( 'click', function() {
-			console.log("Hi!");
-			$( this ).parent().find( '.sub-menu' ).slideToggle( 'fast' );
+			$( this ).parent().find( '.sub-menu' ).toggleClass( 'menu-visible' );
 			return false;
 		});
 	}

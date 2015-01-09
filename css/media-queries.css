@@ -202,7 +202,8 @@
     left: 0;
   }
 
-  #site-navigation .menu {
+  #site-navigation .menu,
+  #site-navigation .sub-menu {
     -webkit-transition: max-height 0.5s;
     -moz-transition: max-height 0.5s;
     -ms-transition: max-height 0.5s;
@@ -212,19 +213,16 @@
     max-height: 0;
   }
 
-  #site-navigation .menu.menu-visible {
-    max-height: 1500px;
-    transition: max-height 0.25s ease-in;
+  #site-navigation .menu.menu-visible,
+  #site-navigation .sub-menu.menu-visible {
+    max-height: 1200px;
+    transition: max-height 1s ease-in;
   }
 
   #site-navigation .menu li {
     border-top: 1px solid #787065;
     display: block;
     text-align: left;
-  }
-
-  #site-navigation .sub-menu {
-    display: none;
   }
 
   #site-navigation .sub-menu li {

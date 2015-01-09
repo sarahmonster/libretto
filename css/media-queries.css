@@ -292,6 +292,11 @@
 
 /* Tablets and up */
 @media only screen and (min-width: 641px) {
+  /* Fix nav bar to top of screen */
+  .nav-bar {
+    position: fixed;
+  }
+  
   /* Header has more space, so let's use it */
   #masthead.header-image {
     border-bottom: 1px solid #f8f8f7;
@@ -307,7 +312,7 @@
 
   .site-branding {
     float: left;
-    padding: 0.5rem 0 0 4rem;
+    margin: 0.75rem 1rem 1rem 4rem;
   }
 
   /* Main menu is styled differently from mobile */
@@ -320,7 +325,7 @@
     font-size: 16px;
     font-size: 1.6rem;
     float: right;
-    padding: 1.5rem 4rem 0.5rem;
+    padding: 0.75rem 4rem 0.5rem 3rem;
   }
 
   #site-navigation:before,
@@ -333,22 +338,24 @@
     display: inline-block;
     line-height: 1;
     position: relative;
+    margin: 0.25rem 0;
   }
 
   #site-navigation li a {
     color: #787065;
-    padding: 1.5rem 2rem 1.25rem 0;
-    margin-top: -1rem;
+    padding: 1rem;
   }
 
   /* Hover effects are only relevant if you're on a larger device */
   #site-navigation a:hover {
     color: #363431;
+    background: rgba(255, 255, 255, 0.25);
   }
 
   /* Sub-menus will display via drop-down menus */
   #site-navigation .sub-menu {
     background: #faf9f5;
+    background: purple;
     display: none;
     margin: 0;
     min-width: 15rem;
@@ -364,6 +371,7 @@
 
   #site-navigation .menu-item-has-children:hover:after {
     border-bottom: 10px solid #faf9f5;
+    border-bottom: 10px solid purple;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     content: "";

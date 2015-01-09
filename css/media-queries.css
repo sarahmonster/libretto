@@ -312,7 +312,7 @@
 
   .site-branding {
     float: left;
-    margin: 0.75rem 1rem 1rem 4rem;
+    margin: 0.75rem 1rem 1rem 1.5rem;
   }
 
   /* Main menu is styled differently from mobile */
@@ -325,7 +325,7 @@
     font-size: 16px;
     font-size: 1.6rem;
     float: right;
-    padding: 0.75rem 4rem 0.5rem 3rem;
+    padding: 0.75rem 2rem 0.5rem 1rem;
   }
 
   #site-navigation:before,
@@ -600,7 +600,7 @@
 
   /* Footer can stretch out a bit */
   #colophon {
-    padding: 2rem 4rem;
+    padding: 1rem 2rem 0;
     width: 100%;
   }
 
@@ -610,6 +610,7 @@
 
   #social {
     float: right;
+    line-height: 1;
     padding-top: .5rem;
   }
 }
@@ -618,6 +619,16 @@
 
 /* Desktops and big things */
 @media only screen and (min-width: 860px) {
+
+  /* Navigation can have slightly more generous spacing */
+  .site-branding {
+    margin-left: 4rem;
+  }
+
+  #site-navigation {
+    padding: 0.75rem 4rem 0.5rem 3rem;
+  }
+
   /* Overlap content width a bit more for larger screens */
   .gallery,
   .oversized {
@@ -652,5 +663,11 @@
 
   .alignright {
     margin-right: -6em;
+  }
+
+  /* Footer can be spaced out more, too */
+  #colophon {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }

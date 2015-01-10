@@ -49,26 +49,20 @@
 		formatImages();
 	});
 
+
 	$( document ).ready( function() {
+		
 		// Pull out the search bar when clicked
-		$( '#site-navigation .search-form label' ).click( function() {
-			var searchInput = $( this ).siblings( 'input[type="search"]' );
-			if ( searchInput.hasClass( 'open' ) ) {
-				searchInput.animate( {
-						opacity: 0,
-						width: "0"
-					}, 500, function() {
-						$( this ).removeClass( 'open' );
-					});
+		$( '#site-navigation .search-form .search-submit' ).click( function() {
+			if ( $( this ).parent( 'form' ).hasClass( 'open' ) ) {
+				$( this ).parent( 'form' ).removeClass( 'open' )
 			} else {
-				searchInput.animate( {
-						opacity: 1,
-						width: "300"
-					}, 500, function() {
-						$( this ).addClass( 'open' );
-					});
+				$( this ).parent( 'form' ).addClass( 'open' )
+				return false;
 			}
+			
 		});
+
 	});
 
 

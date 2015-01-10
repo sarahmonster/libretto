@@ -107,23 +107,26 @@
   position: relative;
 }
 
-#site-navigation .search-form label {
+#site-navigation .search-form label,
+#site-navigation .search-form .search-submit {
   color: #787065;
   display: inline-block;
   font-size: 18px;
   clip: auto;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
-#site-navigation .search-form label:before {
+#site-navigation .search-form label:before,
+#site-navigation .search-form .search-submit:before {
   content: 'o';
   display: inline-block;
   font-family: readly-icons;
   font-style: normal;
 }
 
-#site-navigation .search-form label:hover {
+#site-navigation .search-form label:hover,
+#site-navigation .search-form .search-submit:hover {
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;

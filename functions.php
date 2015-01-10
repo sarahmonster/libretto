@@ -267,7 +267,7 @@ add_action('wp_enqueue_scripts', 'remove_jetpack_stylesheets');
  */
 function readly_add_menu_items( $items, $args ) {
   if ( 'primary' === $args->theme_location ):
-  	$items .= '<li>' . get_search_form( false ) . '</li>';
+  	//$items .= '<li>' . get_search_form( false ) . '</li>';
   elseif ( 'social' === $args->theme_location ):
   	$items .= '<li><a href="' . get_feed_link() . '" class="icon-rss"><span>' . __( 'RSS', 'readly' ) . '</span></a>';
   endif;

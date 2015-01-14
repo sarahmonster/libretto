@@ -12,7 +12,11 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-links">'.__( 'Pages:', 'readly' ), 'pagelink' => '<span>%</span>', 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array(
+			'before'   => '<div class="page-links">'.__( 'Pages:', 'readly' ), 
+			'pagelink' => '<span>%</span>', 
+			'after'    => '</div>',
+		) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
@@ -23,7 +27,7 @@
 		/* translators: used between list items, there is a space after the comma */
 		$tag_list = get_the_tag_list( '', __( ', ', 'readly' ) );
 
-		if ( !readly_categorized_blog() ): // If blog only has a single category, output only tags
+		if ( ! readly_categorized_blog() ): // If blog only has a single category, output only tags
 			if ( '' != $tag_list ) {
 				$meta_text = __( 'Tagged %2$s', 'readly' );
 			} else {
@@ -42,7 +46,7 @@
 			$meta_text,
 			$category_list,
 			$tag_list,
-			get_permalink(),
+			esc_url( get_permalink() ),
 			the_title_attribute( 'echo=0' )
 		);
 		?>

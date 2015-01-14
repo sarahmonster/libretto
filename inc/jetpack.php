@@ -18,3 +18,9 @@ function readly_infinite_scroll_setup() {
 }
 
 add_action( 'after_setup_theme', 'readly_infinite_scroll_setup' );
+
+/**
+ * Add theme support for Jetpack responsive videos
+ *
+ */
+add_theme_support( 'jetpack-responsive-videos' )

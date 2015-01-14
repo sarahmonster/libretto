@@ -40,8 +40,10 @@
 				<div class="screen-reader-text skip-link">
 					<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'readly' ); ?>"><?php _e( 'Skip to content', 'readly' ); ?></a>
 				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => false ) ); ?>
-				<?php get_search_form(); ?>
+				<div class="menu-wrapper">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => false ) ); ?>
+					<?php get_search_form(); ?>
+				</div>
 			</nav><!-- .site-navigation -->
 		</header><!-- .header-bar -->
 

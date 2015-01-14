@@ -92,22 +92,6 @@
     color: #cacabc;
   }
 
-  #site-navigation .search-form label {
-    position: absolute;
-    top: 20px;
-    left: 15px;
-  }
-
-  #site-navigation .search-form input[type="search"] {
-    margin: .5rem;
-    text-indent: 20px;
-    width: calc(100% - 4rem);
-  }
-
-  #site-navigation .search-form .search-submit {
-    display: none;
-  }
-
   .menu-toggle {
     background: #363431;
     border-bottom: 2px solid #787065;
@@ -124,6 +108,7 @@
     z-index: 50;
   }
 
+  /* Create the menu icon via CSS and animate */
   #menu-icon {
     width: 25px;
     height: 25px;
@@ -206,7 +191,8 @@
     left: 0;
   }
 
-  #site-navigation .menu,
+  /* Animate opening menu and sub-menus with CSS transitions */
+  #site-navigation .menu-wrapper,
   #site-navigation .sub-menu {
     -webkit-transition: max-height 0.5s;
     -moz-transition: max-height 0.5s;
@@ -217,14 +203,40 @@
     max-height: 0;
   }
 
-  #site-navigation .menu.menu-visible,
+  #site-navigation .menu-wrapper.menu-visible,
   #site-navigation .sub-menu.menu-visible {
     max-height: 1200px;
     transition: max-height 1s ease-in;
   }
 
+  /* Search bar */
+  #site-navigation .search-form {
+    position: relative;
+  }
+
+  #site-navigation .search-form label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+
+  #site-navigation .search-form label:hover:before {
+    margin-top: 5px;
+  }
+
+  #site-navigation .search-form input[type="search"] {
+    margin: .5rem;
+    text-indent: 25px;
+    width: calc(100% - 1rem);
+  }
+
+  #site-navigation .search-form .search-submit {
+    display: none;
+  }
+
+  /* Style menu items a bit differently */
   #site-navigation .menu li {
-    border-top: 1px solid #787065;
+    border-bottom: 1px solid #787065;
     display: block;
     text-align: left;
   }

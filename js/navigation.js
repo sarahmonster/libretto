@@ -8,7 +8,7 @@
 
 	/* Drop menu down from top of screen */
 	$( '.menu-toggle' ).on( 'click', function() {
-		var menu = $( this ).parent().find( '.menu' );
+		var menu = $( this ).parent().find( '.menu-wrapper' );
 		menu.toggleClass( 'menu-visible' );
 		$( this ).find( '#menu-icon' ).toggleClass( 'open' );
 	});
@@ -23,7 +23,7 @@
 
 	/* Make sure to show the sub-menu on page resize */
 	$( window ).resize( function() {
-		var menu = $( '.menu-toggle' ).parent().find( '.menu' );
+		var menu = $( '.menu-toggle' ).parent().find( '.menu-wrapper' );
 		menu.removeClass ( 'menu-visible' );
 		$( '#menu-icon' ).removeClass( 'open' );
 	});

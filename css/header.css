@@ -103,10 +103,6 @@
   display: none;
 }
 
-#site-navigation .search-form {
-  position: relative;
-}
-
 #site-navigation .search-form label,
 #site-navigation .search-form .search-submit {
   color: #787065;
@@ -125,8 +121,7 @@
   font-style: normal;
 }
 
-#site-navigation .search-form label:hover,
-#site-navigation .search-form .search-submit:hover {
+#site-navigation .search-form label:hover {
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;

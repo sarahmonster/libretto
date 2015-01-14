@@ -104,6 +104,10 @@
     width: calc(100% - 4rem);
   }
 
+  #site-navigation .search-form .search-submit {
+    display: none;
+  }
+
   .menu-toggle {
     background: #363431;
     border-bottom: 2px solid #787065;
@@ -559,8 +563,8 @@
     width: 37%;
   }
 
-  .form-submit input[type="submit"],
-  .search-submit input[type="submit"] {
+  .password-protected input[type="submit"],
+  .search-form input[type="submit"] {
     width: 100%;
   }
 

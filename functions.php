@@ -181,7 +181,7 @@ function readly_scripts() {
 
 	// General site stylesheet & JS
 	wp_enqueue_style( 'readly-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'readly-script', get_template_directory_uri().'/js/readly.js', array(), '20140331' );
+	wp_enqueue_script( 'readly-script', get_template_directory_uri().'/js/readly.js', array( 'jquery' ), '20140331' );
 
 	// Fonts
 	wp_enqueue_style( 'readly-fonts', readly_fonts_url(), array(), null );
@@ -189,9 +189,8 @@ function readly_scripts() {
 
 
 	// Navigation
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'readly-touche', get_template_directory_uri().'/js/touche.min.js', array(), '20150108', true );
-	wp_enqueue_script( 'readly-navigation', get_template_directory_uri().'/js/navigation.js', array(), '20150115', true );
+	wp_enqueue_script( 'readly-touche', get_template_directory_uri().'/js/touche.min.js', '20150108', true );
+	wp_enqueue_script( 'readly-navigation', get_template_directory_uri().'/js/navigation.js', array( 'jquery' ), '20150115', true );
 	wp_enqueue_script( 'readly-skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	// Comments

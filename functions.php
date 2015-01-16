@@ -58,7 +58,7 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 * Enable support for Post Formats
 		 */
 		add_theme_support( 'post-formats', array(
-			'aside', 'audio', 'chat', 'gallery', 'image', 'quote', 'status', 'link', 'video',
+			'aside', 'image', 'video', 'quote', 'link', 'audio', 'chat', 'gallery', 'status',
 		) );
 
 		/**

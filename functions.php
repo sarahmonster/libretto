@@ -211,32 +211,22 @@ add_action( 'template_redirect', 'readly_nix_sharedaddy_script' );
 /**
  * Remove styles for contact form
  */
-function remove_jetpack_stylesheets() {
-    wp_deregister_style('grunion.css');
+function readly_remove_jetpack_stylesheets() {
+    wp_deregister_style( 'grunion.css' );
 }
-add_action('wp_enqueue_scripts', 'remove_jetpack_stylesheets');
+add_action( 'wp_enqueue_scripts', 'readly_remove_jetpack_stylesheets' );
 
 /**
- * Add a search box to the primary menu, and an RSS link to the social media menu
- */
-function readly_add_menu_items( $items, $args ) {
-  if ( 'primary' === $args->theme_location ):
-  	//$items .= '<li>' . get_search_form( false ) . '</li>';
-  elseif ( 'social' === $args->theme_location ):
-  	$items .= '<li><a href="' . get_feed_link() . '" class="icon-rss"><span>' . __( 'RSS', 'readly' ) . '</span></a>';
-  endif;
-return $items;
-}
-add_filter( 'wp_nav_menu_items', 'readly_add_menu_items', 10, 2 );
-
-/**
- * Customize the password form a smidge
+ * The default password form wraps the input box in a label, making it difficult to hide the text.
+ * Using a placeholder & intro text means that a label here is largely redundant, and the form looks
+ * better if we can fit the password box and the submit button on a single line (on larger screens).
+ * This outputs a slightly altered password form that doesn't wrap the label around the input.
  */
 function readly_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$password_form = __( "This post is password-protected. To read it, please enter the password below.", 'readly' ) .
-		'<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( 'Password:', 'readly' ) . ' </label><input title="Password" placeholder="Password" name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
+		'<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><label for="' . $label . '">' . __( 'Password:', 'readly' ) . ' </label><input title="' . __( 'Password', 'readly' ) .'" placeholder="' . __( 'Password', 'readly' ) .'"  name="' . __( 'password', 'readly' ) .'" id="' . $label . '" type="password" size="20" maxlength="20" /><p class="form-submit"><input type="submit"  name="' . __( 'submit', 'readly' ) .'" value="' . esc_attr__( "Submit", 'readly' ) . '" /></p>
     </form>';
 	return $password_form;
 }
@@ -244,6 +234,7 @@ add_filter( 'the_password_form', 'readly_password_form' );
 
 /**
  * Add custom post class for password-protected posts
+ * so that we can add an icon specific to these posts
  */
 function readly_password_protected_class( $classes ) {
 	global $post;
@@ -255,47 +246,29 @@ function readly_password_protected_class( $classes ) {
 add_filter( 'post_class', 'readly_password_protected_class' );
 
 /**
- * Improve excerpt display and output
+ * Use a bare ellipsis after post excerpts.
  */
- function readly_better_excerpt( $text ) { // Fakes an excerpt if needed
-	global $post;
-	if ( '' === $text ) {
-		$text = get_the_content( '' );
-		$text = apply_filters( 'the_content', $text );
-		$text = str_replace( '\]\]\>', ']]&gt;', $text );
-		$text = strip_tags( $text, '<p><img><blockquote><cite><figure><figcaption><a>' ); // Allow certain HTML tags only
-		$excerpt_length = 45;
-		$words = explode( ' ', $text, $excerpt_length + 1 );
-		if ( count( $words ) > $excerpt_length ) {
-			array_pop( $words );
-			$text = implode( ' ', $words )  . '&hellip;';
-		}
-	}
-	return $text;
-}
-remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-add_filter( 'get_the_excerpt', 'readly_better_excerpt' );
-
 function readly_excerpt_more( $more ) {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'readly_excerpt_more' );
 
 /**
- * Make sure quote post types use a blockquote
+ * Add a blockquote tag around the content of a quote post format,
+ * if the content of the post doesn't already contain one.
  */
-function add_blockquote_to_quote( $content ) {
+function readly_add_blockquote_to_quote( $content ) {
 	if ( is_singular() || is_archive() || is_home() ):
 		// Only run on quote post types, and only for those that don't already contain a blockquote
 		// Note: we look for "<blockquote" specifically so as to catch instances of blockquotes with additional attributes
 		if ( 'quote' === get_post_format() && strpos( $content, '<blockquote' ) === false) {
-	    $content = "<blockquote>$content</blockquote>";
+	    $content = '<blockquote>' . $content . '</blockquote>';
 		}
 	endif;
 	return $content;
 }
-add_filter( 'the_content', 'add_blockquote_to_quote' );
-add_filter( 'get_the_excerpt', 'add_blockquote_to_quote' );
+add_filter( 'the_content', 'readly_add_blockquote_to_quote' );
+add_filter( 'get_the_excerpt', 'readly_add_blockquote_to_quote' );
 
 /**
  * Implement the Custom Header feature.

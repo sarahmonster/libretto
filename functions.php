@@ -66,10 +66,6 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 */
 		add_theme_support( 'custom-background', array(
 			'default-color'          => '#eae9e6',
-			'default-image'          => '',
-			'wp-head-callback'       => '_custom_background_cb',
-			'admin-head-callback'    => '',
-			'admin-preview-callback' => '',
 		) );
 
 		/**

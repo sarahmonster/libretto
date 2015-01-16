@@ -1,11 +1,5 @@
-body, 
-button, 
-input, 
-select, 
-#page, 
-#masthead, 
-#colophon {
-    background: #eae9e6;
+body {
+  background: #eae9e6;
 }
 
 #content {

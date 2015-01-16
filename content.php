@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
+
 	<?php
 	// Determine the post type, so we can adjust the display accordingly
 	$post_format = get_post_format();
@@ -70,10 +70,16 @@
 
 
 	<?php // Show post footers for abbreviated post types
-	if ( 'quote' === $post_format || 'status' === $post_format || 'link' === $post_format || 'aside' === $post_format ):  
+	if ( 'quote' === $post_format || 'status' === $post_format || 'link' === $post_format || 'aside' === $post_format ):
 	?>
 		<footer class="entry-footer">
-			<?php readly_posted_on(); ?>
+			<?php // Show title if one exists; otherwise, show the date
+			if ( "" != get_the_title() ):
+					the_title( sprintf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
+				else:
+					readly_posted_on();
+			endif;
+			?>
 			<?php if ( ! post_password_required() && ( comments_open() && '0' !== get_comments_number() ) ): ?>
 				<span class="sep"> &#183; </span>
 				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'readly' ), __( '1 Comment', 'readly' ), __( '% Comments', 'readly' ) ); ?></span>

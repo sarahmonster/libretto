@@ -12,22 +12,6 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 720; /* 680px wide plus a 40px buffer */
 }
 
-/**
- * Set gallery shortcode defaults
- */
-function readly_gallery_atts( $out, $pairs, $atts ) {
-	$atts = shortcode_atts( array(
-		'columns' => '3',
-		'size'    => 'gallery',
-	), $atts );
-
-	$out['columns'] = $atts['columns'];
-	$out['size'] = $atts['size'];
-
-	return $out;
-}
-add_filter( 'shortcode_atts_gallery', 'readly_gallery_atts', 10, 3 );
-
 if ( ! function_exists( 'readly_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

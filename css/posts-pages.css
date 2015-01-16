@@ -110,7 +110,7 @@
 
 /* Entry headers */
 .entry-header,
-.empty .title-block {
+.empty-header .title-block {
   border-bottom: 1px solid #d9d6d0;
   margin-bottom: 8rem;
   padding-bottom: 2rem;

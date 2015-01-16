@@ -246,6 +246,20 @@ function readly_password_protected_class( $classes ) {
 add_filter( 'post_class', 'readly_password_protected_class' );
 
 /**
+* Add a custom body class depending on whether or not a background image is being used.
+* Depending on whether we're using a header image or not, the masthead is styled a bit differently.
+*/
+function readly_add_header_class_to_body( $classes ) {
+	if ( '' != get_header_image() ):
+		$classes[] = "header-image";
+	else:
+		$classes[] = "empty-header";
+	endif;
+	return $classes;
+}
+add_filter( 'body_class','readly_add_header_class_to_body' );
+
+/**
  * Use a bare ellipsis after post excerpts.
  */
 function readly_excerpt_more( $more ) {

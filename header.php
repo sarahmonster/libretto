@@ -43,16 +43,8 @@
 			</nav><!-- .site-navigation -->
 		</header><!-- .header-bar -->
 
-	<?php // We style the masthead differently if it contains a header image or not, so we're using a class to simplify things
-	if ( '' != get_header_image() ) {
-		$header_class = "header-image";
-	} else {
-		$header_class = "empty";
-	}
-	?>
-
-		<header id="masthead" class="site-header <?php echo $header_class; ?>" role="banner">
-		<?php if ( 'header-image' == $header_class ): //  Display images here only if user has selected a site-wide header image
+		<header id="masthead" class="site-header" role="banner">
+		<?php if ( '' != get_header_image() ): //  Display images here only if user has selected a site-wide header image
 			if ( has_post_thumbnail() && is_single() ): // If there's a featured image set, show it
 				the_post_thumbnail( 'full' );
 			else: // Otherwise, display the header image

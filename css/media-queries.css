@@ -21,7 +21,7 @@
     font-size: 2.4rem;
   }
 
-  .empty .title-block {
+  .empty-header .title-block {
     margin-bottom: 2rem;
   }
 
@@ -312,7 +312,7 @@
   .nav-bar {
     position: fixed;
   }
-  
+
   /* Header has more space, so let's use it */
   #masthead.header-image {
     border-bottom: 1px solid #f8f8f7;
@@ -322,7 +322,7 @@
     margin-bottom: 6em;
   }
 
-  .empty .title-block {
+  .empty-header .title-block {
     margin: 10rem auto 4rem;
   }
 

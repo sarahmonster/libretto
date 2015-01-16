@@ -92,8 +92,8 @@
   color: #faf9f5;
 }
 
-/* And if it is not */
-.empty .title-block {
+/* If header image is not present */
+.empty-header .title-block {
   margin: 2rem auto;
   max-width: 680px;
 }

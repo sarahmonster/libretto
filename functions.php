@@ -45,6 +45,7 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 */
 		add_image_size( 'gallery', 400, 400, true );
 		add_image_size( 'readly-oversized', 900, 600, true );
+		add_image_size( 'readly-fullpage', 1600, 1000, true );
 
 		/**
 		 * This theme uses wp_nav_menu() in two locations:

@@ -46,7 +46,7 @@
 		<header id="masthead" class="site-header" role="banner">
 		<?php if ( '' != get_header_image() ): //  Display images here only if user has selected a site-wide header image
 			if ( has_post_thumbnail() && is_single() ): // If there's a featured image set, show it
-				the_post_thumbnail( 'full' );
+				the_post_thumbnail( 'readly-fullpage' );
 			else: // Otherwise, display the header image
 			?>
 				<img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" />

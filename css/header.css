@@ -46,7 +46,7 @@
 }
 
 /* Style a bit differently if a header image is present */
-#masthead.header-image {
+.header-image #masthead{
   position: relative;
   background: #d9d6d0 url('../images/grain.jpg');
   line-height: 0;
@@ -54,7 +54,7 @@
   width: 100%;
 }
 
-#masthead.header-image:after {
+.header-image #masthead:after {
   background-image: linear-gradient(
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0.5)

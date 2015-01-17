@@ -5,29 +5,28 @@
  * @package Readly
  */
 
-// Sort of hacky code to count the total number of active sidebars
+// Loop through all possible sidebar areas to determine if they're active or not
 $available_sidebars = array( "sidebar-1", "sidebar-2", "sidebar-3", "sidebar-4" );
-$active_sidebars = 0;
+$active_sidebars = array();
 
 foreach ( $available_sidebars as $sidebar_name ):
   if ( is_active_sidebar( $sidebar_name ) ) {
-    $active_sidebars++;
+    $active_sidebars[] = $sidebar_name;
   }
 endforeach;
 
 // No sidebars? No content!
-if ( 0 === $active_sidebars  ) {
+if ( 0 === count( $active_sidebars )  ) {
   return;
 }
-return; // Circumvent sidebar display for now TODO: Remove!
 ?>
 
-<section id="footer-sidebar" class="clear widget-area sidebar-count-<?php echo $active_sidebars; ?>" role="complementary">
-<?php
-foreach ( $available_sidebars as $sidebar_name ):
-  echo '<div id="'. $sidebar_name .'" class="widget-block">';
-  dynamic_sidebar( $sidebar_name );
-  echo '</div>';
-endforeach;
-?>
+<section id="footer-sidebar" class="clear widget-area" role="complementary">
+  <?php // Otherwise, let's loop through every activated sidebar, and put it in a div
+  foreach ( $active_sidebars as $sidebar_name ):
+    echo '<div id="'. $sidebar_name .'" class="widget-block">';
+    dynamic_sidebar( $sidebar_name );
+    echo '</div>';
+  endforeach;
+  ?>
 </section><!-- #secondary -->

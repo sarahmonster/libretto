@@ -20,9 +20,7 @@
 
 /* Tablets and teeny desktops */
 @media only screen and (min-width: 641px) {
-  #footer-sidebar.sidebar-count-2 .widget-block,
-  #footer-sidebar.sidebar-count-3 .widget-block,
-  #footer-sidebar.sidebar-count-4 .widget-block {
+  #footer-sidebar .widget-block {
     float: left;
     margin: 0 0 0 4%;
     width: 48%;
@@ -36,35 +34,54 @@
 /* Anything bigger */
 @media only screen and (min-width: 1024px) {
   #footer-sidebar {
-    padding: 4rem 2rem;
+    padding: 4rem 4rem;
   }
 
   /* Different widths for different numbers of active sidebars */
-  #footer-sidebar.sidebar-count-1 .widget-block {
+
+  /* Single column */
+  #footer-sidebar div:nth-child(1):nth-last-child(1) {
     margin: 0 auto;
     width: 85%;
   }
 
-  #footer-sidebar.sidebar-count-2 .widget-block {
+  /* Two columns */
+  #footer-sidebar div:nth-child(1):nth-last-child(2),
+  #footer-sidebar div:nth-child(2):nth-last-child(1) {
     float: left;
-    margin: 0 5% 0 0;
-    width: 45%;
+    margin: 0 5%;
+    width: 40%;
   }
 
-  #footer-sidebar.sidebar-count-3 .widget-block {
+  /* Three columns */
+  #footer-sidebar div:nth-child(1):nth-last-child(3),
+  #footer-sidebar div:nth-child(2):nth-last-child(2),
+  #footer-sidebar div:nth-child(3):nth-last-child(1) {
     float: left;
-    margin: 0 3% 0 0;
+    margin: 0 5% 0 0;
     width: 30%;
   }
 
-  #footer-sidebar.sidebar-count-4 .widget-block {
+  #footer-sidebar div:nth-child(1):nth-last-child(3):last-of-type,
+  #footer-sidebar div:nth-child(2):nth-last-child(2):last-of-type,
+  #footer-sidebar div:nth-child(3):nth-last-child(1):last-of-type {
+    margin-right: 0;
+  }
+
+  /* Four columns */
+  #footer-sidebar div:nth-child(1):nth-last-child(4),
+  #footer-sidebar div:nth-child(2):nth-last-child(3),
+  #footer-sidebar div:nth-child(3):nth-last-child(2),
+  #footer-sidebar div:nth-child(4):nth-last-child(1) {
     float: left;
     margin: 0 1% 0 0;
     width: 24.25%;
   }
 
-  #footer-sidebar .widget-block:last-of-type {
-    border-right: none;
+  #footer-sidebar div:nth-child(1):nth-last-child(4):last-of-type,
+  #footer-sidebar div:nth-child(2):nth-last-child(3):last-of-type,
+  #footer-sidebar div:nth-child(3):nth-last-child(2):last-of-type,
+  #footer-sidebar div:nth-child(4):nth-last-child(1):last-of-type {
     margin-right: 0;
   }
 }

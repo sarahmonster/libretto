@@ -7,7 +7,7 @@
 ( function( $ ) {
 	/* This calculates the size of each image in the entry content,
 	 * then gives it a class to overlap the content area if it's wide enough.
-	 * Certain images are ignored—mostly those in galleries or video previews
+	 * Certain images are ignored-—mostly those in galleries or video previews
 	 */
 	function formatImages() {
 
@@ -37,6 +37,13 @@
 				}
 			}
 		});
+
+		// Remove height & width attributes from featured images
+		$( '.featured-image' ).each( function() {
+			$( this ).removeAttr( 'width' );
+			$( this ).removeAttr( 'height' );
+			console.log( "hi" );
+		});
 	}
 
 	// Format images on page load
@@ -51,7 +58,7 @@
 
 
 	$( document ).ready( function() {
-		
+
 		// Pull out the search bar when clicked
 		$( '#site-navigation .search-form .search-submit' ).click( function() {
 			if ( $( this ).parent( 'form' ).hasClass( 'open' ) ) {
@@ -60,7 +67,7 @@
 				$( this ).parent( 'form' ).addClass( 'open' )
 				return false;
 			}
-			
+
 		});
 
 	});

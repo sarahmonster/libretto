@@ -19,6 +19,33 @@
   margin: 2em 46%;
 }
 
+/* Click-to-scroll */
+#infinite-handle {
+  text-align: center;
+}
+
+#infinite-handle span {
+  background: #faf9f5;
+  border: 1px solid #d9d6d0;
+  color: #787065;
+  display: inline-block;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 4rem auto;
+  outline: 4px solid #faf9f5;
+  padding: 7px 25px;
+  text-transform: uppercase;
+}
+
+#infinite-handle span:hover {
+  background: #eae9e6;
+  border-color: #932817;
+  color: #932817;
+  cursor: pointer;
+}
 
 /* Style Jetpack's sharing module */
 .sd-title {

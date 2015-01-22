@@ -106,25 +106,25 @@
 }
 
 /* Child comments */
-.children {
+.comment-list .children {
   background: rgba(255, 255, 255, 0.5);
   border-left: 4px solid #d9d6d0;
   padding: 2rem 0 0 2rem;
   margin: 4rem 0 2rem 0;
 }
 
-.children .children,
-.children .children .children .children,
-.children .children .children .children .children .children,
-.children .children .children .children .children .children .children .children {
+.comment-list .children .children,
+.comment-list .children .children .children .children,
+.comment-list .children .children .children .children .children .children,
+.comment-list .children .children .children .children .children .children .children .children {
   background: #eae9e6;
   border-color: #a09a92;
 }
 
-.children .children .children,
-.children .children .children .children .children,
-.children .children .children .children .children .children .children,
-.children .children .children .children .children .children .children .children .children {
+.comment-list .children .children .children,
+.comment-list .children .children .children .children .children,
+.comment-list .children .children .children .children .children .children .children,
+.comment-list .children .children .children .children .children .children .children .children .children {
   background: #faf9f5;
   border-color: #d9d6d0;
 }

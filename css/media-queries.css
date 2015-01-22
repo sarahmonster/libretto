@@ -289,7 +289,8 @@
   .comment-content {
     margin: 1rem 0.5rem;
   }
-  .children {
+
+  .comment-list .children {
     border-left: 0;
     border-top: 4px solid #d9d6d0;
     margin: 2rem 0;

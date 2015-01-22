@@ -189,41 +189,37 @@ article + article {
 
 /* "Read more" link */
 .more-link {
-  background: #a09a92;
-  border-bottom: none;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  color: #faf9f5;
+  color: #a09a92;
   display: inline-block;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-family: "Playfair Display";
+  font-size: 21px;
+  font-size: 2.1rem;
+  font-style: italic;
   line-height: 1.4;
-  margin-top: 2em;
-  padding: 9px 15px;
-  position: relative;
-  float: right;
+  text-align: center;
+  text-transform: lowercase;
+  width: 100%;
+}
+
+.more-link:before,
+.more-link:after {
+  display: inline;
+  font-size: 1.5em;
+  font-style: normal;
+  padding: 0 10px;
+  vertical-align: -0.15em;
+}
+
+.more-link:before {
+  content: "{";
 }
 
 .more-link:after {
-  border: solid transparent;
-  border-left-color: #a09a92;
-  border-width: 19px 0 19px 19px;
-  content: '';
-  display: block;
-  height: 0;
-  left: 100%;
-  position: absolute;
-  top: 0;
-  width: 0;
+  content: "}";
 }
 
 .more-link:hover {
-  background: #787065;
-  color: #eae9e6;
-}
-
-.more-link:hover:after {
-  border-left-color: #787065;
+  color: #712012;
 }
 
 /* Post formats */

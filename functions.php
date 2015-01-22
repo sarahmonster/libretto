@@ -53,7 +53,7 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 */
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'readly' ),
-			'social' => __( 'Social Media Menu', 'readly' ),
+			'social'  => __( 'Social Media Menu', 'readly' ),
 		) );
 
 		/**
@@ -67,7 +67,7 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 * Enable support for custom background
 		 */
 		add_theme_support( 'custom-background', array(
-			'default-color'          => '#eae9e6',
+			'default-color' => '#eae9e6',
 		) );
 
 		/**
@@ -101,32 +101,32 @@ function readly_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Second Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Third Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Fourth Footer Sidebar', 'readly' ),
 		'id'            => 'sidebar-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'readly_widgets_init' );
@@ -217,6 +217,23 @@ function readly_remove_jetpack_stylesheets() {
     wp_deregister_style( 'grunion.css' );
 }
 add_action( 'wp_enqueue_scripts', 'readly_remove_jetpack_stylesheets' );
+
+/**
+ * Create a reusable array of available sidebars.
+ * Used in sidebar.php and in inc/jetpack.php to adjust footer area according to usage.
+ */
+function readly_get_active_sidebars() {
+  // Loop through all possible sidebar areas to determine if they're active or not
+  $available_sidebars = array( "sidebar-1", "sidebar-2", "sidebar-3", "sidebar-4" );
+  $active_sidebars = array();
+
+  foreach ( $available_sidebars as $sidebar_name ):
+    if ( is_active_sidebar( $sidebar_name ) ) {
+      $active_sidebars[] = $sidebar_name;
+    }
+  endforeach;
+  return $active_sidebars;
+}
 
 /**
  * The default password form wraps the input box in a label, making it difficult to hide the text.

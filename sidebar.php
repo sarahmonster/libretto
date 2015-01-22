@@ -5,15 +5,7 @@
  * @package Readly
  */
 
-// Loop through all possible sidebar areas to determine if they're active or not
-$available_sidebars = array( "sidebar-1", "sidebar-2", "sidebar-3", "sidebar-4" );
-$active_sidebars = array();
-
-foreach ( $available_sidebars as $sidebar_name ):
-  if ( is_active_sidebar( $sidebar_name ) ) {
-    $active_sidebars[] = $sidebar_name;
-  }
-endforeach;
+$active_sidebars = readly_get_active_sidebars();
 
 // No sidebars? No content!
 if ( 0 === count( $active_sidebars )  ) {

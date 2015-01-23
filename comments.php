@@ -28,20 +28,15 @@ if ( post_password_required() ) {
 	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Show comment navigation at top ?>
-		<?php global $cpage; // Get current comment page ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'readly' ); ?></h1>
 
 			<div class="previous">
-			<?php if ( 1 !== $cpage ): ?>
-				<span class="meta-nav"><?php previous_comments_link( __( 'Older Comments', 'readly' ) ); ?></span>
-			<?php endif; ?>
+				<?php previous_comments_link( '<span class="meta-nav">' . __( 'Older Comments', 'readly' ) . '</span>' ); ?>
 			</div>
 
 			<div class="next">
-			<?php if ( $cpage ): ?>
-				<span class="meta-nav"><?php next_comments_link( __( 'Newer Comments', 'readly' ) ); ?></span>
-			<?php endif; ?>
+				<?php next_comments_link( '<span class="meta-nav">' . __( 'Newer Comments', 'readly' ) . '</span>' ); ?>
 			</div>
 
 		</nav><!-- #comment-nav-above -->
@@ -58,20 +53,15 @@ if ( post_password_required() ) {
 	</ol><!-- .comment-list -->
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Show comment navigation at bottom ?>
-		<?php global $cpage; // Get current comment page ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'readly' ); ?></h1>
 
 			<div class="previous">
-			<?php if ( 1 !== $cpage ): ?>
-				<span class="meta-nav"><?php previous_comments_link( __( 'Older Comments', 'readly' ) ); ?></span>
-			<?php endif; ?>
+				<?php previous_comments_link( '<span class="meta-nav">' . __( 'Older Comments', 'readly' ) . '</span>' ); ?>
 			</div>
 
 			<div class="next">
-			<?php if ( $cpage ): ?>
-				<span class="meta-nav"><?php next_comments_link( __( 'Newer Comments', 'readly' ) ); ?></span>
-			<?php endif; ?>
+				<?php next_comments_link( '<span class="meta-nav">' . __( 'Newer Comments', 'readly' ) . '</span>' ); ?>
 			</div>
 
 		</nav><!-- #comment-nav-above -->

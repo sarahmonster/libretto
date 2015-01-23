@@ -33,7 +33,7 @@
 					'color': to,
 					'position': 'relative'
 				} );
-				$( '.site-title a' ).css( { 'color': to } );
+				$( '.title-block .site-title a' ).css( { 'color': to } );
 			}
 		} );
 	} );

@@ -13,44 +13,6 @@
  */
 function readly_theme_customizer( $wp_customize ) {
 
-	// Allow user to select if they'd like to display excerpts, or full post content on index pages
-	$wp_customize->add_section( 'readly_layout_section' , array(
-		'title'       => __( 'Theme Options', 'readly' ),
-		'priority'    => 30,
-		'description' => __( 'Would you like to show excerpts, or full post content on your blog page?', 'readly' ),
-	) );
-
-	$wp_customize->add_setting( 'readly_blog_index', array(
-		'default'           => 'excerpt',
-		'sanitize_callback' => 'readly_sanitize_blog_index',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'readly_blog_index', array(
-		'label'     => __( 'Blog index display', 'readly' ),
-		'section'   => 'readly_layout_section',
-		'settings'  => 'readly_blog_index',
-		'type'      => 'radio',
-		'choices'   => array(
-			'excerpt' => __( 'Excerpts', 'readly' ),
-			'content' => __( 'Full content', 'readly' ),
-		),
-	) ) );
-
-	// Allow user to change the colour of links throughout the site
-	$wp_customize->add_setting( 'readly_link_colour', array(
-		'default'           => '#932817',
-		'type'              => 'theme_mod',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'readly_sanitize_hex_colour',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'readly_link_colour', array(
-		'label'    => __( 'Link colour', 'readly' ),
-		'section'  => 'colors',
-		'settings' => 'readly_link_colour',
-		'priority' => 10,
-	) ) );
-
 	// Set various built-in site settings to be previewed live in the customizer
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -59,45 +21,6 @@ function readly_theme_customizer( $wp_customize ) {
 
 } // readly_theme_customizer()
 add_action( 'customize_register', 'readly_theme_customizer' );
-
-/* Add CSS in the head for various options set by the customizer */
-function readly_add_customizer_css() {
-	$link_colour = readly_sanitize_hex_colour( get_theme_mod( 'readly_link_colour' ) );
-	?>
-	<!-- Custom styles -->
-	<style>
-		.entry-content a,
-		.entry-content a:visited {
-			color: <?php echo $link_colour; ?>;
-		}
-		.title-block h1,
-		.title-block h3,
-		.title-block h1 a {
-			color: #<?php echo get_theme_mod( 'header_textcolor' ); ?>;
-		}
-	</style>
-	<?php
-}
-//add_action( 'wp_head', 'readly_add_customizer_css' ); TODO: Add back in?
-
-/* Sanitize value for blog index option */
-function readly_sanitize_blog_index( $content ) {
-	if ( 'content' === $content ) {
-		return 'content';
-	} else {
-		return 'excerpt';
-	}
-}
-
-/* Sanitize hex colours */
-function readly_sanitize_hex_colour( $colour ) {
-	if ( '' === $colour )
-		return '';
-	// 3 or 6 hex digits, or the empty string.
-	if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $colour ) )
-		return $colour;
-	return null;
-}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

@@ -4,10 +4,10 @@
 }
 
 .byline {
+  display: none;
 }
 
-.single .byline,
-.group-blog .byline {
+.group-blog:not(.single) .byline {
   display: inline;
 }
 
@@ -125,7 +125,7 @@
 }
 
 .entry-meta a {
-  color: #a09a92;
+  color: #787065;
 }
 
 .entry-header .entry-meta:before,

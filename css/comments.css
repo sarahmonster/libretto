@@ -35,8 +35,8 @@
   margin: -1rem 1rem 1rem 0;
 }
 
-.fn,
-.comment-metadata {
+.comment-list .fn,
+.comment-list .comment-metadata {
   font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 1.4rem;

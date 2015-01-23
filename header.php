@@ -66,6 +66,7 @@
 			<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
 				<div class="entry-meta">
 					<?php readly_posted_on(); ?>
+
 				</div><!-- .entry-meta -->
 				<h1><?php the_title(); ?></h1>
 

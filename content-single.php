@@ -13,8 +13,8 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array(
-			'before'   => '<div class="page-links">'.__( 'Pages:', 'readly' ), 
-			'pagelink' => '<span>%</span>', 
+			'before'   => '<div class="page-links">'.__( 'Pages:', 'readly' ),
+			'pagelink' => '<span>%</span>',
 			'after'    => '</div>',
 		) ); ?>
 	</div><!-- .entry-content -->

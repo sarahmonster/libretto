@@ -62,7 +62,7 @@
 
 
 	<div class="entry-content">
-		<?php the_content( __( 'Read more', 'readly' ) ); ?>
+		<?php the_content( __( 'read more', 'readly' ) ); ?>
 	</div><!-- .entry-content -->
 
 

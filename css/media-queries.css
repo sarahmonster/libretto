@@ -642,6 +642,11 @@
     padding: 0 0.2rem 0 .1rem;
   }
 
+  /* Image navigation */
+  .navigation-image .next {
+    min-height: 2.4rem;
+  }
+
   /* Arrange 404 widgets in columns */
   .error404 .widget {
     float: left;

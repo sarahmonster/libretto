@@ -45,12 +45,10 @@ if ( ! isset( $content_width ) ) {
 				<?php // Add prev/next navigation. TODO: improve this so it matches with look & feel of navs in other places ?>
 				<nav id="nav-below" class="navigation-image" role="navigation">
 					<div class="previous">
-					<span class="meta-nav">Previous image</span>
-						<?php previous_image_link( false, 'Post title placeholder' ); ?>
+						<?php previous_image_link( false, '<span class="meta-nav">' . __( 'Previous image', 'readly' ) . '</span>' ); ?>
 					</div><!-- .previous -->
 					<div class="next">
-						<span class="meta-nav">Next image</span>
-							<?php next_image_link( false, 'Post title placeholder' ); ?>
+							<?php next_image_link( false, '<span class="meta-nav">' . __( 'Next image', 'readly' ) . '</span>' ); ?>
 					</div><!-- .next -->
 				</nav><!-- .navigation-image -->
 

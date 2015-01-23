@@ -10,6 +10,13 @@
   padding: 2rem 3rem;
 }
 
+.error404 .widget {
+  font-size: 1.4rem;
+}
+
+.error404 .widgettitle {
+  font-size: 1.6rem;
+}
 
 /* Phone-sized screens */
 @media only screen and (max-width: 640px) {

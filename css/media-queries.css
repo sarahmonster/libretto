@@ -637,6 +637,17 @@
     padding: 0 0.2rem 0 .1rem;
   }
 
+  /* Arrange 404 widgets in columns */
+  .error404 .widget {
+    float: left;
+    margin: 0 4% 2rem 0;
+    width: 48%;
+  }
+
+  .error404 .widget:nth-of-type(2n) {
+    margin-right: 0;
+  }
+
   /* Footer can stretch out a bit */
   #colophon {
     padding: 1rem 2rem 0;

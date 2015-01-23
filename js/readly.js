@@ -14,7 +14,9 @@
 		$( '.entry-content img' ).each( function() {
 			// Never give overlap class to gallery images or video, unless you want things to implode
 			// "Medium" and "large" images are also excluded for logical reasons, as well as smileys
-			if ( ! $( this ).hasClass( 'attachment-gallery' ) && ! $( this ).hasClass( 'videopress-poster' ) && ! $( this ).parents( '.tiled-gallery-item' ).length && ! $( this ).hasClass( 'size-thumbnail' ) && ! $( this ).hasClass( 'size-medium' ) && ! $( this ).hasClass( 'wp-smiley' ) ) {
+			if ( ! $( this ).hasClass( 'attachment-gallery' ) && ! $( this ).hasClass( 'videopress-poster' )
+				&& ! $( this ).parents( '.tiled-gallery-item' ).length && ! $( this ).parents( '.gallery' ).length
+				&& ! $( this ).hasClass( 'size-thumbnail' ) && ! $( this ).hasClass( 'size-medium' ) && ! $( this ).hasClass( 'wp-smiley' ) ) {
 
 				// Determine actual, rather than computed, width of image, by creating a new image instance
 				var computedImage = $( this );

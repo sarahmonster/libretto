@@ -43,7 +43,6 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		/**
 		 * Add an image size for galleries
 		 */
-		add_image_size( 'gallery', 400, 400, true );
 		add_image_size( 'readly-oversized', 900, 600, true );
 		add_image_size( 'readly-fullpage', 1600, 1000, true );
 

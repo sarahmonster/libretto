@@ -85,7 +85,7 @@
 				<h1><?php _e( 'Search results', 'readly' ); ?></h1>
 				<h3><?php printf( __( 'You searched for %s', 'readly' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 
-						<?php elseif ( is_attachment() ): // Show image attachment data ?>
+			<?php elseif ( is_attachment() ): // Show image attachment data ?>
 				<div class="entry-meta">
 				<?php
 					printf( __( 'Posted <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>', 'readly' ),

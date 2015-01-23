@@ -78,7 +78,7 @@
   margin-top: 6rem;
 }
 
-.comment-content p:last-of-type {
+.comment-content > p:last-of-type {
   margin-bottom: 0;
 }
 

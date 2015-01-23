@@ -63,7 +63,29 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h3 class="site-description"><?php bloginfo( 'description' ); ?></h3>
 
-			<?php elseif ( is_attachment() ): // Show image attachment data ?>
+			<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
+				<div class="entry-meta">
+					<?php readly_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<h1><?php the_title(); ?></h1>
+
+			<?php elseif ( is_page() ): // Show the page title for pages ?>
+				<h1><?php the_title(); ?></h1>
+
+			<?php elseif ( is_archive() ): // Show archive title
+				echo the_archive_title( '<h1>', '</h1>' );
+				echo the_archive_description( '<h3>', '</h3>' );
+			?>
+
+			<?php elseif ( is_404() ): // Show "page not found" ?>
+				<h1><?php _e( '404 Error', 'readly' ); ?></h1>
+				<h3><?php _e( 'Oops! That page can&rsquo;t be found.', 'readly' ); ?></h3>
+
+			<?php elseif ( is_search() ): // Search results ?>
+				<h1><?php _e( 'Search results', 'readly' ); ?></h1>
+				<h3><?php printf( __( 'You searched for %s', 'readly' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+
+						<?php elseif ( is_attachment() ): // Show image attachment data ?>
 				<div class="entry-meta">
 				<?php
 					printf( __( 'Posted <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>', 'readly' ),
@@ -81,61 +103,6 @@
 				?>
 				</div>
 				<h1><?php the_title(); ?></h1>
-
-			<?php elseif ( is_single() ): // Show the post title and metadata for posts ?>
-				<div class="entry-meta">
-					<?php readly_posted_on(); ?>
-				</div><!-- .entry-meta -->
-				<h1><?php the_title(); ?></h1>
-
-			<?php elseif ( is_page() ): // Show the page title for pages ?>
-				<h1><?php the_title(); ?></h1>
-
-			<?php elseif ( is_category() ): // Show the category name and description for category pages ?>
-				<h1><?php printf( __( 'Posted <em>under</em> %s', 'readly' ), strtolower( single_cat_title( '', false ) ) ); ?></h1>
-				<?php
-				$category_description = category_description();
-				if ( ! empty( $category_description ) ) {
-					echo apply_filters( 'category_archive_meta', '<h3>'.$category_description.'</h3>' );
-				}
-				?>
-
-			<?php elseif ( is_404() ): // Show "page not found" ?>
-				<h1><?php _e( 'Uh oh!', 'readly' ); ?></h1>
-				<h3><?php _e( 'Page not found', 'readly' ); ?></h3>
-
-			<?php elseif ( is_search() ): // Search results ?>
-				<h1><?php _e( 'Search results', 'readly' ); ?></h1>
-				<h3><?php printf( __( 'You searched for %s', 'readly' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
-
-			<?php elseif ( is_tag() ): // Show the tag name ?>
-				<h1><?php printf( __( 'Tagged <em>with</em> %s', 'readly' ), single_tag_title( '', false ) ); ?></h1>
-				<?php
-				$tag_description = tag_description();
-				if ( ! empty( $tag_description ) ) {
-					echo apply_filters( 'tag_archive_meta', '<h3>'.$tag_description.'</h3>' );
-				}
-			?>
-
-			<?php elseif ( is_author() ): // Show author details
-				// Queue the first post, so we know what author we're dealing with (if that is the case).
-				the_post();
-				printf( __( 'Author Archives: %s', 'readly' ), '<span class="vcard"><a class="url fn n" href="'.esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ).'" title="'.esc_attr( get_the_author() ).'" rel="me">'.get_the_author().'</a></span>' );
-				// Since we called the_post() above, we need to rewind the loop
-				rewind_posts();
-			?>
-
-			<?php elseif ( is_day() ): // Daily archives ?>
-				<h1><?php echo printf( __( 'Daily Archives: %s', 'readly' ), '<span>'.get_the_date().'</span>' ); ?></h1>
-
-			<?php elseif ( is_month() ): // Monthly archives ?>
-				<h1><?php echo printf( __( 'Monthly Archives: %s', 'readly' ), '<span>'.get_the_date( 'F Y' ).'</span>' ); ?></h1>
-
-			<?php elseif ( is_year() ): // Yearly archives ?>
-				<h1><?php echo printf( __( 'Yearly Archives: %s', 'readly' ), '<span>'.get_the_date( 'Y' ).'</span>' ); ?></h1>
-
-			<?php elseif ( is_archive() ): // Any miscellaneous archive pages ?>
-				<h1><?php echo _e( 'Archives', 'readly' ); ?></h1>
 
 			<?php endif; ?>
 

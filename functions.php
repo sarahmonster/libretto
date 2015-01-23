@@ -41,10 +41,14 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 * Add an image size for galleries
+		 * Add custom image sizes for:
+		 * 1. The site logo
+		 * 2. Large images that overlap the content area a smidge
+		 * 3. Full-page images (primarily used for featured images)
 		 */
-		add_image_size( 'readly-oversized', 900, 600, true );
-		add_image_size( 'readly-fullpage', 1600, 1000, true );
+		add_image_size( 'readly-logo', 200, 200, false );
+		add_image_size( 'readly-oversized', 900, 600, false );
+		add_image_size( 'readly-fullpage', 1600, 1000, false );
 
 		/**
 		 * This theme uses wp_nav_menu() in two locations:
@@ -67,6 +71,13 @@ if ( ! function_exists( 'readly_setup' ) ) :
 		 */
 		add_theme_support( 'custom-background', array(
 			'default-color' => '#eae9e6',
+		) );
+
+		/**
+		 * Enable support for site logo
+		 */
+		add_theme_support( 'site-logo', array(
+    	'size' => 'readly-logo',
 		) );
 
 		/**

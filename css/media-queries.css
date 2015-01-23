@@ -30,6 +30,10 @@
     padding-right: 0.5rem;
   }
 
+  .title-block .site-logo-link {
+    display: none;
+  }
+
   .entry-header {
     margin-bottom: 4rem;
   }
@@ -335,6 +339,16 @@
 
   .empty-header .title-block {
     margin: 10rem auto 4rem;
+  }
+
+  .title-block .site-logo-link {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .title-block .site-logo {
+    max-height: 100px;
+    max-width: 100px;
   }
 
   .site-branding {

@@ -18,81 +18,6 @@
   font-size: 1.6rem;
 }
 
-/* Phone-sized screens */
-@media only screen and (max-width: 640px) {
-  #footer-sidebar .widget-block {
-    width: 100%;
-  }
-}
-
-/* Tablets and teeny desktops */
-@media only screen and (min-width: 641px) {
-  #footer-sidebar .widget-block {
-    float: left;
-    margin: 0 0 0 4%;
-    width: 48%;
-  }
-
-  #footer-sidebar .widget-block:nth-of-type(odd) {
-    margin-left: 0;
-  }
-}
-
-/* Anything bigger */
-@media only screen and (min-width: 1024px) {
-  #footer-sidebar {
-    padding: 4rem 4rem;
-  }
-
-  /* Different widths for different numbers of active sidebars */
-
-  /* Single column */
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(1) {
-    margin: 0 auto;
-    width: 85%;
-  }
-
-  /* Two columns */
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(2),
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(1) {
-    float: left;
-    margin: 0 5%;
-    width: 40%;
-  }
-
-  /* Three columns */
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(3),
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(2),
-  #footer-sidebar .widget-block:nth-child(3):nth-last-child(1) {
-    float: left;
-    margin: 0 5% 0 0;
-    width: 30%;
-  }
-
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(3):last-of-type,
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(2):last-of-type,
-  #footer-sidebar .widget-block:nth-child(3):nth-last-child(1):last-of-type {
-    margin-right: 0;
-  }
-
-  /* Four columns */
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(4),
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(3),
-  #footer-sidebar .widget-block:nth-child(3):nth-last-child(2),
-  #footer-sidebar .widget-block:nth-child(4):nth-last-child(1) {
-    float: left;
-    margin: 0 1% 0 0;
-    width: 24.25%;
-  }
-
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(4):last-of-type,
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(3):last-of-type,
-  #footer-sidebar .widget-block:nth-child(3):nth-last-child(2):last-of-type,
-  #footer-sidebar .widget-block:nth-child(4):nth-last-child(1):last-of-type {
-    margin-right: 0;
-  }
-}
-
 .widget {
   margin: 0 0 1.5em;
 }
@@ -118,6 +43,7 @@
   background: #fff;
   width: 100%;
 }
+
 .widget_search input[type="search"] + .search-submit {
   display: block;
   padding-top: 1rem;
@@ -134,10 +60,10 @@
   margin-bottom: 1rem;
 }
 
-  #footer-sidebar .widget-block:nth-child(1):nth-last-child(4) #wp-calendar td,
-  #footer-sidebar .widget-block:nth-child(2):nth-last-child(3) #wp-calendar td,
-  #footer-sidebar .widget-block:nth-child(3):nth-last-child(2) #wp-calendar td,
-  #footer-sidebar .widget-block:nth-child(4):nth-last-child(1) #wp-calendar td {
+#footer-sidebar .widget-block:nth-child(1):nth-last-child(4) #wp-calendar td,
+#footer-sidebar .widget-block:nth-child(2):nth-last-child(3) #wp-calendar td,
+#footer-sidebar .widget-block:nth-child(3):nth-last-child(2) #wp-calendar td,
+#footer-sidebar .widget-block:nth-child(4):nth-last-child(1) #wp-calendar td {
   padding: 0.5em .75em;
 }
 

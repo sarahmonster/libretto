@@ -302,6 +302,11 @@
     padding: 2rem 0 0;
   }
 
+  /* Make sure footer widgets span full width */
+  #footer-sidebar .widget-block {
+    width: 100%;
+  }
+
   /* Footer is arranged in a stack */
   #colophon .site-info,
   #social {
@@ -648,6 +653,17 @@
     margin-right: 0;
   }
 
+  /* Footer widgets should span two rows */
+  #footer-sidebar .widget-block {
+    float: left;
+    margin: 0 0 0 4%;
+    width: 48%;
+  }
+
+  #footer-sidebar .widget-block:nth-of-type(odd) {
+    margin-left: 0;
+  }
+
   /* Footer can stretch out a bit */
   #colophon {
     padding: 1rem 2rem 0;
@@ -714,6 +730,57 @@
 
   .alignright {
     margin-right: -6em;
+  }
+
+  /* Different widths for different numbers of active footer widgets */
+  #footer-sidebar {
+    padding: 4rem 4rem;
+  }
+
+  /* Single column */
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(1) {
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  /* Two columns */
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(2),
+  #footer-sidebar .widget-block:nth-child(2):nth-last-child(1) {
+    float: left;
+    margin: 0 5%;
+    width: 40%;
+  }
+
+  /* Three columns */
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(3),
+  #footer-sidebar .widget-block:nth-child(2):nth-last-child(2),
+  #footer-sidebar .widget-block:nth-child(3):nth-last-child(1) {
+    float: left;
+    margin: 0 5% 0 0;
+    width: 30%;
+  }
+
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(3):last-of-type,
+  #footer-sidebar .widget-block:nth-child(2):nth-last-child(2):last-of-type,
+  #footer-sidebar .widget-block:nth-child(3):nth-last-child(1):last-of-type {
+    margin-right: 0;
+  }
+
+  /* Four columns */
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(4),
+  #footer-sidebar .widget-block:nth-child(2):nth-last-child(3),
+  #footer-sidebar .widget-block:nth-child(3):nth-last-child(2),
+  #footer-sidebar .widget-block:nth-child(4):nth-last-child(1) {
+    float: left;
+    margin: 0 1% 0 0;
+    width: 24.25%;
+  }
+
+  #footer-sidebar .widget-block:nth-child(1):nth-last-child(4):last-of-type,
+  #footer-sidebar .widget-block:nth-child(2):nth-last-child(3):last-of-type,
+  #footer-sidebar .widget-block:nth-child(3):nth-last-child(2):last-of-type,
+  #footer-sidebar .widget-block:nth-child(4):nth-last-child(1):last-of-type {
+    margin-right: 0;
   }
 
   /* Footer can be spaced out more, too */

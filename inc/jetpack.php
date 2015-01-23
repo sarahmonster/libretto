@@ -32,9 +32,3 @@ function readly_has_footer_widgets() {
   endif;
 }
 add_filter( 'infinite_scroll_has_footer_widgets', 'readly_has_footer_widgets' );
-
-/**
- * Add theme support for Jetpack responsive videos
- *
- */
-add_theme_support( 'jetpack-responsive-videos' );

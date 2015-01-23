@@ -27,9 +27,3 @@ function readly_wpcom_setup() {
   endif;
 }
 add_action( 'after_setup_theme', 'readly_wpcom_setup' );
-
-
-/*
-* Add default print styles. TODO: Add proper print styles.
-*/
-add_theme_support( 'print-style' );

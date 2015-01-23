@@ -61,10 +61,12 @@
 
 		// Pull out the search bar when clicked
 		$( '#site-navigation .search-form .search-submit' ).click( function() {
-			if ( $( this ).parent( 'form' ).hasClass( 'open' ) ) {
-				$( this ).parent( 'form' ).removeClass( 'open' )
+			var $form = $( this ).parent( 'form' );
+			if ( $form.hasClass( 'open' ) ) {
+				$form.removeClass( 'open' );
 			} else {
-				$( this ).parent( 'form' ).addClass( 'open' )
+				$form.addClass( 'open' );
+				$form.find( 'input').focus();
 				return false;
 			}
 

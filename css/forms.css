@@ -138,3 +138,12 @@ label span {
   font-size: .9em;
   padding-left: 2px;
 }
+
+/* Selected text */
+input::selection {
+  background: #eae9e6;
+}
+
+input::-moz-selection {
+  background: #eae9e6;
+}

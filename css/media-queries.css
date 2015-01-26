@@ -808,3 +808,156 @@
     padding-right: 4rem;
   }
 }
+
+/* Print styles */
+@media print {
+  body {
+    background: none !important; /* Brute force since user agents all print differently. */
+    font-size: 12pt;
+    margin: 0 10%;
+  }
+
+  .secondary-toggle,
+  .navigation,
+  .page-links,
+  .edit-link,
+  #reply-title,
+  .comment-form,
+  .comment-edit-link,
+  .comment-list .reply a,
+  button,
+  input,
+  textarea,
+  select {
+    display: none;
+  }
+
+  .site-header,
+  .site-footer,
+  .hentry,
+  .entry-footer,
+  .page-header,
+  .page-content,
+  .comments-area {
+    background: none !important; /* Make sure color schemes dont't affect to print */
+  }
+
+  body,
+  blockquote,
+  blockquote cite,
+  blockquote small,
+  label,
+  a,
+  .site-title a,
+  .site-description,
+  .post-title,
+  .author-heading,
+  .entry-footer,
+  .entry-footer a,
+  .taxonomy-description,
+  .entry-caption,
+  .comment-author,
+  .comment-metadata,
+  .comment-metadata a,
+  .comment-notes,
+  .comment-awaiting-moderation,
+  .no-comments,
+  .site-info,
+  .site-info a,
+  .wp-caption-text,
+  .gallery-caption {
+    color: #000 !important; /* Make sure color schemes don't affect to print */
+  }
+
+  pre,
+  abbr[title],
+  table,
+  th,
+  td,
+  .site-header,
+  .site-footer,
+  .hentry + .hentry,
+  .author-info,
+  .page-header,
+  .comments-area,
+  .comment-list + .comment-respond,
+  .comment-list article,
+  .comment-list .pingback,
+  .comment-list .trackback,
+  .no-comments {
+    border-color: #eaeaea !important; /* Make sure color schemes don't affect to print */
+  }
+
+  /* Remove navbar and image in header */
+  .nav-bar,
+  #masthead img {
+    display: none;
+  }
+
+  .header-image #masthead:after {
+    display: none;
+  }
+
+  /* Hide flourishes and icons */
+  .entry-meta:before,
+  .entry-meta:after,
+  .entry-header:before,
+  .title-block:before,
+  .entry-footer:before {
+    display: none !important;
+  }
+
+  .title-block,
+  .header-image .title-block {
+    left: 0;
+    margin-top: 15%;
+    position: relative;
+    text-shadow: none;
+    top: 0;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 24pt;
+    text-shadow: none;
+  }
+
+  .entry-title,
+  .entry-title a {
+    font-size: 24pt;
+  }
+
+  blockquote {
+    font-size: 19pt;
+  }
+
+  blockquote cite {
+    font-size: 10pt;
+  }
+
+  .hentry + .hentry {
+    margin-top: 15%;
+  }
+
+  .sticky {
+    box-shadow: none;
+  }
+
+  .entry-footer {
+    margin-top: 2%;
+    padding-left: 0;
+    font-size: 10pt;
+  }
+
+  /* Hide irrelevant footer elements. We only want to print the post content. */
+  .sharedaddy,
+  .navigation-post,
+  .navigation-paging,
+  .navigation-image,
+  #comments,
+  #footer-sidebar,
+  #colophon {
+    display: none;
+  }
+}
+

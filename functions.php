@@ -218,14 +218,6 @@ function readly_scripts() {
 add_action( 'wp_enqueue_scripts', 'readly_scripts' );
 
 /**
- * Remove scripts for Jetpack's sharing function
- */
-function readly_nix_sharedaddy_script() {
-	remove_action( 'wp_head', 'sharing_add_header', 1 );
-}
-add_action( 'template_redirect', 'readly_nix_sharedaddy_script' );
-
-/**
  * Remove styles for contact form
  */
 function readly_remove_jetpack_stylesheets() {

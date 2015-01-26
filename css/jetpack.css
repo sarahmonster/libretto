@@ -47,47 +47,9 @@
   cursor: pointer;
 }
 
-/* Style Jetpack's sharing module */
-.sd-title {
-  margin-bottom: 0.25em;
-  text-align: center;
-}
-
-.sd-content ul {
-  line-height: 1;
-  text-align: center;
-}
-
-.sd-content li {
-  display: inline-block;
-  list-style: none;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-size: 1.2rem;
-  font-weight: normal;
-  letter-spacing: 1px;
-  padding: 3px 10px 3px 8px;
-  position: relative;
-  margin: 0.3em;
-  text-transform: uppercase;
-}
-
-.sd-content a,
-.entry-content .sd-content a {
-  color: #faf9f5;
-}
-
-.sd-content a:before {
-  color: #faf9f5;
-  display: inline;
-  font-family: readly-icons;
-  padding-right: 6px;
-  text-transform: none;
-  vertical-align: bottom;
-}
-
-.sd-content .share-end {
-  display: none;
+/* Minimal adjustments to sharing module */
+.sharedaddy .sd-title {
+  font-style: normal;
 }
 
 /* Slideshows */

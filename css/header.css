@@ -46,7 +46,7 @@
 }
 
 /* Style a bit differently if a header image is present */
-.header-image #masthead{
+.header-image #masthead {
   position: relative;
   background: #d9d6d0 url('../images/grain.jpg');
   line-height: 0;
@@ -71,6 +71,7 @@
 
 #masthead img {
   margin: 0 auto;
+  width: auto;
 }
 
 .header-image .title-block {

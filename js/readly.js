@@ -51,6 +51,7 @@
 	// Format images on page load
 	$( window ).load( function() {
 		formatImages();
+		fitHeader();
 	});
 
 	// Format images on each subsequent Infinite Scroll load, as well
@@ -58,6 +59,11 @@
 		formatImages();
 	});
 
+	// Ensure that header images are no taller than the viewport height
+	function fitHeader() {
+  	windowHeight = $( window ).height();
+   	$( '#masthead img' ).css( 'max-height', windowHeight ).refresh();
+	};
 
 	$( document ).ready( function() {
 

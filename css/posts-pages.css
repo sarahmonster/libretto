@@ -128,8 +128,8 @@
   color: #787065;
 }
 
-time.updated {
-  display: none;
+time + time {
+  display: none; /* We don't need two times showing */
 }
 
 .entry-header .entry-meta:before,

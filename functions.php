@@ -98,11 +98,6 @@ if ( ! function_exists( 'readly_setup' ) ) :
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 		) );
 
-		/**
-		 * Add theme support for Jetpack responsive videos
-		 */
-		add_theme_support( 'jetpack-responsive-videos' );
-
 	} // readly_setup()
 endif;
 add_action( 'after_setup_theme', 'readly_setup' );
